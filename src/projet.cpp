@@ -208,10 +208,12 @@ void IRB4400::toggle_rep0(int state)
 {
   if (state)
   {
-    base_mobile_repere->ref();
+    base_mobile_repere->unref();
     viewer->render();
   }else{
-    base_mobile_repere->unref();
+    root->grille->unref();
+    root->grille_base->unref();
+    root->base_mobile_repere->unref();
     viewer->render();
   }
 }
