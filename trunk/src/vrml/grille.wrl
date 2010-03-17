@@ -1,0 +1,167 @@
+#VRML V2.0 utf8
+
+# Construction d'une grille carree
+
+DEF Grille Group {
+  children [
+    DEF GrilleGroupe1 Group {
+      children [
+        DEF Ligne1 Shape {
+          appearance Appearance {
+            material Material {
+              emissiveColor 1.0 0.7 0.3
+              transparency 0.5
+            } 
+          }
+          geometry IndexedLineSet {
+            coord Coordinate {
+              point [-2.0 0 0, 2.0,0 0]
+            }
+            coordIndex [0 1]
+          }  
+        }
+        Transform {
+          translation 0 -0.2 0
+          children USE Ligne1
+        }
+        Transform {
+          translation 0 -0.4 0
+          children USE Ligne1
+        }
+        Transform {
+          translation 0 -0.6 0
+          children USE Ligne1
+        }
+        Transform {
+          translation 0 -0.8 0
+          children USE Ligne1
+        }
+        Transform {
+          translation 0 -1.0 0
+          children USE Ligne1
+        }
+        Transform {
+          translation 0 -1.2 0
+          children USE Ligne1
+        }
+        Transform {
+          translation 0 -1.4 0
+          children USE Ligne1
+        }
+        Transform {
+          translation 0 -1.6 0
+          children USE Ligne1
+        }
+		Transform {
+          translation 0 -1.8 0
+          children USE Ligne1
+        }
+		Transform {
+          translation 0 -2.0 0
+          children USE Ligne1
+        }
+        Transform {
+          translation 0 0.2 0
+          children USE Ligne1
+        }
+        Transform {
+          translation 0 0.4 0
+          children USE Ligne1
+        }
+        Transform {
+          translation 0 0.6 0
+          children USE Ligne1
+        }  
+        Transform {
+          translation 0 0.8 0
+          children USE Ligne1
+        } 
+        Transform {
+          translation 0 01.0 0
+          children USE Ligne1
+        } 
+        Transform {
+          translation 0 1.2 0
+          children USE Ligne1  
+        } 
+        Transform {
+          translation 0 1.4 0
+          children USE Ligne1
+        }
+        Transform {
+          translation 0 1.6 0
+          children USE Ligne1
+        }
+		Transform {
+          translation 0 1.8 0
+          children USE Ligne1
+        }
+		Transform {
+          translation 0 2.0 0
+          children USE Ligne1
+        }
+      ]
+    }
+    Transform {
+      rotation 0 0 1 1.571
+      children USE GrilleGroupe1
+    }
+    DEF GrilleLegende1 Transform {
+      translation 2.05 0 0
+      rotation 0 0 1 -1.571
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              emissiveColor 0.7 0.5 0.6
+            }
+          } 
+          geometry Text {
+            fontStyle FontStyle {
+              size 0.25
+              justify "MIDDLE"
+            }
+            string "20 cases"
+            length 0.6
+          }
+        }
+      ]
+    }
+    DEF GrilleLegende2 Transform {
+      rotation 0 0 1 1.571
+      children USE GrilleLegende1
+    }
+    DEF GrilleLegende3 Transform {
+      translation 2.050 1.9 0
+      children [
+        DEF GrilleLegende3Text Transform {
+          rotation 0 0 1 -1.571
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  emissiveColor 1.0 1.0 1.0
+                }
+              } 
+              geometry Text {
+                fontStyle FontStyle {
+                  size 0.150
+                  justify "MIDDLE"
+                }
+                string "1"
+                length 0.300
+              }
+            }
+          ]
+        }
+      ]
+    }
+    DEF GrilleLegende4 Transform {
+      translation 1.9 2.050 0
+      rotation 0 0 1 1.571
+      children USE GrilleLegende3Text
+    }
+
+  ]
+}
+
