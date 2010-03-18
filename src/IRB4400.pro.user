@@ -106,7 +106,7 @@
     <value type="QString">XDG_SESSION_COOKIE=ea38317ff97c1a0752c070b14b942e6f-1268849146.220559-58991767</value>
    </valuelist>
    <valuelist key="abstractProcess.arguments" type="QVariantList">
-    <value type="QString">/home/parapampa/devel/Projet ROBO/IRB4400/IRB4400.pro</value>
+    <value type="QString">/home/parapampa/devel/Projet ROBO/IRB4400/ensiie-irb4440/src/IRB4400.pro</value>
     <value type="QString">-spec</value>
     <value type="QString">linux-g++</value>
     <value type="QString">-r</value>
@@ -114,7 +114,7 @@
    </valuelist>
    <value key="abstractProcess.command" type="QString">/home/parapampa/qtsdk-2010.02/qt/bin/qmake</value>
    <value key="abstractProcess.enabled" type="bool">false</value>
-   <value key="abstractProcess.workingDirectory" type="QString">/home/parapampa/devel/Projet ROBO/IRB4400</value>
+   <value key="abstractProcess.workingDirectory" type="QString">/home/parapampa/devel/Projet ROBO/IRB4400/ensiie-irb4440/src</value>
   </valuemap>
  </data>
  <data>
@@ -157,7 +157,7 @@
    </valuelist>
    <value key="abstractProcess.command" type="QString">/usr/bin/make</value>
    <value key="abstractProcess.enabled" type="bool">true</value>
-   <value key="abstractProcess.workingDirectory" type="QString">/home/parapampa/devel/Projet ROBO/IRB4400</value>
+   <value key="abstractProcess.workingDirectory" type="QString">/home/parapampa/devel/Projet ROBO/IRB4400/ensiie-irb4440/src</value>
   </valuemap>
  </data>
  <data>

@@ -31,6 +31,9 @@ extern Interface *interface;
 
 extern IRB4400 *root;
 
+SoNode *base_mobile_repereTmp;
+SoNode *parallelogramme_avant_repereTmp;
+
 void millisleep( unsigned int milliseconds )
 {
 # ifdef _MSC_VER   // si MS
@@ -208,12 +211,26 @@ void IRB4400::toggle_rep0(int state)
 {
   if (state)
   {
-    base_mobile_repere->unref();
+    base_mobile_base->insertChild(base_mobile_repereTmp, 1);;
     viewer->render();
   }else{
-    root->grille->unref();
-    root->grille_base->unref();
-    root->base_mobile_repere->unref();
+    //suppression du repère ("1" correspond au premier enfant du noeud, i.e. le repère ici)
+    base_mobile_repereTmp = base_mobile_base->getChild(1);
+    base_mobile_base->removeChild(1);
+    viewer->render();
+  }
+}
+
+void IRB4400::toggle_rep2(int state)
+{
+  if (state)
+  {
+    base_mobile_base->insertChild(parallelogramme_avant_repereTmp, 1);;
+    viewer->render();
+  }else{
+    //suppression du repère ("1" correspond au premier enfant du noeud, i.e. le repère ici)
+    parallelogramme_avant_repereTmp = parallelogramme_avant_base->getChild(1);
+    parallelogramme_avant_base->removeChild(1);
     viewer->render();
   }
 }
