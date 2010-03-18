@@ -134,6 +134,7 @@ int main(int argc, char** argv)
     root->separator->addChild(root->parallelogramme_avant_base);
     root->parallelogramme_avant_translation->translation = SbVec3f(0, 0, 0);
     root->parallelogramme_avant_base->addChild(root->parallelogramme_avant_translation);
+    //root->openMember("vrml/repere.wrl", root->parallelogramme_avant_repere, root->parallelogramme_avant_base);
     root->openMember("vrml/parallelogramme_avant.wrl", root->parallelogramme_avant, root->parallelogramme_avant_base);
     //bitoniot arriere
     root->bitoniot_arriere_base->ref();
@@ -176,7 +177,7 @@ int main(int argc, char** argv)
     root->separator->addChild(root->poignet_1_base);
     root->poignet_1_translation->translation = SbVec3f(0, 0, 0);
     root->poignet_1_base->addChild(root->poignet_1_translation);
-    root->openMember("vrml/poignet_1.wrl", root->poignet_1, root->base_mobile_base);
+    root->openMember("vrml/poignet_1.wrl", root->poignet_1, root->poignet_1_base);
     //poignet_2
     root->poignet_2_base->ref();
     root->separator->addChild(root->poignet_2_base);
@@ -216,6 +217,8 @@ int main(int argc, char** argv)
   //interface->connect( interface->pushButton4, SIGNAL( clicked() ), root, SLOT( lauch_simulation() ));
 
   interface->connect( interface->checkBox_3, SIGNAL( stateChanged(int) ), root, SLOT( toggle_rep0(int) ) );
+  //interface->connect( interface->checkBox_5, SIGNAL( stateChanged(int) ), root, SLOT( toggle_rep2(int) ) );
+
 
   SoQt::mainLoop();
   //delete(&robot.getViewer());

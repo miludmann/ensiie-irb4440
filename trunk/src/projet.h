@@ -133,6 +133,12 @@ class IRB4400 : public QObject
       void toggle_moving_mode(int state);
       void toggle_moving_mode2(int state);
       void toggle_rep0(int state);
+      //void toggle_rep1(int state);
+      void toggle_rep2(int state);
+      //void toggle_rep3(int state);
+      //void toggle_rep4(int state);
+      //void toggle_rep5(int state);
+      //void toggle_rep6(int state);
 };
 
 void move_progressif(double x_initial, double x_wanted, double y_initial, double y_wanted, double z_initial, double z_wanted, IRB4400 *ivv);

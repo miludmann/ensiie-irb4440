@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'projet.h'
 **
-** Created: Wed Mar 17 23:47:13 2010
+** Created: Thu Mar 18 23:55:47 2010
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.6.2)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_IRB4400[] = {
        4,       // revision
        0,       // classname
        0,    0, // classinfo
-      14,   14, // methods
+      15,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -45,6 +45,7 @@ static const uint qt_meta_data_IRB4400[] = {
      228,  177,    8,    8, 0x0a,
      252,  177,    8,    8, 0x0a,
      277,  177,    8,    8, 0x0a,
+     294,  177,    8,    8, 0x0a,
 
        0        // eod
 };
@@ -57,6 +58,7 @@ static const char qt_meta_stringdata_IRB4400[] = {
     "center_scene()\0state\0toggle_headlight(int)\0"
     "toggle_fil_de_fer(int)\0toggle_moving_mode(int)\0"
     "toggle_moving_mode2(int)\0toggle_rep0(int)\0"
+    "toggle_rep2(int)\0"
 };
 
 const QMetaObject IRB4400::staticMetaObject = {
@@ -103,9 +105,10 @@ int IRB4400::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         case 11: toggle_moving_mode((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 12: toggle_moving_mode2((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 13: toggle_rep0((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 14: toggle_rep2((*reinterpret_cast< int(*)>(_a[1]))); break;
         default: ;
         }
-        _id -= 14;
+        _id -= 15;
     }
     return _id;
 }
