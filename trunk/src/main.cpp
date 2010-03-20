@@ -53,6 +53,7 @@ int main(int argc, char** argv)
   root->parallelogramme_avant_translation = new SoTranslation;
   root->parallelogramme_avant_base = new SoSeparator;
   root->parallelogramme_avant_repere = new SoSeparator;
+  root->parallelogramme_avant_repere_translation = new SoTranslation;
   root->parallelogramme_avant_rotor = new SoRotation;
 
   root->bitoniot_arriere = new SoSeparator;
@@ -131,56 +132,62 @@ int main(int argc, char** argv)
     root->openMember("vrml/base_mobile.wrl", root->base_mobile, root->base_mobile_base);
     //parallelogramme avant
     root->parallelogramme_avant_base->ref();
-    root->separator->addChild(root->parallelogramme_avant_base);
+    root->base_mobile_base->addChild(root->parallelogramme_avant_base);
     root->parallelogramme_avant_translation->translation = SbVec3f(0, 0, 0);
     root->parallelogramme_avant_base->addChild(root->parallelogramme_avant_translation);
-    //root->openMember("vrml/repere.wrl", root->parallelogramme_avant_repere, root->parallelogramme_avant_base);
+
+    root->parallelogramme_avant_repere_translation->translation = SbVec3f(2, 0, 0);
+    root->parallelogramme_avant_repere->addChild(root->parallelogramme_avant_repere_translation);
+
+    root->openMember("vrml/repere.wrl", root->parallelogramme_avant_repere, root->parallelogramme_avant_base);
     root->openMember("vrml/parallelogramme_avant.wrl", root->parallelogramme_avant, root->parallelogramme_avant_base);
+
+
     //bitoniot arriere
     root->bitoniot_arriere_base->ref();
-    root->separator->addChild(root->bitoniot_arriere_base);
+    root->parallelogramme_arriere_base->addChild(root->bitoniot_arriere_base);
     root->bitoniot_arriere_translation->translation = SbVec3f(0, 0, 0);
     root->bitoniot_arriere_base->addChild(root->bitoniot_arriere_translation);
     root->openMember("vrml/bitoniot_arriere.wrl", root->bitoniot_arriere, root->bitoniot_arriere_base);
     //cylindre base
     root->cylindre_base_base->ref();
-    root->separator->addChild(root->cylindre_base_base);
+    root->base_mobile_base->addChild(root->cylindre_base_base);
     root->cylindre_base_translation->translation = SbVec3f(0, 0, 0);
     root->cylindre_base_base->addChild(root->cylindre_base_translation);
     root->openMember("vrml/cylindre_base.wrl", root->cylindre_base, root->cylindre_base_base);
     //sortie cylindre
     root->sortie_cylindre_base->ref();
-    root->separator->addChild(root->sortie_cylindre_base);
+    root->cylindre_base->addChild(root->sortie_cylindre_base);
     root->sortie_cylindre_translation->translation = SbVec3f(0, 0, 0);
     root->sortie_cylindre_base->addChild(root->sortie_cylindre_translation);
     root->openMember("vrml/sortie_cylindre.wrl", root->sortie_cylindre, root->sortie_cylindre_base);
     //parallelogramme arriere
     root->parallelogramme_arriere_base->ref();
-    root->separator->addChild(root->parallelogramme_arriere_base);
+    root->base_mobile_base->addChild(root->parallelogramme_arriere_base);
     root->parallelogramme_arriere_translation->translation = SbVec3f(0, 0, 0);
     root->parallelogramme_arriere_base->addChild(root->parallelogramme_arriere_translation);
     root->openMember("vrml/parallelogramme_arriere.wrl", root->parallelogramme_arriere, root->parallelogramme_arriere_base);
     //coude
     root->coude_base->ref();
-    root->separator->addChild(root->coude_base);
+    root->parallelogramme_avant_base->addChild(root->coude_base);
     root->coude_translation->translation = SbVec3f(0, 0, 0);
     root->coude_base->addChild(root->coude_translation);
     root->openMember("vrml/coude.wrl", root->coude, root->coude_base);
     //avant_bras
     root->avant_bras_base->ref();
-    root->separator->addChild(root->avant_bras_base);
+    root->coude_base->addChild(root->avant_bras_base);
     root->avant_bras_translation->translation = SbVec3f(0, 0, 0);
     root->avant_bras_base->addChild(root->avant_bras_translation);
     root->openMember("vrml/avant_bras.wrl", root->avant_bras, root->avant_bras_base);
     //poignet_1
     root->poignet_1_base->ref();
-    root->separator->addChild(root->poignet_1_base);
+    root->avant_bras_base->addChild(root->poignet_1_base);
     root->poignet_1_translation->translation = SbVec3f(0, 0, 0);
     root->poignet_1_base->addChild(root->poignet_1_translation);
     root->openMember("vrml/poignet_1.wrl", root->poignet_1, root->poignet_1_base);
     //poignet_2
     root->poignet_2_base->ref();
-    root->separator->addChild(root->poignet_2_base);
+    root->poignet_1_base->addChild(root->poignet_2_base);
     root->poignet_2_translation->translation = SbVec3f(0, 0, 0);
     root->poignet_2_base->addChild(root->poignet_2_translation);
     root->openMember("vrml/poignet_2.wrl", root->poignet_2, root->poignet_2_base);
