@@ -48,6 +48,7 @@ class IRB4400 : public QObject
     SoTranslation *parallelogramme_avant_translation;
     SoSeparator *parallelogramme_avant_base;
     SoSeparator *parallelogramme_avant_repere;
+    SoTranslation *parallelogramme_avant_repere_translation;
     SoRotation *parallelogramme_avant_rotor;
     SoRotation *parallelogramme_avant_init_rotor;
     SoSeparator *parallelogramme_avant;
