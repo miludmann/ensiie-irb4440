@@ -309,6 +309,43 @@ void IRB4400::toggle_rep6(int state)
     viewer->render();
   }
 }
+
+void IRB4400::move_base_mobile(int angle)
+{
+    base_mobile_transform->rotation.setValue(SbVec3f(0, 0, 1), (angle-165)*M_PI/180);
+}
+
+void IRB4400::move_avant_bras(int angle)
+{
+    avant_bras_transform->rotation.setValue(SbVec3f(1, 0, 0), (angle-200)*M_PI/180);
+}
+
+void IRB4400::move_poignet_1(int angle)
+{
+    poignet_1_transform->rotation.setValue(SbVec3f(0, 1, 0), (angle-120)*M_PI/180);
+}
+
+void IRB4400::move_poignet_2(int angle)
+{
+    poignet_2_transform->rotation.setValue(SbVec3f(1, 0, 0), (angle-400)*M_PI/180);
+}
+
+void IRB4400::move_parallelogramme(int angle)
+{
+    parallelogramme_avant_transform->rotation.setValue(SbVec3f(0, 1, 0), (angle-82)*M_PI/180);
+    parallelogramme_arriere_transform->rotation.setValue(SbVec3f(0, 1, 0), (angle-82)*M_PI/180);
+}
+
+void IRB4400::reset_sliders()
+{
+    interface->horizontalSlider->setValue(165);
+    interface->horizontalSlider_2->setValue(82);
+    interface->horizontalSlider_3->setValue(62);
+    interface->horizontalSlider_4->setValue(200);
+    interface->horizontalSlider_5->setValue(120);
+    interface->horizontalSlider_6->setValue(400);
+}
+
 void IRB4400::move()
 {/*
   if (mode == 0) {
