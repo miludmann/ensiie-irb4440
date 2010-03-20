@@ -159,9 +159,9 @@ public:
         verticalSlider = new QSlider(tab_1);
         verticalSlider->setObjectName(QString::fromUtf8("verticalSlider"));
         verticalSlider->setGeometry(QRect(20, 140, 19, 160));
-        verticalSlider->setMinimum(-50);
-        verticalSlider->setMaximum(100);
-        verticalSlider->setSingleStep(0);
+        verticalSlider->setMinimum(-290);
+        verticalSlider->setMaximum(2140);
+        verticalSlider->setSingleStep(10);
         verticalSlider->setSliderPosition(0);
         verticalSlider->setOrientation(Qt::Vertical);
         lcdNumber = new QLCDNumber(tab_1);
