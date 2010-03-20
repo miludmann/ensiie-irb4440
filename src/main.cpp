@@ -47,59 +47,46 @@ int main(int argc, char** argv)
   root->grille = new SoSeparator;
 
   root->base_mobile = new SoSeparator;
-  root->base_mobile_translation = new SoTranslation;
+  root->base_mobile_transform = new SoTransform;
   root->base_mobile_base = new SoSeparator;
-  root->base_mobile_rotor = new SoRotation;
 
   root->parallelogramme_avant = new SoSeparator;
-  root->parallelogramme_avant_translation = new SoTranslation;
+  root->parallelogramme_avant_transform = new SoTransform;
   root->parallelogramme_avant_base = new SoSeparator;
-  root->parallelogramme_avant_rotor = new SoRotation;
 
   root->bitoniot_arriere = new SoSeparator;
-  root->bitoniot_arriere_translation = new SoTranslation;
+  root->bitoniot_arriere_transform = new SoTransform;
   root->bitoniot_arriere_base = new SoSeparator;
-  root->bitoniot_arriere_rotor = new SoRotation;
 
   root->cylindre_base = new SoSeparator;
-  root->cylindre_base_translation = new SoTranslation;
+  root->cylindre_base_transform = new SoTransform;
   root->cylindre_base_base = new SoSeparator;
-  root->cylindre_base_rotor = new SoRotation;
 
   root->sortie_cylindre = new SoSeparator;
-  root->sortie_cylindre_translation = new SoTranslation;
+  root->sortie_cylindre_transform = new SoTransform;
   root->sortie_cylindre_base = new SoSeparator;
-  root->sortie_cylindre_rotor = new SoRotation;
 
   root->parallelogramme_arriere = new SoSeparator;
-  root->parallelogramme_arriere_translation = new SoTranslation;
+  root->parallelogramme_arriere_transform = new SoTransform;
   root->parallelogramme_arriere_base = new SoSeparator;
-  root->parallelogramme_arriere_rotor = new SoRotation;
 
   root->coude = new SoSeparator;
-  root->coude_translation = new SoTranslation;
+  root->coude_transform = new SoTransform;
   root->coude_base = new SoSeparator;
-  root->coude_rotor = new SoRotation;
 
   root->avant_bras = new SoSeparator;
-  root->avant_bras_translation = new SoTranslation;
+  root->avant_bras_transform = new SoTransform;
   root->avant_bras_base = new SoSeparator;
-  root->avant_bras_rotor = new SoRotation;
 
   root->poignet_1 = new SoSeparator;
-  root->poignet_1_translation = new SoTranslation;
   root->poignet_1_base = new SoSeparator;
-  root->poignet_1_rotor = new SoRotation;
+  root->poignet_1_transform = new SoTransform;
 
   root->poignet_2 = new SoSeparator;
-  root->poignet_2_translation = new SoTranslation;
+  root->poignet_2_transform = new SoTransform;
   root->poignet_2_base = new SoSeparator;
-  root->poignet_2_rotor = new SoRotation;
 
-  root->repere_r0_translation = new SoTranslation;
   root->repere_r0_base = new SoSeparator;
-  root->repere_r0_rotor = new SoRotation;
-  root->repere_r0_rotor2 = new SoRotation;
   root->repere_r0 = new SoSeparator;
 
   root->repere_r1_translation = new SoTranslation;
@@ -167,8 +154,9 @@ int main(int argc, char** argv)
     //base mobile
     root->base_mobile_base->ref();
     root->separator->addChild(root->base_mobile_base);
-    root->base_mobile_translation->translation = SbVec3f(0, 0, 0);
-    root->base_mobile_base->addChild(root->base_mobile_translation);
+    root->base_mobile_transform->translation = SbVec3f(0, 0, 0);
+    root->base_mobile_transform->rotation.setValue(SbVec3f(0, 0, 1), 0);
+    root->base_mobile_base->addChild(root->base_mobile_transform);
     root->openMember("vrml/base_mobile.wrl", root->base_mobile, root->base_mobile_base);
     //repere_r1
     root->repere_r1_base->ref();
@@ -179,13 +167,14 @@ int main(int argc, char** argv)
     //parallelogramme avant
     root->parallelogramme_avant_base->ref();
     root->base_mobile_base->addChild(root->parallelogramme_avant_base);
-    root->parallelogramme_avant_translation->translation = SbVec3f(0, 0, 0);
-    root->parallelogramme_avant_base->addChild(root->parallelogramme_avant_translation);
+    root->parallelogramme_avant_transform->translation = SbVec3f(0, 0, 0);
+    root->parallelogramme_avant_transform->recenter(SbVec3f(0, 0, 0));
+    root->parallelogramme_avant_base->addChild(root->parallelogramme_avant_transform);
     root->openMember("vrml/parallelogramme_avant.wrl", root->parallelogramme_avant, root->parallelogramme_avant_base);
     //repere_r2
     root->repere_r2_base->ref();
     root->parallelogramme_avant_base->addChild(root->repere_r2_base);
-    root->repere_r2_translation->translation = SbVec3f(0.3, 0, 0.68);
+    root->repere_r2_translation->translation = SbVec3f(0.2, 0, 0.68);
     root->repere_r2_base->addChild(root->repere_r2_translation);
     root->repere_r2_rotor->rotation.setValue(SbVec3f(1, 0, 0), M_PI/2);
     root->repere_r2_base->addChild(root->repere_r2_rotor);
@@ -195,32 +184,33 @@ int main(int argc, char** argv)
     //bitoniot arriere
     root->bitoniot_arriere_base->ref();
     root->parallelogramme_arriere_base->addChild(root->bitoniot_arriere_base);
-    root->bitoniot_arriere_translation->translation = SbVec3f(0, 0, 0);
-    root->bitoniot_arriere_base->addChild(root->bitoniot_arriere_translation);
+    root->bitoniot_arriere_transform->translation = SbVec3f(0, 0, 0);
+    root->bitoniot_arriere_base->addChild(root->bitoniot_arriere_transform);
     root->openMember("vrml/bitoniot_arriere.wrl", root->bitoniot_arriere, root->bitoniot_arriere_base);
     //cylindre base
     root->cylindre_base_base->ref();
     root->base_mobile_base->addChild(root->cylindre_base_base);
-    root->cylindre_base_translation->translation = SbVec3f(0, 0, 0);
-    root->cylindre_base_base->addChild(root->cylindre_base_translation);
+    root->cylindre_base_transform->translation = SbVec3f(0, 0, 0);
+    root->cylindre_base_base->addChild(root->cylindre_base_transform);
     root->openMember("vrml/cylindre_base.wrl", root->cylindre_base, root->cylindre_base_base);
     //sortie cylindre
     root->sortie_cylindre_base->ref();
     root->cylindre_base->addChild(root->sortie_cylindre_base);
-    root->sortie_cylindre_translation->translation = SbVec3f(0, 0, 0);
-    root->sortie_cylindre_base->addChild(root->sortie_cylindre_translation);
+    root->sortie_cylindre_transform->translation = SbVec3f(0, 0, 0);
+    root->sortie_cylindre_base->addChild(root->sortie_cylindre_transform);
     root->openMember("vrml/sortie_cylindre.wrl", root->sortie_cylindre, root->sortie_cylindre_base);
     //parallelogramme arriere
     root->parallelogramme_arriere_base->ref();
     root->base_mobile_base->addChild(root->parallelogramme_arriere_base);
-    root->parallelogramme_arriere_translation->translation = SbVec3f(0, 0, 0);
-    root->parallelogramme_arriere_base->addChild(root->parallelogramme_arriere_translation);
+    root->parallelogramme_arriere_transform->translation = SbVec3f(0, 0, 0);
+    //root->parallelogramme_avant_transform->recenter(SbVec3f(-0.1, 0, 0.68));
+    root->parallelogramme_arriere_base->addChild(root->parallelogramme_arriere_transform);
     root->openMember("vrml/parallelogramme_arriere.wrl", root->parallelogramme_arriere, root->parallelogramme_arriere_base);
     //coude
     root->coude_base->ref();
     root->parallelogramme_avant_base->addChild(root->coude_base);
-    root->coude_translation->translation = SbVec3f(0, 0, 0);
-    root->coude_base->addChild(root->coude_translation);
+    root->coude_transform->translation = SbVec3f(0, 0, 0);
+    root->coude_base->addChild(root->coude_transform);
     root->openMember("vrml/coude.wrl", root->coude, root->coude_base);
     //repere_r3
     root->repere_r3_base->ref();
@@ -235,8 +225,9 @@ int main(int argc, char** argv)
     //avant_bras
     root->avant_bras_base->ref();
     root->coude_base->addChild(root->avant_bras_base);
-    root->avant_bras_translation->translation = SbVec3f(0, 0, 0);
-    root->avant_bras_base->addChild(root->avant_bras_translation);
+    root->avant_bras_transform->translation = SbVec3f(0, 0, 0);
+    root->avant_bras_transform->recenter(SbVec3f(1.08, 0, 1.720));
+    root->avant_bras_base->addChild(root->avant_bras_transform);
     root->openMember("vrml/avant_bras.wrl", root->avant_bras, root->avant_bras_base);
     //repere_r4
     root->repere_r4_base->ref();
@@ -251,8 +242,9 @@ int main(int argc, char** argv)
     //poignet_1
     root->poignet_1_base->ref();
     root->avant_bras_base->addChild(root->poignet_1_base);
-    root->poignet_1_translation->translation = SbVec3f(0, 0, 0);
-    root->poignet_1_base->addChild(root->poignet_1_translation);
+    root->poignet_1_transform->translation = SbVec3f(0, 0, 0);
+    root->poignet_1_transform->recenter(SbVec3f(1.08, 0, 1.720));
+    root->poignet_1_base->addChild(root->poignet_1_transform);
     root->openMember("vrml/poignet_1.wrl", root->poignet_1, root->poignet_1_base);
     //repere_r5
     root->repere_r5_base->ref();
@@ -267,8 +259,9 @@ int main(int argc, char** argv)
     //poignet_2
     root->poignet_2_base->ref();
     root->poignet_1_base->addChild(root->poignet_2_base);
-    root->poignet_2_translation->translation = SbVec3f(0, 0, 0);
-    root->poignet_2_base->addChild(root->poignet_2_translation);
+    root->poignet_2_transform->translation = SbVec3f(0, 0, 0);
+    root->poignet_2_transform->recenter(SbVec3f(1.08, 0, 1.720));
+    root->poignet_2_base->addChild(root->poignet_2_transform);
     root->openMember("vrml/poignet_2.wrl", root->poignet_2, root->poignet_2_base);
     //repere_r6
     root->repere_r6_base->ref();
@@ -320,7 +313,12 @@ int main(int argc, char** argv)
   interface->connect( interface->checkBox_8, SIGNAL( stateChanged(int) ), root, SLOT( toggle_rep3(int) ) );
   interface->connect( interface->checkBox_9, SIGNAL( stateChanged(int) ), root, SLOT( toggle_rep6(int) ) );
 
-
+  interface->connect( interface->horizontalSlider, SIGNAL (valueChanged(int)), root, SLOT(move_base_mobile(int)));
+  interface->connect( interface->horizontalSlider_2, SIGNAL (valueChanged(int)), root, SLOT(move_parallelogramme(int)));
+  interface->connect( interface->horizontalSlider_4, SIGNAL (valueChanged(int)), root, SLOT(move_avant_bras(int)));
+  interface->connect( interface->horizontalSlider_5, SIGNAL (valueChanged(int)), root, SLOT(move_poignet_1(int)));
+  interface->connect( interface->horizontalSlider_6, SIGNAL (valueChanged(int)), root, SLOT(move_poignet_2(int)));
+  interface->connect( interface->pushButton_8, SIGNAL( clicked()), root, SLOT(reset_sliders()));
 
   SoQt::mainLoop();
   //delete(&robot.getViewer());

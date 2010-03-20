@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'projet.h'
 **
-** Created: Sat Mar 20 19:54:20 2010
+** Created: Sat Mar 20 23:37:34 2010
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.6.2)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_IRB4400[] = {
        4,       // revision
        0,       // classname
        0,    0, // classinfo
-      20,   14, // methods
+      26,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -51,6 +51,12 @@ static const uint qt_meta_data_IRB4400[] = {
      345,  177,    8,    8, 0x0a,
      362,  177,    8,    8, 0x0a,
      379,  177,    8,    8, 0x0a,
+     402,  396,    8,    8, 0x0a,
+     424,  396,    8,    8, 0x0a,
+     450,  396,    8,    8, 0x0a,
+     471,  396,    8,    8, 0x0a,
+     491,  396,    8,    8, 0x0a,
+     511,    8,    8,    8, 0x0a,
 
        0        // eod
 };
@@ -66,6 +72,10 @@ static const char qt_meta_stringdata_IRB4400[] = {
     "toggle_rep1(int)\0toggle_rep2(int)\0"
     "toggle_rep3(int)\0toggle_rep4(int)\0"
     "toggle_rep5(int)\0toggle_rep6(int)\0"
+    "angle\0move_base_mobile(int)\0"
+    "move_parallelogramme(int)\0"
+    "move_avant_bras(int)\0move_poignet_1(int)\0"
+    "move_poignet_2(int)\0reset_sliders()\0"
 };
 
 const QMetaObject IRB4400::staticMetaObject = {
@@ -118,9 +128,15 @@ int IRB4400::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         case 17: toggle_rep4((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 18: toggle_rep5((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 19: toggle_rep6((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 20: move_base_mobile((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 21: move_parallelogramme((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 22: move_avant_bras((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 23: move_poignet_1((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 24: move_poignet_2((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 25: reset_sliders(); break;
         default: ;
         }
-        _id -= 20;
+        _id -= 26;
     }
     return _id;
 }

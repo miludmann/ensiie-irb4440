@@ -76,15 +76,14 @@
   <valuemap type="QVariantMap">
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Debug</value>
    <valuelist key="abstractProcess.Environment" type="QVariantList">
-    <value type="QString">COIN_GLERROR_DEBUGGING=1</value>
-    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-oxW36j74uH,guid=31250a8d9b1ad0e876fbd7264ba3daf6</value>
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-OWc3kjC4OG,guid=5d030c9eb3304fba65bf48464ba3dd06</value>
     <value type="QString">DESKTOP_SESSION=gnome</value>
     <value type="QString">DISPLAY=:0.0</value>
     <value type="QString">GDMSESSION=gnome</value>
     <value type="QString">GDM_KEYBOARD_LAYOUT=fr</value>
     <value type="QString">GDM_LANG=en_US.UTF-8</value>
     <value type="QString">GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
-    <value type="QString">GNOME_KEYRING_SOCKET=/tmp/keyring-4aHHNI/socket</value>
+    <value type="QString">GNOME_KEYRING_SOCKET=/tmp/keyring-TxsoXL/socket</value>
     <value type="QString">GTK_MODULES=canberra-gtk-module</value>
     <value type="QString">GTK_RC_FILES=/etc/gtk/gtkrc:/home/parapampa/.gtkrc-1.2-gnome2</value>
     <value type="QString">HOME=/home/parapampa</value>
@@ -95,16 +94,16 @@
     <value type="QString">PATH=/home/parapampa/qtsdk-2010.02/qt/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games</value>
     <value type="QString">PWD=/home/parapampa/qtsdk-2010.02/bin</value>
     <value type="QString">QTDIR=/home/parapampa/qtsdk-2010.02/qt</value>
-    <value type="QString">SESSION_MANAGER=local/parapampa-laptop:@/tmp/.ICE-unix/942,unix/parapampa-laptop:/tmp/.ICE-unix/942</value>
+    <value type="QString">SESSION_MANAGER=local/parapampa-laptop:@/tmp/.ICE-unix/1037,unix/parapampa-laptop:/tmp/.ICE-unix/1037</value>
     <value type="QString">SHELL=/bin/bash</value>
     <value type="QString">SPEECHD_PORT=7560</value>
-    <value type="QString">SSH_AGENT_PID=1103</value>
-    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-4aHHNI/socket.ssh</value>
+    <value type="QString">SSH_AGENT_PID=1175</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-TxsoXL/socket.ssh</value>
     <value type="QString">USER=parapampa</value>
     <value type="QString">USERNAME=parapampa</value>
-    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-parapampa-9tsfE5/database</value>
+    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-parapampa-83fF5W/database</value>
     <value type="QString">XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share/:/usr/share/</value>
-    <value type="QString">XDG_SESSION_COOKIE=ea38317ff97c1a0752c070b14b942e6f-1269029614.111154-302716588</value>
+    <value type="QString">XDG_SESSION_COOKIE=ea38317ff97c1a0752c070b14b942e6f-1269030143.809703-1142710049</value>
    </valuelist>
    <valuelist key="abstractProcess.arguments" type="QVariantList">
     <value type="QString">/home/parapampa/devel/Projet ROBO/IRB4400/ensiie-irb4440/src/IRB4400.pro</value>
@@ -123,15 +122,14 @@
   <valuemap type="QVariantMap">
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Debug</value>
    <valuelist key="abstractProcess.Environment" type="QVariantList">
-    <value type="QString">COIN_GLERROR_DEBUGGING=1</value>
-    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-oxW36j74uH,guid=31250a8d9b1ad0e876fbd7264ba3daf6</value>
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-OWc3kjC4OG,guid=5d030c9eb3304fba65bf48464ba3dd06</value>
     <value type="QString">DESKTOP_SESSION=gnome</value>
     <value type="QString">DISPLAY=:0.0</value>
     <value type="QString">GDMSESSION=gnome</value>
     <value type="QString">GDM_KEYBOARD_LAYOUT=fr</value>
     <value type="QString">GDM_LANG=en_US.UTF-8</value>
     <value type="QString">GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
-    <value type="QString">GNOME_KEYRING_SOCKET=/tmp/keyring-4aHHNI/socket</value>
+    <value type="QString">GNOME_KEYRING_SOCKET=/tmp/keyring-TxsoXL/socket</value>
     <value type="QString">GTK_MODULES=canberra-gtk-module</value>
     <value type="QString">GTK_RC_FILES=/etc/gtk/gtkrc:/home/parapampa/.gtkrc-1.2-gnome2</value>
     <value type="QString">HOME=/home/parapampa</value>
@@ -142,16 +140,16 @@
     <value type="QString">PATH=/home/parapampa/qtsdk-2010.02/qt/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games</value>
     <value type="QString">PWD=/home/parapampa/qtsdk-2010.02/bin</value>
     <value type="QString">QTDIR=/home/parapampa/qtsdk-2010.02/qt</value>
-    <value type="QString">SESSION_MANAGER=local/parapampa-laptop:@/tmp/.ICE-unix/942,unix/parapampa-laptop:/tmp/.ICE-unix/942</value>
+    <value type="QString">SESSION_MANAGER=local/parapampa-laptop:@/tmp/.ICE-unix/1037,unix/parapampa-laptop:/tmp/.ICE-unix/1037</value>
     <value type="QString">SHELL=/bin/bash</value>
     <value type="QString">SPEECHD_PORT=7560</value>
-    <value type="QString">SSH_AGENT_PID=1103</value>
-    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-4aHHNI/socket.ssh</value>
+    <value type="QString">SSH_AGENT_PID=1175</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-TxsoXL/socket.ssh</value>
     <value type="QString">USER=parapampa</value>
     <value type="QString">USERNAME=parapampa</value>
-    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-parapampa-9tsfE5/database</value>
+    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-parapampa-83fF5W/database</value>
     <value type="QString">XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share/:/usr/share/</value>
-    <value type="QString">XDG_SESSION_COOKIE=ea38317ff97c1a0752c070b14b942e6f-1269029614.111154-302716588</value>
+    <value type="QString">XDG_SESSION_COOKIE=ea38317ff97c1a0752c070b14b942e6f-1269030143.809703-1142710049</value>
    </valuelist>
    <value key="abstractProcess.IgnoreReturnValue" type="bool">false</value>
    <valuelist key="abstractProcess.arguments" type="QVariantList">
