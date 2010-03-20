@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'projet.h'
 **
-** Created: Fri Mar 19 21:52:04 2010
+** Created: Sat Mar 20 19:54:20 2010
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.6.2)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_IRB4400[] = {
        4,       // revision
        0,       // classname
        0,    0, // classinfo
-      15,   14, // methods
+      20,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -46,6 +46,11 @@ static const uint qt_meta_data_IRB4400[] = {
      252,  177,    8,    8, 0x0a,
      277,  177,    8,    8, 0x0a,
      294,  177,    8,    8, 0x0a,
+     311,  177,    8,    8, 0x0a,
+     328,  177,    8,    8, 0x0a,
+     345,  177,    8,    8, 0x0a,
+     362,  177,    8,    8, 0x0a,
+     379,  177,    8,    8, 0x0a,
 
        0        // eod
 };
@@ -58,7 +63,9 @@ static const char qt_meta_stringdata_IRB4400[] = {
     "center_scene()\0state\0toggle_headlight(int)\0"
     "toggle_fil_de_fer(int)\0toggle_moving_mode(int)\0"
     "toggle_moving_mode2(int)\0toggle_rep0(int)\0"
-    "toggle_rep2(int)\0"
+    "toggle_rep1(int)\0toggle_rep2(int)\0"
+    "toggle_rep3(int)\0toggle_rep4(int)\0"
+    "toggle_rep5(int)\0toggle_rep6(int)\0"
 };
 
 const QMetaObject IRB4400::staticMetaObject = {
@@ -105,10 +112,15 @@ int IRB4400::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         case 11: toggle_moving_mode((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 12: toggle_moving_mode2((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 13: toggle_rep0((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 14: toggle_rep2((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 14: toggle_rep1((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 15: toggle_rep2((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 16: toggle_rep3((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 17: toggle_rep4((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 18: toggle_rep5((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 19: toggle_rep6((*reinterpret_cast< int(*)>(_a[1]))); break;
         default: ;
         }
-        _id -= 15;
+        _id -= 20;
     }
     return _id;
 }

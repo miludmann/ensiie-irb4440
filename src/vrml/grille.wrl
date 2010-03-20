@@ -121,7 +121,7 @@ DEF Grille Group {
               size 0.25
               justify "MIDDLE"
             }
-            string "20 cases"
+            string "4 metres"
             length 0.6
           }
         }
@@ -148,7 +148,7 @@ DEF Grille Group {
                   size 0.150
                   justify "MIDDLE"
                 }
-                string "1"
+                string "0.2m"
                 length 0.300
               }
             }

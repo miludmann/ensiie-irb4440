@@ -41,14 +41,11 @@ class IRB4400 : public QObject
     //base_mobile
     SoTranslation *base_mobile_translation;
     SoSeparator *base_mobile_base;
-    SoSeparator *base_mobile_repere;
     SoRotation *base_mobile_rotor;
     SoSeparator *base_mobile;
     //parallelogramme_avant
     SoTranslation *parallelogramme_avant_translation;
     SoSeparator *parallelogramme_avant_base;
-    SoSeparator *parallelogramme_avant_repere;
-    SoTranslation *parallelogramme_avant_repere_translation;
     SoRotation *parallelogramme_avant_rotor;
     SoRotation *parallelogramme_avant_init_rotor;
     SoSeparator *parallelogramme_avant;
@@ -77,29 +74,66 @@ class IRB4400 : public QObject
     //coude
     SoTranslation *coude_translation;
     SoSeparator *coude_base;
-    SoSeparator *coude_repere;
     SoRotation *coude_rotor;
     SoSeparator *coude;
     //avant_bras
     SoTranslation *avant_bras_translation;
     SoSeparator *avant_bras_base;
-    SoSeparator *avant_bras_repere;
     SoRotation *avant_bras_rotor;
     SoSeparator *avant_bras;
     //poignet_1
     SoTranslation *poignet_1_translation;
     SoSeparator *poignet_1_base;
-    SoSeparator *poignet_1_repere;
     SoRotation *poignet_1_rotor;
     SoSeparator *poignet_1;
     //poignet_2
     SoTranslation *poignet_2_translation;
     SoSeparator *poignet_2_base;
-    SoSeparator *poignet_2_repere;
     SoRotation *poignet_2_rotor;
     SoSeparator *poignet_2;
 
-
+    //repere_r0
+    SoTranslation *repere_r0_translation;
+    SoSeparator *repere_r0_base;
+    SoRotation *repere_r0_rotor;
+    SoRotation *repere_r0_rotor2;
+    SoSeparator *repere_r0;
+    //repere_r1
+    SoTranslation *repere_r1_translation;
+    SoSeparator *repere_r1_base;
+    SoRotation *repere_r1_rotor;
+    SoRotation *repere_r1_rotor2;
+    SoSeparator *repere_r1;
+    //repere_r2
+    SoTranslation *repere_r2_translation;
+    SoSeparator *repere_r2_base;
+    SoRotation *repere_r2_rotor;
+    SoRotation *repere_r2_rotor2;
+    SoSeparator *repere_r2;
+    //repere_r3
+    SoTranslation *repere_r3_translation;
+    SoSeparator *repere_r3_base;
+    SoRotation *repere_r3_rotor;
+    SoRotation *repere_r3_rotor2;
+    SoSeparator *repere_r3;
+    //repere_r4
+    SoTranslation *repere_r4_translation;
+    SoSeparator *repere_r4_base;
+    SoRotation *repere_r4_rotor;
+    SoRotation *repere_r4_rotor2;
+    SoSeparator *repere_r4;
+    //repere_r5
+    SoTranslation *repere_r5_translation;
+    SoSeparator *repere_r5_base;
+    SoRotation *repere_r5_rotor;
+    SoRotation *repere_r5_rotor2;
+    SoSeparator *repere_r5;
+    //repere_r6
+    SoTranslation *repere_r6_translation;
+    SoSeparator *repere_r6_base;
+    SoRotation *repere_r6_rotor;
+    SoRotation *repere_r6_rotor2;
+    SoSeparator *repere_r6;
 
     SoQtExaminerViewer* viewer;
     //SoQtRenderArea* viewer;
@@ -134,12 +168,12 @@ class IRB4400 : public QObject
       void toggle_moving_mode(int state);
       void toggle_moving_mode2(int state);
       void toggle_rep0(int state);
-      //void toggle_rep1(int state);
+      void toggle_rep1(int state);
       void toggle_rep2(int state);
-      //void toggle_rep3(int state);
-      //void toggle_rep4(int state);
-      //void toggle_rep5(int state);
-      //void toggle_rep6(int state);
+      void toggle_rep3(int state);
+      void toggle_rep4(int state);
+      void toggle_rep5(int state);
+      void toggle_rep6(int state);
 };
 
 void move_progressif(double x_initial, double x_wanted, double y_initial, double y_wanted, double z_initial, double z_wanted, IRB4400 *ivv);

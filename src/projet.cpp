@@ -31,8 +31,13 @@ extern Interface *interface;
 
 extern IRB4400 *root;
 
-SoNode *base_mobile_repereTmp;
-SoNode *parallelogramme_avant_repereTmp;
+SoNode *repere_r0Tmp;
+SoNode *repere_r1Tmp;
+SoNode *repere_r2Tmp;
+SoNode *repere_r3Tmp;
+SoNode *repere_r4Tmp;
+SoNode *repere_r5Tmp;
+SoNode *repere_r6Tmp;
 
 void millisleep( unsigned int milliseconds )
 {
@@ -143,8 +148,7 @@ SoQtExaminerViewer IRB4400::getViewer()
 void IRB4400::move_grille(int val)
 {
   double position=interface->verticalSlider->value();
-  position = position / 100;
-  position = (position)*4;
+  position = position / 1000;
   grille_translation->translation= SbVec3f(0, 0, position);;
 }
 
@@ -207,16 +211,31 @@ void IRB4400::toggle_fil_de_fer(int state)
   }
 }
 
+
 void IRB4400::toggle_rep0(int state)
 {
   if (state)
   {
-    base_mobile_base->insertChild(base_mobile_repereTmp, 1);;
+    repere_r0_base->insertChild(repere_r0Tmp, 0);
     viewer->render();
   }else{
-    //suppression du repère ("1" correspond au premier enfant du noeud, i.e. le repère ici)
-    base_mobile_repereTmp = base_mobile_base->getChild(1);
-    base_mobile_base->removeChild(1);
+    //suppression du repère affiché ("3" correspond au premier enfant du noeud, i.e. le repère ici)
+    repere_r0Tmp = repere_r0_base->getChild(0);
+    repere_r0_base->removeChild(0);
+    viewer->render();
+  }
+}
+
+void IRB4400::toggle_rep1(int state)
+{
+  if (state)
+  {
+    repere_r1_base->insertChild(repere_r1Tmp, 1);
+    viewer->render();
+  }else{
+    //suppression du repère affiché ("3" correspond au premier enfant du noeud, i.e. le repère ici)
+    repere_r1Tmp = repere_r1_base->getChild(1);
+    repere_r1_base->removeChild(1);
     viewer->render();
   }
 }
@@ -225,16 +244,71 @@ void IRB4400::toggle_rep2(int state)
 {
   if (state)
   {
-    base_mobile_base->insertChild(parallelogramme_avant_repereTmp, 1);;
+    repere_r2_base->insertChild(repere_r2Tmp, 3);
     viewer->render();
   }else{
-    //suppression du repère ("1" correspond au premier enfant du noeud, i.e. le repère ici)
-    parallelogramme_avant_repereTmp = parallelogramme_avant_base->getChild(1);
-    parallelogramme_avant_base->removeChild(1);
+    //suppression du repère affiché ("3" correspond au premier enfant du noeud, i.e. le repère ici)
+    repere_r2Tmp = repere_r2_base->getChild(3);
+    repere_r2_base->removeChild(3);
     viewer->render();
   }
 }
 
+void IRB4400::toggle_rep3(int state)
+{
+  if (state)
+  {
+    repere_r3_base->insertChild(repere_r3Tmp, 3);
+    viewer->render();
+  }else{
+    //suppression du repère affiché ("3" correspond au premier enfant du noeud, i.e. le repère ici)
+    repere_r3Tmp = repere_r3_base->getChild(3);
+    repere_r3_base->removeChild(3);
+    viewer->render();
+  }
+}
+
+void IRB4400::toggle_rep4(int state)
+{
+  if (state)
+  {
+    repere_r4_base->insertChild(repere_r4Tmp, 3);
+    viewer->render();
+  }else{
+    //suppression du repère affiché ("3" correspond au premier enfant du noeud, i.e. le repère ici)
+    repere_r4Tmp = repere_r4_base->getChild(3);
+    repere_r4_base->removeChild(3);
+    viewer->render();
+  }
+}
+
+void IRB4400::toggle_rep5(int state)
+{
+  if (state)
+  {
+    repere_r5_base->insertChild(repere_r5Tmp, 3);
+    viewer->render();
+  }else{
+    //suppression du repère affiché ("3" correspond au premier enfant du noeud, i.e. le repère ici)
+    repere_r5Tmp = repere_r5_base->getChild(3);
+    repere_r5_base->removeChild(3);
+    viewer->render();
+  }
+}
+
+void IRB4400::toggle_rep6(int state)
+{
+  if (state)
+  {
+    repere_r6_base->insertChild(repere_r6Tmp, 3);
+    viewer->render();
+  }else{
+    //suppression du repère affiché ("3" correspond au premier enfant du noeud, i.e. le repère ici)
+    repere_r6Tmp = repere_r6_base->getChild(3);
+    repere_r6_base->removeChild(3);
+    viewer->render();
+  }
+}
 void IRB4400::move()
 {/*
   if (mode == 0) {
