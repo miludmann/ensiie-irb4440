@@ -166,6 +166,7 @@ class IRB4400 : public QObject
       void move_avant_bras(int angle);
       void move_poignet_1(int angle);
       void move_poignet_2(int angle);
+      void move_coude(int angle);
       void reset_sliders();
 };
 
