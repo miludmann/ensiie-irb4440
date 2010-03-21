@@ -168,7 +168,7 @@ int main(int argc, char** argv)
     root->parallelogramme_avant_base->ref();
     root->base_mobile_base->addChild(root->parallelogramme_avant_base);
     root->parallelogramme_avant_transform->translation = SbVec3f(0, 0, 0);
-    root->parallelogramme_avant_transform->recenter(SbVec3f(0, 0, 0));
+    root->parallelogramme_avant_transform->recenter(SbVec3f(0.2, 0, 0.68));
     root->parallelogramme_avant_base->addChild(root->parallelogramme_avant_transform);
     root->openMember("vrml/parallelogramme_avant.wrl", root->parallelogramme_avant, root->parallelogramme_avant_base);
     //repere_r2
@@ -210,12 +210,13 @@ int main(int argc, char** argv)
     root->coude_base->ref();
     root->parallelogramme_avant_base->addChild(root->coude_base);
     root->coude_transform->translation = SbVec3f(0, 0, 0);
+    root->coude_transform->recenter(SbVec3f(0.2, 0, 1.57));
     root->coude_base->addChild(root->coude_transform);
     root->openMember("vrml/coude.wrl", root->coude, root->coude_base);
     //repere_r3
     root->repere_r3_base->ref();
     root->coude_base->addChild(root->repere_r3_base);
-    root->repere_r3_translation->translation = SbVec3f(0.3, 0, 1.57);
+    root->repere_r3_translation->translation = SbVec3f(0.2, 0, 1.57);
     root->repere_r3_base->addChild(root->repere_r3_translation);
     root->repere_r3_rotor->rotation.setValue(SbVec3f(1, 0, 0), M_PI/2);
     root->repere_r3_base->addChild(root->repere_r3_rotor);
@@ -315,6 +316,7 @@ int main(int argc, char** argv)
 
   interface->connect( interface->horizontalSlider, SIGNAL (valueChanged(int)), root, SLOT(move_base_mobile(int)));
   interface->connect( interface->horizontalSlider_2, SIGNAL (valueChanged(int)), root, SLOT(move_parallelogramme(int)));
+  interface->connect( interface->horizontalSlider_3, SIGNAL (valueChanged(int)), root, SLOT(move_coude(int)));
   interface->connect( interface->horizontalSlider_4, SIGNAL (valueChanged(int)), root, SLOT(move_avant_bras(int)));
   interface->connect( interface->horizontalSlider_5, SIGNAL (valueChanged(int)), root, SLOT(move_poignet_1(int)));
   interface->connect( interface->horizontalSlider_6, SIGNAL (valueChanged(int)), root, SLOT(move_poignet_2(int)));
