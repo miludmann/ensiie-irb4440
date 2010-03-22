@@ -332,8 +332,12 @@ void IRB4400::move_poignet_2(int angle)
 
 void IRB4400::move_parallelogramme(int angle)
 {
+    float angle3 = interface->horizontalSlider_3->value();
+
     parallelogramme_avant_transform->rotation.setValue(SbVec3f(0, 1, 0), (angle-82)*M_PI/180);
-    //cylindre_base_transform->rotation.setValue(SbVec3f(0, 1, 0), (angle-82)*M_PI/180);
+    //interface->horizontalSlider_3->setValue(angle3+82-angle);
+    move_coude(angle3+82-angle);
+
 }
 
 void IRB4400::move_coude(int angle)
@@ -351,6 +355,40 @@ void IRB4400::reset_sliders()
     interface->horizontalSlider_4->setValue(200);
     interface->horizontalSlider_5->setValue(120);
     interface->horizontalSlider_6->setValue(400);
+}
+
+void IRB4400::repeat_command()
+{
+    float angle1 = interface->horizontalSlider->value();
+    float angle2 = interface->horizontalSlider_2->value();
+    float angle3 = interface->horizontalSlider_3->value();
+    float angle4 = interface->horizontalSlider_4->value();
+    float angle5 = interface->horizontalSlider_5->value();
+    float angle6 = interface->horizontalSlider_6->value();
+
+    interface->horizontalSlider->setValue(165);
+    interface->horizontalSlider_2->setValue(82);
+    interface->horizontalSlider_3->setValue(62);
+    interface->horizontalSlider_4->setValue(200);
+    interface->horizontalSlider_5->setValue(140);
+    interface->horizontalSlider_6->setValue(400);
+
+    for (double i=0; i<50; i++) {
+        move_base_mobile(165-i*(165-angle1)/50);
+        interface->horizontalSlider->setValue(165-i*(165-angle1)/50);
+        move_parallelogramme(82-i*(82-angle2)/50);
+        interface->horizontalSlider_2->setValue(82-i*(82-angle2)/50);
+        move_coude(62-i*(62-angle3)/50);
+        interface->horizontalSlider_3->setValue(62-i*(62-angle3)/50);
+        move_avant_bras(200-i*(200-angle4)/50);
+        interface->horizontalSlider_4->setValue(200-i*(200-angle4)/50);
+        move_poignet_1(140-i*(140-angle5)/50);
+        interface->horizontalSlider_5->setValue(140-i*(140-angle5)/50);
+        move_poignet_2(400-i*(400-angle6)/50);
+        interface->horizontalSlider_6->setValue(400-i*(400-angle6)/50);
+        viewer->render();
+        millisleep(20);
+    }
 }
 
 void IRB4400::move()
