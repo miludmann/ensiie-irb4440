@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'projet.h'
 **
-** Created: Mon Mar 22 01:02:19 2010
+** Created: Mon Mar 22 12:07:43 2010
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.6.2)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_IRB4400[] = {
        4,       // revision
        0,       // classname
        0,    0, // classinfo
-      27,   14, // methods
+      28,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -58,6 +58,7 @@ static const uint qt_meta_data_IRB4400[] = {
      491,  396,    8,    8, 0x0a,
      511,  396,    8,    8, 0x0a,
      527,    8,    8,    8, 0x0a,
+     543,    8,    8,    8, 0x0a,
 
        0        // eod
 };
@@ -77,7 +78,7 @@ static const char qt_meta_stringdata_IRB4400[] = {
     "move_parallelogramme(int)\0"
     "move_avant_bras(int)\0move_poignet_1(int)\0"
     "move_poignet_2(int)\0move_coude(int)\0"
-    "reset_sliders()\0"
+    "reset_sliders()\0repeat_command()\0"
 };
 
 const QMetaObject IRB4400::staticMetaObject = {
@@ -137,9 +138,10 @@ int IRB4400::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         case 24: move_poignet_2((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 25: move_coude((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 26: reset_sliders(); break;
+        case 27: repeat_command(); break;
         default: ;
         }
-        _id -= 27;
+        _id -= 28;
     }
     return _id;
 }

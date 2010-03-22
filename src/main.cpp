@@ -322,6 +322,7 @@ int main(int argc, char** argv)
   interface->connect( interface->horizontalSlider_4, SIGNAL (valueChanged(int)), root, SLOT(move_avant_bras(int)));
   interface->connect( interface->horizontalSlider_5, SIGNAL (valueChanged(int)), root, SLOT(move_poignet_1(int)));
   interface->connect( interface->horizontalSlider_6, SIGNAL (valueChanged(int)), root, SLOT(move_poignet_2(int)));
+  interface->connect( interface->pushButton_7, SIGNAL( clicked()), root, SLOT(repeat_command()));
   interface->connect( interface->pushButton_8, SIGNAL( clicked()), root, SLOT(reset_sliders()));
 
   SoQt::mainLoop();

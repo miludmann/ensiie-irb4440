@@ -168,6 +168,7 @@ class IRB4400 : public QObject
       void move_poignet_2(int angle);
       void move_coude(int angle);
       void reset_sliders();
+      void repeat_command();
 };
 
 void move_progressif(double x_initial, double x_wanted, double y_initial, double y_wanted, double z_initial, double z_wanted, IRB4400 *ivv);
