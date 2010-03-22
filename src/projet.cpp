@@ -332,12 +332,11 @@ void IRB4400::move_poignet_2(int angle)
 
 void IRB4400::move_parallelogramme(int angle)
 {
-    float angle3 = interface->horizontalSlider_3->value();
+    static float angle3 = interface->horizontalSlider_3->value();
 
     parallelogramme_avant_transform->rotation.setValue(SbVec3f(0, 1, 0), (angle-82)*M_PI/180);
-    //interface->horizontalSlider_3->setValue(angle3+82-angle);
-    move_coude(angle3+82-angle);
-
+    interface->horizontalSlider_3->setValue(angle3+82-angle);
+    //move_coude(angle3+82-angle);
 }
 
 void IRB4400::move_coude(int angle)
@@ -370,7 +369,7 @@ void IRB4400::repeat_command()
     interface->horizontalSlider_2->setValue(82);
     interface->horizontalSlider_3->setValue(62);
     interface->horizontalSlider_4->setValue(200);
-    interface->horizontalSlider_5->setValue(140);
+    interface->horizontalSlider_5->setValue(120);
     interface->horizontalSlider_6->setValue(400);
 
     for (double i=0; i<50; i++) {
