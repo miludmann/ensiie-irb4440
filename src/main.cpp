@@ -183,29 +183,31 @@ int main(int argc, char** argv)
     root->openMember("vrml/repere.wrl", root->repere_r2, root->repere_r2_base);
     //bitoniot arriere
     root->bitoniot_arriere_base->ref();
-    root->parallelogramme_arriere_base->addChild(root->bitoniot_arriere_base);
+    root->parallelogramme_avant_base->addChild(root->bitoniot_arriere_base);
     root->bitoniot_arriere_transform->translation = SbVec3f(0, 0, 0);
+    root->bitoniot_arriere_transform->recenter(SbVec3f(0.2, 0, 0.68));
     root->bitoniot_arriere_base->addChild(root->bitoniot_arriere_transform);
     root->openMember("vrml/bitoniot_arriere.wrl", root->bitoniot_arriere, root->bitoniot_arriere_base);
+    //parallelogramme arriere
+    root->parallelogramme_arriere_base->ref();
+    root->bitoniot_arriere_base->addChild(root->parallelogramme_arriere_base);
+    root->parallelogramme_arriere_transform->translation = SbVec3f(0, 0, 0);
+    root->parallelogramme_arriere_transform->recenter(SbVec3f(-0.1, 0, 0.68));
+    root->parallelogramme_arriere_base->addChild(root->parallelogramme_arriere_transform);
+    root->openMember("vrml/parallelogramme_arriere.wrl", root->parallelogramme_arriere, root->parallelogramme_arriere_base);
     //cylindre base
     root->cylindre_base_base->ref();
     root->base_mobile_base->addChild(root->cylindre_base_base);
     root->cylindre_base_transform->translation = SbVec3f(0, 0, 0);
+    root->cylindre_base_transform->recenter(SbVec3f(-0.48, 0, 0.52));
     root->cylindre_base_base->addChild(root->cylindre_base_transform);
     root->openMember("vrml/cylindre_base.wrl", root->cylindre_base, root->cylindre_base_base);
     //sortie cylindre
     root->sortie_cylindre_base->ref();
-    root->cylindre_base->addChild(root->sortie_cylindre_base);
+    root->cylindre_base_base->addChild(root->sortie_cylindre_base);
     root->sortie_cylindre_transform->translation = SbVec3f(0, 0, 0);
     root->sortie_cylindre_base->addChild(root->sortie_cylindre_transform);
     root->openMember("vrml/sortie_cylindre.wrl", root->sortie_cylindre, root->sortie_cylindre_base);
-    //parallelogramme arriere
-    root->parallelogramme_arriere_base->ref();
-    root->base_mobile_base->addChild(root->parallelogramme_arriere_base);
-    root->parallelogramme_arriere_transform->translation = SbVec3f(0, 0, 0);
-    //root->parallelogramme_avant_transform->recenter(SbVec3f(-0.1, 0, 0.68));
-    root->parallelogramme_arriere_base->addChild(root->parallelogramme_arriere_transform);
-    root->openMember("vrml/parallelogramme_arriere.wrl", root->parallelogramme_arriere, root->parallelogramme_arriere_base);
     //coude
     root->coude_base->ref();
     root->parallelogramme_avant_base->addChild(root->coude_base);

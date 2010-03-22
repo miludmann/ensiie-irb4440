@@ -333,12 +333,14 @@ void IRB4400::move_poignet_2(int angle)
 void IRB4400::move_parallelogramme(int angle)
 {
     parallelogramme_avant_transform->rotation.setValue(SbVec3f(0, 1, 0), (angle-82)*M_PI/180);
-    //parallelogramme_arriere_transform->rotation.setValue(SbVec3f(0, 1, 0), (angle-82)*M_PI/180);
+    //cylindre_base_transform->rotation.setValue(SbVec3f(0, 1, 0), (angle-82)*M_PI/180);
 }
 
 void IRB4400::move_coude(int angle)
 {
     coude_transform->rotation.setValue(SbVec3f(0, 1, 0), (angle-62)*M_PI/180);
+    bitoniot_arriere_transform->rotation.setValue(SbVec3f(0, 1, 0), (angle-62)*M_PI/180);
+    parallelogramme_arriere_transform->rotation.setValue(SbVec3f(0, 1, 0), -(angle-62)*M_PI/180);
 }
 
 void IRB4400::reset_sliders()
