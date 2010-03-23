@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'interface2.h'
 **
-** Created: Mon Mar 22 10:42:11 2010
+** Created: Tue Mar 23 20:36:56 2010
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.6.2)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -17,7 +17,7 @@
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-static const uint qt_meta_data_Interface[] = {
+static const uint qt_meta_data_TabWidget[] = {
 
  // content:
        4,       // revision
@@ -36,35 +36,35 @@ static const uint qt_meta_data_Interface[] = {
        0        // eod
 };
 
-static const char qt_meta_stringdata_Interface[] = {
-    "Interface\0\0languageChange()\0"
+static const char qt_meta_stringdata_TabWidget[] = {
+    "TabWidget\0\0languageChange()\0"
 };
 
-const QMetaObject Interface::staticMetaObject = {
-    { &QTabWidget::staticMetaObject, qt_meta_stringdata_Interface,
-      qt_meta_data_Interface, 0 }
+const QMetaObject TabWidget::staticMetaObject = {
+    { &QTabWidget::staticMetaObject, qt_meta_stringdata_TabWidget,
+      qt_meta_data_TabWidget, 0 }
 };
 
 #ifdef Q_NO_DATA_RELOCATION
-const QMetaObject &Interface::getStaticMetaObject() { return staticMetaObject; }
+const QMetaObject &TabWidget::getStaticMetaObject() { return staticMetaObject; }
 #endif //Q_NO_DATA_RELOCATION
 
-const QMetaObject *Interface::metaObject() const
+const QMetaObject *TabWidget::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->metaObject : &staticMetaObject;
 }
 
-void *Interface::qt_metacast(const char *_clname)
+void *TabWidget::qt_metacast(const char *_clname)
 {
     if (!_clname) return 0;
-    if (!strcmp(_clname, qt_meta_stringdata_Interface))
-        return static_cast<void*>(const_cast< Interface*>(this));
-    if (!strcmp(_clname, "Ui::Interface"))
-        return static_cast< Ui::Interface*>(const_cast< Interface*>(this));
+    if (!strcmp(_clname, qt_meta_stringdata_TabWidget))
+        return static_cast<void*>(const_cast< TabWidget*>(this));
+    if (!strcmp(_clname, "Ui::TabWidget"))
+        return static_cast< Ui::TabWidget*>(const_cast< TabWidget*>(this));
     return QTabWidget::qt_metacast(_clname);
 }
 
-int Interface::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int TabWidget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QTabWidget::qt_metacall(_c, _id, _a);
     if (_id < 0)

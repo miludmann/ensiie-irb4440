@@ -8,7 +8,7 @@
  *  The dialog will by default be modeless, unless you set 'modal' to
  *  true to construct a modal dialog.
  */
-Interface::Interface(QWidget* parent, const char* name, bool modal, Qt::WindowFlags fl)
+TabWidget::TabWidget(QWidget* parent, const char* name, bool modal, Qt::WindowFlags fl)
     : QTabWidget(parent, name, fl)
 {
     setupUi(this);
@@ -18,7 +18,7 @@ Interface::Interface(QWidget* parent, const char* name, bool modal, Qt::WindowFl
 /*
  *  Destroys the object and frees any allocated resources
  */
-Interface::~Interface()
+TabWidget::~TabWidget()
 {
     // no need to delete child widgets, Qt does it all for us
 }
@@ -27,7 +27,7 @@ Interface::~Interface()
  *  Sets the strings of the subwidgets using the current
  *  language.
  */
-void Interface::languageChange()
+void TabWidget::languageChange()
 {
     retranslateUi(this);
 }

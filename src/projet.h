@@ -13,6 +13,8 @@
 
 #include <qobject.h>
 #include <math.h>
+#include <QVector>
+
 #define M_PI 3.14159265358979323846
 
 void millisleep( unsigned int milliseconds );
@@ -25,6 +27,9 @@ class IRB4400 : public QObject
     ~IRB4400();
     void openFile(QString s);
     void openMember(QString s, SoSeparator *new_separator, SoSeparator *root);
+
+    int angle23;
+    bool flag;
 
     //matiere
     SoMaterial *matiere;
@@ -126,15 +131,15 @@ class IRB4400 : public QObject
     //SoQtRenderArea* viewer;
 
 
-    double last_good_x;
-    double last_good_y;
-    double last_good_z;
-    double x_wanted;
-    double x_initial;
-    double y_wanted;
-    double y_initial;
-    double z_wanted;
-    double z_initial;
+    double px_wanted;
+    double py_wanted;
+    double pz_wanted;
+    double zx_wanted;
+    double zy_wanted;
+    double zz_wanted;
+    double last_good_px;
+    double last_good_py;
+    double last_good_pz;
 
     int mode;
     int simulation_mode;
@@ -168,7 +173,12 @@ class IRB4400 : public QObject
       void move_poignet_2(int angle);
       void move_coude(int angle);
       void reset_sliders();
+      void repeat(int nb_iter);
       void repeat_command();
+      void toggle_toutCocher();
+      QVector<double> mgi(double x, double y, double z, double a, double b, double c);
+      void on_lancer_commande();
+      void default_mgi();
 };
 
 void move_progressif(double x_initial, double x_wanted, double y_initial, double y_wanted, double z_initial, double z_wanted, IRB4400 *ivv);
