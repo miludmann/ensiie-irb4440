@@ -1,5 +1,6 @@
 #include "projet.h"
 #include "interface2.h"
+//#include "ui_interfaceUi.h"
 
 #include <Inventor/Qt/SoQt.h>
 
@@ -23,7 +24,7 @@
 
 
 IRB4400 *root;
-Interface *interface;
+TabWidget *interface;
 
 int main(int argc, char** argv)
 {
@@ -278,19 +279,16 @@ int main(int argc, char** argv)
     root->openMember("vrml/repere.wrl", root->repere_r6, root->repere_r6_base);
 }
 
-  interface = new Interface();
+  interface = new TabWidget();
   interface->show();
-  interface->move(QPoint(1050,100));
+  interface->move(QPoint(1050,0));
 
   app.setMainWidget(myWidget);
-  myWidget->resize(1024,800);
+  myWidget->resize(800,600);
   myWidget->move(QPoint(0,0));
   myWidget->show();
 
   root->mode = 0;
-  root->x_wanted = 0;
-  root->y_wanted = -0.9;
-  root->z_wanted = 0;
   //root->move();
 
   root->center_scene();
@@ -316,6 +314,8 @@ int main(int argc, char** argv)
   interface->connect( interface->checkBox_8, SIGNAL( stateChanged(int) ), root, SLOT( toggle_rep3(int) ) );
   interface->connect( interface->checkBox_9, SIGNAL( stateChanged(int) ), root, SLOT( toggle_rep6(int) ) );
 
+  interface->connect( interface->pushButton_10, SIGNAL( clicked() ), root, SLOT( toggle_toutCocher() ) );
+
   interface->connect( interface->horizontalSlider, SIGNAL (valueChanged(int)), root, SLOT(move_base_mobile(int)));
   interface->connect( interface->horizontalSlider_2, SIGNAL (valueChanged(int)), root, SLOT(move_parallelogramme(int)));
   interface->connect( interface->horizontalSlider_3, SIGNAL (valueChanged(int)), root, SLOT(move_coude(int)));
@@ -324,6 +324,10 @@ int main(int argc, char** argv)
   interface->connect( interface->horizontalSlider_6, SIGNAL (valueChanged(int)), root, SLOT(move_poignet_2(int)));
   interface->connect( interface->pushButton_7, SIGNAL( clicked()), root, SLOT(repeat_command()));
   interface->connect( interface->pushButton_8, SIGNAL( clicked()), root, SLOT(reset_sliders()));
+
+  interface->connect( interface->pushButton_6, SIGNAL( clicked()), root, SLOT(on_lancer_commande()));
+  interface->connect( interface->pushButton_9, SIGNAL( clicked()), root, SLOT(default_mgi()));
+
 
   SoQt::mainLoop();
   //delete(&robot.getViewer());

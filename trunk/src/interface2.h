@@ -28,10 +28,9 @@
 #include <QtGui/QTabWidget>
 #include <QtGui/QTextBrowser>
 #include <QtGui/QWidget>
+#include <QtGui/QDoubleSpinBox>
 
-QT_BEGIN_NAMESPACE
-
-class Ui_Interface
+class Ui_TabWidget
 {
 public:
     QWidget *tab_1;
@@ -83,9 +82,6 @@ public:
     QPushButton *pushButton_8;
     QWidget *tab_3;
     QLabel *label_9;
-    QLineEdit *lineEdit;
-    QLineEdit *lineEdit_2;
-    QLineEdit *lineEdit_3;
     QLabel *label_10;
     QLabel *label_11;
     QLabel *label_12;
@@ -96,6 +92,17 @@ public:
     QLabel *label_13;
     QFrame *line_11;
     QPushButton *pushButton_9;
+    QLabel *label_21;
+    QLabel *label_22;
+    QLabel *label_23;
+    QLabel *label_24;
+    QDoubleSpinBox *doubleSpinBox;
+    QDoubleSpinBox *doubleSpinBox_2;
+    QDoubleSpinBox *doubleSpinBox_3;
+    QDoubleSpinBox *doubleSpinBox_4;
+    QDoubleSpinBox *doubleSpinBox_5;
+    QDoubleSpinBox *doubleSpinBox_6;
+    QTextBrowser *textBrowser_2;
     QWidget *tab_4;
     QPushButton *pushButton_3;
     QLabel *label_5;
@@ -135,14 +142,14 @@ public:
     QLabel *label_3;
     QLabel *label_4;
 
-    void setupUi(QTabWidget *Interface)
+    void setupUi(QTabWidget *TabWidget)
     {
-        if (Interface->objectName().isEmpty())
-            Interface->setObjectName(QString::fromUtf8("Interface"));
-        Interface->resize(294, 643);
-        Interface->setTabPosition(QTabWidget::West);
-        Interface->setTabShape(QTabWidget::Triangular);
-        Interface->setMovable(true);
+        if (TabWidget->objectName().isEmpty())
+            TabWidget->setObjectName(QString::fromUtf8("TabWidget"));
+        TabWidget->resize(294, 643);
+        TabWidget->setTabPosition(QTabWidget::West);
+        TabWidget->setTabShape(QTabWidget::Triangular);
+        TabWidget->setMovable(true);
         tab_1 = new QWidget();
         tab_1->setObjectName(QString::fromUtf8("tab_1"));
         line = new QFrame(tab_1);
@@ -161,7 +168,7 @@ public:
         verticalSlider->setGeometry(QRect(20, 140, 19, 160));
         verticalSlider->setMinimum(-290);
         verticalSlider->setMaximum(2140);
-        verticalSlider->setSingleStep(10);
+        verticalSlider->setSingleStep(0);
         verticalSlider->setSliderPosition(0);
         verticalSlider->setOrientation(Qt::Vertical);
         lcdNumber = new QLCDNumber(tab_1);
@@ -189,7 +196,7 @@ public:
         line_7->setFrameShadow(QFrame::Sunken);
         checkBox_3 = new QCheckBox(tab_1);
         checkBox_3->setObjectName(QString::fromUtf8("checkBox_3"));
-        checkBox_3->setGeometry(QRect(70, 480, 93, 23));
+        checkBox_3->setGeometry(QRect(70, 483, 93, 20));
         checkBox_3->setChecked(true);
         label_20 = new QLabel(tab_1);
         label_20->setObjectName(QString::fromUtf8("label_20"));
@@ -222,7 +229,7 @@ public:
         pushButton_10 = new QPushButton(tab_1);
         pushButton_10->setObjectName(QString::fromUtf8("pushButton_10"));
         pushButton_10->setGeometry(QRect(40, 600, 161, 28));
-        Interface->addTab(tab_1, QString());
+        TabWidget->addTab(tab_1, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
         tab_2->setAutoFillBackground(false);
@@ -347,62 +354,100 @@ public:
         pushButton_8 = new QPushButton(tab_2);
         pushButton_8->setObjectName(QString::fromUtf8("pushButton_8"));
         pushButton_8->setGeometry(QRect(61, 550, 131, 28));
-        Interface->addTab(tab_2, QString());
+        TabWidget->addTab(tab_2, QString());
         tab_3 = new QWidget();
         tab_3->setObjectName(QString::fromUtf8("tab_3"));
         label_9 = new QLabel(tab_3);
         label_9->setObjectName(QString::fromUtf8("label_9"));
-        label_9->setGeometry(QRect(20, 10, 201, 18));
-        lineEdit = new QLineEdit(tab_3);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setGeometry(QRect(90, 40, 113, 26));
-        lineEdit->setMaxLength(10);
-        lineEdit_2 = new QLineEdit(tab_3);
-        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
-        lineEdit_2->setGeometry(QRect(90, 80, 113, 26));
-        lineEdit_2->setMaxLength(10);
-        lineEdit_3 = new QLineEdit(tab_3);
-        lineEdit_3->setObjectName(QString::fromUtf8("lineEdit_3"));
-        lineEdit_3->setGeometry(QRect(90, 120, 113, 26));
-        lineEdit_3->setMaxLength(10);
-        lineEdit_3->setFrame(true);
-        lineEdit_3->setDragEnabled(false);
+        label_9->setGeometry(QRect(10, 10, 201, 18));
         label_10 = new QLabel(tab_3);
         label_10->setObjectName(QString::fromUtf8("label_10"));
-        label_10->setGeometry(QRect(60, 40, 31, 31));
+        label_10->setGeometry(QRect(51, 40, 20, 31));
         label_11 = new QLabel(tab_3);
         label_11->setObjectName(QString::fromUtf8("label_11"));
-        label_11->setGeometry(QRect(60, 80, 21, 31));
+        label_11->setGeometry(QRect(50, 80, 21, 31));
         label_12 = new QLabel(tab_3);
         label_12->setObjectName(QString::fromUtf8("label_12"));
-        label_12->setGeometry(QRect(60, 120, 31, 31));
+        label_12->setGeometry(QRect(50, 120, 31, 31));
         radioButton_10 = new QRadioButton(tab_3);
         radioButton_10->setObjectName(QString::fromUtf8("radioButton_10"));
-        radioButton_10->setGeometry(QRect(70, 270, 108, 23));
+        radioButton_10->setGeometry(QRect(70, 430, 108, 23));
         radioButton_10->setChecked(true);
         line_10 = new QFrame(tab_3);
         line_10->setObjectName(QString::fromUtf8("line_10"));
-        line_10->setGeometry(QRect(0, 220, 311, 16));
+        line_10->setGeometry(QRect(0, 380, 311, 16));
         line_10->setFrameShape(QFrame::HLine);
         line_10->setFrameShadow(QFrame::Sunken);
         radioButton_11 = new QRadioButton(tab_3);
         radioButton_11->setObjectName(QString::fromUtf8("radioButton_11"));
-        radioButton_11->setGeometry(QRect(70, 300, 108, 23));
+        radioButton_11->setGeometry(QRect(70, 460, 108, 23));
         pushButton_6 = new QPushButton(tab_3);
         pushButton_6->setObjectName(QString::fromUtf8("pushButton_6"));
-        pushButton_6->setGeometry(QRect(50, 360, 151, 28));
+        pushButton_6->setGeometry(QRect(50, 510, 151, 28));
         label_13 = new QLabel(tab_3);
         label_13->setObjectName(QString::fromUtf8("label_13"));
-        label_13->setGeometry(QRect(20, 240, 151, 18));
+        label_13->setGeometry(QRect(20, 400, 151, 18));
         line_11 = new QFrame(tab_3);
         line_11->setObjectName(QString::fromUtf8("line_11"));
-        line_11->setGeometry(QRect(0, 330, 261, 16));
+        line_11->setGeometry(QRect(0, 490, 261, 16));
         line_11->setFrameShape(QFrame::HLine);
         line_11->setFrameShadow(QFrame::Sunken);
         pushButton_9 = new QPushButton(tab_3);
         pushButton_9->setObjectName(QString::fromUtf8("pushButton_9"));
-        pushButton_9->setGeometry(QRect(60, 170, 141, 31));
-        Interface->addTab(tab_3, QString());
+        pushButton_9->setGeometry(QRect(50, 340, 141, 31));
+        label_21 = new QLabel(tab_3);
+        label_21->setObjectName(QString::fromUtf8("label_21"));
+        label_21->setGeometry(QRect(50, 210, 21, 31));
+        label_22 = new QLabel(tab_3);
+        label_22->setObjectName(QString::fromUtf8("label_22"));
+        label_22->setGeometry(QRect(50, 250, 21, 31));
+        label_23 = new QLabel(tab_3);
+        label_23->setObjectName(QString::fromUtf8("label_23"));
+        label_23->setGeometry(QRect(50, 290, 21, 31));
+        label_24 = new QLabel(tab_3);
+        label_24->setObjectName(QString::fromUtf8("label_24"));
+        label_24->setGeometry(QRect(10, 170, 241, 18));
+        doubleSpinBox = new QDoubleSpinBox(tab_3);
+        doubleSpinBox->setObjectName(QString::fromUtf8("doubleSpinBox"));
+        doubleSpinBox->setGeometry(QRect(80, 40, 111, 28));
+        doubleSpinBox->setMinimum(-1.96);
+        doubleSpinBox->setMaximum(1.96);
+        doubleSpinBox->setSingleStep(0.1);
+        doubleSpinBox->setValue(1.22);
+        doubleSpinBox_2 = new QDoubleSpinBox(tab_3);
+        doubleSpinBox_2->setObjectName(QString::fromUtf8("doubleSpinBox_2"));
+        doubleSpinBox_2->setGeometry(QRect(80, 80, 111, 28));
+        doubleSpinBox_2->setMinimum(-1.96);
+        doubleSpinBox_2->setMaximum(1.96);
+        doubleSpinBox_2->setSingleStep(0.1);
+        doubleSpinBox_3 = new QDoubleSpinBox(tab_3);
+        doubleSpinBox_3->setObjectName(QString::fromUtf8("doubleSpinBox_3"));
+        doubleSpinBox_3->setGeometry(QRect(80, 120, 111, 28));
+        doubleSpinBox_3->setMinimum(-0.29);
+        doubleSpinBox_3->setMaximum(2.14);
+        doubleSpinBox_3->setSingleStep(0.1);
+        doubleSpinBox_3->setValue(1.75);
+        doubleSpinBox_4 = new QDoubleSpinBox(tab_3);
+        doubleSpinBox_4->setObjectName(QString::fromUtf8("doubleSpinBox_4"));
+        doubleSpinBox_4->setGeometry(QRect(80, 210, 111, 28));
+        doubleSpinBox_4->setMinimum(-100);
+        doubleSpinBox_4->setSingleStep(0.1);
+        doubleSpinBox_4->setValue(1);
+        doubleSpinBox_5 = new QDoubleSpinBox(tab_3);
+        doubleSpinBox_5->setObjectName(QString::fromUtf8("doubleSpinBox_5"));
+        doubleSpinBox_5->setGeometry(QRect(80, 250, 111, 28));
+        doubleSpinBox_5->setMinimum(-100);
+        doubleSpinBox_5->setSingleStep(0.1);
+        doubleSpinBox_6 = new QDoubleSpinBox(tab_3);
+        doubleSpinBox_6->setObjectName(QString::fromUtf8("doubleSpinBox_6"));
+        doubleSpinBox_6->setGeometry(QRect(80, 290, 111, 28));
+        doubleSpinBox_6->setMinimum(-100);
+        doubleSpinBox_6->setSingleStep(0.1);
+        doubleSpinBox_6->setValue(0);
+        textBrowser_2 = new QTextBrowser(tab_3);
+        textBrowser_2->setObjectName(QString::fromUtf8("textBrowser_2"));
+        textBrowser_2->setGeometry(QRect(10, 550, 241, 71));
+        TabWidget->addTab(tab_3, QString());
         tab_4 = new QWidget();
         tab_4->setObjectName(QString::fromUtf8("tab_4"));
         pushButton_3 = new QPushButton(tab_4);
@@ -542,7 +587,7 @@ public:
         line_6->setGeometry(QRect(120, 400, 20, 81));
         line_6->setFrameShape(QFrame::VLine);
         line_6->setFrameShadow(QFrame::Sunken);
-        Interface->addTab(tab_4, QString());
+        TabWidget->addTab(tab_4, QString());
         tab_5 = new QWidget();
         tab_5->setObjectName(QString::fromUtf8("tab_5"));
         textBrowser = new QTextBrowser(tab_5);
@@ -559,9 +604,9 @@ public:
         label_4 = new QLabel(tab_5);
         label_4->setObjectName(QString::fromUtf8("label_4"));
         label_4->setGeometry(QRect(60, 50, 151, 18));
-        Interface->addTab(tab_5, QString());
+        TabWidget->addTab(tab_5, QString());
 
-        retranslateUi(Interface);
+        retranslateUi(TabWidget);
         QObject::connect(verticalSlider, SIGNAL(valueChanged(int)), lcdNumber, SLOT(display(int)));
         QObject::connect(horizontalSlider, SIGNAL(valueChanged(int)), lcdNumber_2, SLOT(display(int)));
         QObject::connect(horizontalSlider_4, SIGNAL(valueChanged(int)), lcdNumber_5, SLOT(display(int)));
@@ -572,96 +617,92 @@ public:
         QObject::connect(horizontalSlider_6, SIGNAL(valueChanged(int)), lcdNumber_7, SLOT(display(int)));
         QObject::connect(pushButton_5, SIGNAL(clicked()), radioButton_20, SLOT(click()));
         QObject::connect(pushButton_5, SIGNAL(clicked()), radioButton_16, SLOT(click()));
-        QObject::connect(pushButton_10, SIGNAL(clicked(bool)), checkBox_8, SLOT(setChecked(bool)));
-        QObject::connect(pushButton_10, SIGNAL(clicked(bool)), checkBox_9, SLOT(setChecked(bool)));
-        QObject::connect(pushButton_10, SIGNAL(clicked(bool)), checkBox_7, SLOT(setChecked(bool)));
-        QObject::connect(pushButton_10, SIGNAL(clicked(bool)), checkBox_6, SLOT(setChecked(bool)));
-        QObject::connect(pushButton_10, SIGNAL(clicked(bool)), checkBox_3, SLOT(setChecked(bool)));
-        QObject::connect(pushButton_10, SIGNAL(clicked(bool)), checkBox_4, SLOT(setChecked(bool)));
-        QObject::connect(pushButton_10, SIGNAL(clicked(bool)), checkBox_5, SLOT(setChecked(bool)));
 
-        Interface->setCurrentIndex(0);
+        TabWidget->setCurrentIndex(2);
         comboBox_2->setCurrentIndex(1);
         comboBox_3->setCurrentIndex(2);
 
 
-        QMetaObject::connectSlotsByName(Interface);
+        QMetaObject::connectSlotsByName(TabWidget);
     } // setupUi
 
-    void retranslateUi(QTabWidget *Interface)
+    void retranslateUi(QTabWidget *TabWidget)
     {
-        Interface->setWindowTitle(QApplication::translate("Interface", "Interface", 0, QApplication::UnicodeUTF8));
-        pushButton->setText(QApplication::translate("Interface", "Centrer la sc\303\250ne", 0, QApplication::UnicodeUTF8));
-        label->setText(QApplication::translate("Interface", "Hauteur de la grille", 0, QApplication::UnicodeUTF8));
-        pushButton_2->setText(QApplication::translate("Interface", "R\303\251initialiser", 0, QApplication::UnicodeUTF8));
-        checkBox->setText(QApplication::translate("Interface", "Projecteur de lumi\303\250re", 0, QApplication::UnicodeUTF8));
-        checkBox_2->setText(QApplication::translate("Interface", "Fil de fer", 0, QApplication::UnicodeUTF8));
-        checkBox_3->setText(QApplication::translate("Interface", "Rep\303\250re 0", 0, QApplication::UnicodeUTF8));
-        label_20->setText(QApplication::translate("Interface", "Affichage des rep\303\250res", 0, QApplication::UnicodeUTF8));
-        checkBox_4->setText(QApplication::translate("Interface", "Rep\303\250re 1", 0, QApplication::UnicodeUTF8));
-        checkBox_5->setText(QApplication::translate("Interface", "Rep\303\250re 2", 0, QApplication::UnicodeUTF8));
-        checkBox_6->setText(QApplication::translate("Interface", "Rep\303\250re 4", 0, QApplication::UnicodeUTF8));
-        checkBox_7->setText(QApplication::translate("Interface", "Rep\303\250re 5", 0, QApplication::UnicodeUTF8));
-        checkBox_8->setText(QApplication::translate("Interface", "Rep\303\250re 3", 0, QApplication::UnicodeUTF8));
-        checkBox_9->setText(QApplication::translate("Interface", "Rep\303\250re 6", 0, QApplication::UnicodeUTF8));
-        pushButton_10->setText(QApplication::translate("Interface", "Tout d\303\251cocher", 0, QApplication::UnicodeUTF8));
-        Interface->setTabText(Interface->indexOf(tab_1), QApplication::translate("Interface", "Vue G\303\251n\303\251rale", 0, QApplication::UnicodeUTF8));
-        label_14->setText(QApplication::translate("Interface", "Axe 1", 0, QApplication::UnicodeUTF8));
-        label_15->setText(QApplication::translate("Interface", "Axe 2", 0, QApplication::UnicodeUTF8));
-        label_16->setText(QApplication::translate("Interface", "Axe 3", 0, QApplication::UnicodeUTF8));
-        label_17->setText(QApplication::translate("Interface", "Axe 4", 0, QApplication::UnicodeUTF8));
-        label_18->setText(QApplication::translate("Interface", "Axe 5", 0, QApplication::UnicodeUTF8));
-        label_19->setText(QApplication::translate("Interface", "Axe 6", 0, QApplication::UnicodeUTF8));
-        pushButton_7->setText(QApplication::translate("Interface", "R\303\251p\303\251ter la commande", 0, QApplication::UnicodeUTF8));
-        pushButton_8->setText(QApplication::translate("Interface", "Valeurs par d\303\251faut", 0, QApplication::UnicodeUTF8));
-        Interface->setTabText(Interface->indexOf(tab_2), QApplication::translate("Interface", "Commande articulaire", 0, QApplication::UnicodeUTF8));
-        label_9->setText(QApplication::translate("Interface", "Coordonn\303\251es de la destination", 0, QApplication::UnicodeUTF8));
-        lineEdit_3->setInputMask(QString());
-        label_10->setText(QApplication::translate("Interface", "X", 0, QApplication::UnicodeUTF8));
-        label_11->setText(QApplication::translate("Interface", "Y", 0, QApplication::UnicodeUTF8));
-        label_12->setText(QApplication::translate("Interface", "Z", 0, QApplication::UnicodeUTF8));
-        radioButton_10->setText(QApplication::translate("Interface", "Instantan\303\251", 0, QApplication::UnicodeUTF8));
-        radioButton_11->setText(QApplication::translate("Interface", "Progressif", 0, QApplication::UnicodeUTF8));
-        pushButton_6->setText(QApplication::translate("Interface", "Lancer la commande", 0, QApplication::UnicodeUTF8));
-        label_13->setText(QApplication::translate("Interface", "Mode de d\303\251placement", 0, QApplication::UnicodeUTF8));
-        pushButton_9->setText(QApplication::translate("Interface", "Valeurs par d\303\251faut", 0, QApplication::UnicodeUTF8));
-        Interface->setTabText(Interface->indexOf(tab_3), QApplication::translate("Interface", "Commande de la situation", 0, QApplication::UnicodeUTF8));
-        pushButton_3->setText(QApplication::translate("Interface", "Placer les palettes", 0, QApplication::UnicodeUTF8));
-        label_5->setText(QApplication::translate("Interface", "Simulation : tours de Hano\303\257", 0, QApplication::UnicodeUTF8));
-        label_6->setText(QApplication::translate("Interface", "Petit objet", 0, QApplication::UnicodeUTF8));
+        TabWidget->setWindowTitle(QApplication::translate("TabWidget", "TabWidget", 0, QApplication::UnicodeUTF8));
+        pushButton->setText(QApplication::translate("TabWidget", "Centrer la sc\303\250ne", 0, QApplication::UnicodeUTF8));
+        label->setText(QApplication::translate("TabWidget", "Hauteur de la grille", 0, QApplication::UnicodeUTF8));
+        pushButton_2->setText(QApplication::translate("TabWidget", "R\303\251initialiser", 0, QApplication::UnicodeUTF8));
+        checkBox->setText(QApplication::translate("TabWidget", "Projecteur de lumi\303\250re", 0, QApplication::UnicodeUTF8));
+        checkBox_2->setText(QApplication::translate("TabWidget", "Fil de fer", 0, QApplication::UnicodeUTF8));
+        checkBox_3->setText(QApplication::translate("TabWidget", "Rep\303\250re 0", 0, QApplication::UnicodeUTF8));
+        label_20->setText(QApplication::translate("TabWidget", "Affichage des rep\303\250res", 0, QApplication::UnicodeUTF8));
+        checkBox_4->setText(QApplication::translate("TabWidget", "Rep\303\250re 1", 0, QApplication::UnicodeUTF8));
+        checkBox_5->setText(QApplication::translate("TabWidget", "Rep\303\250re 2", 0, QApplication::UnicodeUTF8));
+        checkBox_6->setText(QApplication::translate("TabWidget", "Rep\303\250re 4", 0, QApplication::UnicodeUTF8));
+        checkBox_7->setText(QApplication::translate("TabWidget", "Rep\303\250re 5", 0, QApplication::UnicodeUTF8));
+        checkBox_8->setText(QApplication::translate("TabWidget", "Rep\303\250re 3", 0, QApplication::UnicodeUTF8));
+        checkBox_9->setText(QApplication::translate("TabWidget", "Rep\303\250re 6", 0, QApplication::UnicodeUTF8));
+        pushButton_10->setText(QApplication::translate("TabWidget", "Tout cocher / d\303\251cocher", 0, QApplication::UnicodeUTF8));
+        TabWidget->setTabText(TabWidget->indexOf(tab_1), QApplication::translate("TabWidget", "Vue G\303\251n\303\251rale", 0, QApplication::UnicodeUTF8));
+        label_14->setText(QApplication::translate("TabWidget", "Axe 1", 0, QApplication::UnicodeUTF8));
+        label_15->setText(QApplication::translate("TabWidget", "Axe 2", 0, QApplication::UnicodeUTF8));
+        label_16->setText(QApplication::translate("TabWidget", "Axe 3", 0, QApplication::UnicodeUTF8));
+        label_17->setText(QApplication::translate("TabWidget", "Axe 4", 0, QApplication::UnicodeUTF8));
+        label_18->setText(QApplication::translate("TabWidget", "Axe 5", 0, QApplication::UnicodeUTF8));
+        label_19->setText(QApplication::translate("TabWidget", "Axe 6", 0, QApplication::UnicodeUTF8));
+        pushButton_7->setText(QApplication::translate("TabWidget", "R\303\251p\303\251ter la commande", 0, QApplication::UnicodeUTF8));
+        pushButton_8->setText(QApplication::translate("TabWidget", "Valeurs par d\303\251faut", 0, QApplication::UnicodeUTF8));
+        TabWidget->setTabText(TabWidget->indexOf(tab_2), QApplication::translate("TabWidget", "Commande articulaire", 0, QApplication::UnicodeUTF8));
+        label_9->setText(QApplication::translate("TabWidget", "Coordonn\303\251es de la destination", 0, QApplication::UnicodeUTF8));
+        label_10->setText(QApplication::translate("TabWidget", "X", 0, QApplication::UnicodeUTF8));
+        label_11->setText(QApplication::translate("TabWidget", "Y", 0, QApplication::UnicodeUTF8));
+        label_12->setText(QApplication::translate("TabWidget", "Z", 0, QApplication::UnicodeUTF8));
+        radioButton_10->setText(QApplication::translate("TabWidget", "Instantan\303\251", 0, QApplication::UnicodeUTF8));
+        radioButton_11->setText(QApplication::translate("TabWidget", "Progressif", 0, QApplication::UnicodeUTF8));
+        pushButton_6->setText(QApplication::translate("TabWidget", "Lancer la commande", 0, QApplication::UnicodeUTF8));
+        label_13->setText(QApplication::translate("TabWidget", "Mode de d\303\251placement", 0, QApplication::UnicodeUTF8));
+        pushButton_9->setText(QApplication::translate("TabWidget", "Valeurs par d\303\251faut", 0, QApplication::UnicodeUTF8));
+        label_21->setText(QApplication::translate("TabWidget", "Zx", 0, QApplication::UnicodeUTF8));
+        label_22->setText(QApplication::translate("TabWidget", "Zy", 0, QApplication::UnicodeUTF8));
+        label_23->setText(QApplication::translate("TabWidget", "Zz", 0, QApplication::UnicodeUTF8));
+        label_24->setText(QApplication::translate("TabWidget", "Coordonn\303\251es du vecteur Z (rep\303\250re 6)", 0, QApplication::UnicodeUTF8));
+        TabWidget->setTabText(TabWidget->indexOf(tab_3), QApplication::translate("TabWidget", "Commande de la situation", 0, QApplication::UnicodeUTF8));
+        pushButton_3->setText(QApplication::translate("TabWidget", "Placer les palettes", 0, QApplication::UnicodeUTF8));
+        label_5->setText(QApplication::translate("TabWidget", "Simulation : tours de Hano\303\257", 0, QApplication::UnicodeUTF8));
+        label_6->setText(QApplication::translate("TabWidget", "Petit objet", 0, QApplication::UnicodeUTF8));
         comboBox->clear();
         comboBox->insertItems(0, QStringList()
-         << QApplication::translate("Interface", "Etage 1", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Interface", "Etage 2", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Interface", "Etage 3", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TabWidget", "Etage 1", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TabWidget", "Etage 2", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TabWidget", "Etage 3", 0, QApplication::UnicodeUTF8)
         );
         comboBox_2->clear();
         comboBox_2->insertItems(0, QStringList()
-         << QApplication::translate("Interface", "Etage 1", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Interface", "Etage 2", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Interface", "Etage 3", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TabWidget", "Etage 1", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TabWidget", "Etage 2", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TabWidget", "Etage 3", 0, QApplication::UnicodeUTF8)
         );
-        label_7->setText(QApplication::translate("Interface", "Objet moyen", 0, QApplication::UnicodeUTF8));
+        label_7->setText(QApplication::translate("TabWidget", "Objet moyen", 0, QApplication::UnicodeUTF8));
         comboBox_3->clear();
         comboBox_3->insertItems(0, QStringList()
-         << QApplication::translate("Interface", "Etage 1", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Interface", "Etage 2", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("Interface", "Etage 3", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TabWidget", "Etage 1", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TabWidget", "Etage 2", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("TabWidget", "Etage 3", 0, QApplication::UnicodeUTF8)
         );
-        label_8->setText(QApplication::translate("Interface", "Grand objet", 0, QApplication::UnicodeUTF8));
-        pushButton_4->setText(QApplication::translate("Interface", "Placer les objets", 0, QApplication::UnicodeUTF8));
-        pushButton_5->setText(QApplication::translate("Interface", "R\303\251initialiser", 0, QApplication::UnicodeUTF8));
-        radioButton_12->setText(QApplication::translate("Interface", "Palette 2", 0, QApplication::UnicodeUTF8));
-        radioButton_14->setText(QApplication::translate("Interface", "Palette 3", 0, QApplication::UnicodeUTF8));
-        radioButton_13->setText(QApplication::translate("Interface", "Palette 1", 0, QApplication::UnicodeUTF8));
-        radioButton_15->setText(QApplication::translate("Interface", "Palette 1", 0, QApplication::UnicodeUTF8));
-        radioButton_16->setText(QApplication::translate("Interface", "Palette 2", 0, QApplication::UnicodeUTF8));
-        radioButton_17->setText(QApplication::translate("Interface", "Palette 3", 0, QApplication::UnicodeUTF8));
-        radioButton_18->setText(QApplication::translate("Interface", "Palette 1", 0, QApplication::UnicodeUTF8));
-        radioButton_19->setText(QApplication::translate("Interface", "Palette 2", 0, QApplication::UnicodeUTF8));
-        radioButton_20->setText(QApplication::translate("Interface", "Palette 3", 0, QApplication::UnicodeUTF8));
-        Interface->setTabText(Interface->indexOf(tab_4), QApplication::translate("Interface", "D\303\251monstartion", 0, QApplication::UnicodeUTF8));
-        textBrowser->setHtml(QApplication::translate("Interface", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        label_8->setText(QApplication::translate("TabWidget", "Grand objet", 0, QApplication::UnicodeUTF8));
+        pushButton_4->setText(QApplication::translate("TabWidget", "Placer les objets", 0, QApplication::UnicodeUTF8));
+        pushButton_5->setText(QApplication::translate("TabWidget", "R\303\251initialiser", 0, QApplication::UnicodeUTF8));
+        radioButton_12->setText(QApplication::translate("TabWidget", "Palette 2", 0, QApplication::UnicodeUTF8));
+        radioButton_14->setText(QApplication::translate("TabWidget", "Palette 3", 0, QApplication::UnicodeUTF8));
+        radioButton_13->setText(QApplication::translate("TabWidget", "Palette 1", 0, QApplication::UnicodeUTF8));
+        radioButton_15->setText(QApplication::translate("TabWidget", "Palette 1", 0, QApplication::UnicodeUTF8));
+        radioButton_16->setText(QApplication::translate("TabWidget", "Palette 2", 0, QApplication::UnicodeUTF8));
+        radioButton_17->setText(QApplication::translate("TabWidget", "Palette 3", 0, QApplication::UnicodeUTF8));
+        radioButton_18->setText(QApplication::translate("TabWidget", "Palette 1", 0, QApplication::UnicodeUTF8));
+        radioButton_19->setText(QApplication::translate("TabWidget", "Palette 2", 0, QApplication::UnicodeUTF8));
+        radioButton_20->setText(QApplication::translate("TabWidget", "Palette 3", 0, QApplication::UnicodeUTF8));
+        TabWidget->setTabText(TabWidget->indexOf(tab_4), QApplication::translate("TabWidget", "D\303\251monstartion", 0, QApplication::UnicodeUTF8));
+        textBrowser->setHtml(QApplication::translate("TabWidget", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
@@ -669,29 +710,26 @@ public:
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Micha\303\253l Ludmann</p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Guillaume Depoyant</p></body></html>", 0, QApplication::UnicodeUTF8));
-        label_2->setText(QApplication::translate("Interface", "Projet robotique", 0, QApplication::UnicodeUTF8));
-        label_3->setText(QApplication::translate("Interface", "ENSIIE", 0, QApplication::UnicodeUTF8));
-        label_4->setText(QApplication::translate("Interface", "Robot ABB : IRB 4400", 0, QApplication::UnicodeUTF8));
-        Interface->setTabText(Interface->indexOf(tab_5), QApplication::translate("Interface", "A propos", 0, QApplication::UnicodeUTF8));
-        Q_UNUSED(Interface);
+        label_2->setText(QApplication::translate("TabWidget", "Projet robotique", 0, QApplication::UnicodeUTF8));
+        label_3->setText(QApplication::translate("TabWidget", "ENSIIE", 0, QApplication::UnicodeUTF8));
+        label_4->setText(QApplication::translate("TabWidget", "Robot ABB : IRB 4400", 0, QApplication::UnicodeUTF8));
+        TabWidget->setTabText(TabWidget->indexOf(tab_5), QApplication::translate("TabWidget", "A propos", 0, QApplication::UnicodeUTF8));
+        Q_UNUSED(TabWidget);
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class Interface: public Ui_Interface {};
+    class TabWidget: public Ui_TabWidget {};
 } // namespace Ui
 
-
-
-
-class Interface : public QTabWidget, public Ui::Interface
+class TabWidget : public QTabWidget, public Ui::TabWidget
 {
     Q_OBJECT
 
 public:
-    Interface(QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WindowFlags fl = 0);
-    ~Interface();
+    TabWidget(QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WindowFlags fl = 0);
+    ~TabWidget();
 
 protected slots:
     virtual void languageChange();
