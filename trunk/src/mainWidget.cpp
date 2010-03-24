@@ -175,9 +175,9 @@ void Interface::on_repere6_toggled(bool checked)
 
 void Interface::on_move_grid_sliderMoved(int position)
 {
-    position = move_grid->value();
-    position = position / 1000;
-    iv->grille_translation->translation= SbVec3f(0, 0, position);
+    double position2 = move_grid->value();
+    position2 = position2 / 1000;
+    iv->grille_translation->translation= SbVec3f(0, 0, position2);
 }
 
 void Interface::on_center_scene_clicked()
@@ -230,4 +230,10 @@ void Interface::on_display_mode_activated(int index)
         iv->viewer->setDrawStyle(SoQtViewer::STILL, SoQtViewer::VIEW_AS_IS);
         break;
     }
+}
+
+void Interface::on_sliderX_valueChanged(int value)
+{
+    float X = value/1000;
+    spinX->setValue(X);
 }

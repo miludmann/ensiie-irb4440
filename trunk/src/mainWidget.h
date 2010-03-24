@@ -29,6 +29,7 @@ public slots:
 
 
 private slots:
+    void on_sliderX_valueChanged(int value);
     void on_display_mode_activated(int index);
     void on_set3D_toggled(bool checked);
     void on_headlight_toggled(bool checked);
