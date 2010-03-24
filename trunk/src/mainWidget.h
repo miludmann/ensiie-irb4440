@@ -2,6 +2,7 @@
 #define MAINWIDGET_H
 
 #include "ui_mainWidgetform.h"
+#include <Inventor/Qt/viewers/SoQtExaminerViewer.h>
 
 class Interface : public QTabWidget, public Ui::MainWidget
 {
@@ -10,6 +11,7 @@ class Interface : public QTabWidget, public Ui::MainWidget
 public:
     Interface(QWidget* parent = 0, const char* name = 0, Qt::WindowFlags fl = 0);
     ~Interface();
+    SoQtExaminerViewer *viewer;
 
 protected slots:
     virtual void languageChange();
@@ -20,6 +22,7 @@ public slots:
 
 
 private slots:
+    void on_toutCocher_clicked();
     void on_reset_sliders_clicked();
 };
 
