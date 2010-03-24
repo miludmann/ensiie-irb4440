@@ -20,6 +20,16 @@ public:
     SoNode *repere_r5Tmp;
     SoNode *repere_r6Tmp;
 
+    double px_wanted;
+    double py_wanted;
+    double pz_wanted;
+    double zx_wanted;
+    double zy_wanted;
+    double zz_wanted;
+    double last_good_px;
+    double last_good_py;
+    double last_good_pz;
+
 protected slots:
     virtual void languageChange();
 
@@ -29,6 +39,14 @@ public slots:
 
 
 private slots:
+    void on_sliderZz_valueChanged(int value);
+    void on_sliderZy_valueChanged(int value);
+    void on_sliderZx_valueChanged(int value);
+    void on_sliderZ_valueChanged(int value);
+    void on_sliderY_valueChanged(int value);
+    void on_repeat_button_clicked();
+    void on_lancer_commande_clicked();
+    void on_default_mgi_clicked();
     void on_sliderX_valueChanged(int value);
     void on_display_mode_activated(int index);
     void on_set3D_toggled(bool checked);
@@ -45,6 +63,11 @@ private slots:
     void on_reinit_grille_clicked();
     void on_toutCocher_clicked();
     void on_reset_sliders_clicked();
+    void repeat(float angle1, float angle2, float angle3, float angle4, float angle5, float angle6, int nb_iter);
+    void repeat_from_current(float angle1, float angle2, float angle3, float angle4, float angle5, float angle6, int nb_iter);
+    void repeat_control_mgd();
+    QVector<double> mgi(double x, double y, double z, double a, double b, double c);
+
 };
 
 #endif // MAINWIDGET_H

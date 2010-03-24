@@ -30,7 +30,7 @@
    <enum>QTabWidget::Rounded</enum>
   </property>
   <property name="currentIndex">
-   <number>0</number>
+   <number>2</number>
   </property>
   <property name="elideMode">
    <enum>Qt::ElideNone</enum>
@@ -673,7 +673,7 @@
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_7">
+   <widget class="QPushButton" name="repeat_button">
     <property name="geometry">
      <rect>
       <x>50</x>
@@ -912,7 +912,7 @@
      <string>Progressif depuis position initiale</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_6">
+   <widget class="QPushButton" name="lancer_commande">
     <property name="geometry">
      <rect>
       <x>50</x>
@@ -951,7 +951,7 @@
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_9">
+   <widget class="QPushButton" name="default_mgi">
     <property name="geometry">
      <rect>
       <x>60</x>
@@ -1139,7 +1139,7 @@
      <double>0.000000000000000</double>
     </property>
    </widget>
-   <widget class="QTextBrowser" name="textBrowser_2">
+   <widget class="QTextBrowser" name="displayResult">
     <property name="geometry">
      <rect>
       <x>10</x>
