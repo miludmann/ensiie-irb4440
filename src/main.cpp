@@ -290,13 +290,6 @@ int main(int argc, char** argv)
   iv->viewer->viewAll();;
   iv->viewer->setHeadlight(false);
 
-  interface->connect( interface->horizontalSlider, SIGNAL (valueChanged(int)), iv, SLOT(move_base_mobile(int)));
-  interface->connect( interface->horizontalSlider_2, SIGNAL (valueChanged(int)), iv, SLOT(move_parallelogramme(int)));
-  interface->connect( interface->horizontalSlider_3, SIGNAL (valueChanged(int)), iv, SLOT(move_coude(int)));
-  interface->connect( interface->horizontalSlider_4, SIGNAL (valueChanged(int)), iv, SLOT(move_avant_bras(int)));
-  interface->connect( interface->horizontalSlider_5, SIGNAL (valueChanged(int)), iv, SLOT(move_poignet_1(int)));
-  interface->connect( interface->horizontalSlider_6, SIGNAL (valueChanged(int)), iv, SLOT(move_poignet_2(int)));
-
   SoQt::mainLoop();
   //delete(&robot.getViewer());
   return 0;

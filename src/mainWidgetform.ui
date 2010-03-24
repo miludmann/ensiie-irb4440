@@ -395,7 +395,7 @@
      <string>Axe 1</string>
     </property>
    </widget>
-   <widget class="QSlider" name="horizontalSlider">
+   <widget class="QSlider" name="slider_base_mobile">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -459,7 +459,7 @@
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
-   <widget class="QSlider" name="horizontalSlider_2">
+   <widget class="QSlider" name="slider_parallelogramme">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -507,7 +507,7 @@
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
-   <widget class="QSlider" name="horizontalSlider_3">
+   <widget class="QSlider" name="slider_coude">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -555,7 +555,7 @@
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
-   <widget class="QSlider" name="horizontalSlider_4">
+   <widget class="QSlider" name="slider_avant_bras">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -603,7 +603,7 @@
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
-   <widget class="QSlider" name="horizontalSlider_5">
+   <widget class="QSlider" name="slider_poignet_1">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -651,7 +651,7 @@
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
-   <widget class="QSlider" name="horizontalSlider_6">
+   <widget class="QSlider" name="slider_poignet_2">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -677,9 +677,9 @@
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>500</y>
+      <y>480</y>
       <width>151</width>
-      <height>28</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
@@ -690,7 +690,7 @@
     <property name="geometry">
      <rect>
       <x>60</x>
-      <y>540</y>
+      <y>520</y>
       <width>131</width>
       <height>28</height>
      </rect>
@@ -811,6 +811,16 @@
     </property>
     <property name="value">
      <number>400</number>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="display_mgd">
+    <property name="geometry">
+     <rect>
+      <x>5</x>
+      <y>551</y>
+      <width>251</width>
+      <height>91</height>
+     </rect>
     </property>
    </widget>
   </widget>
@@ -1076,7 +1086,7 @@
      <double>0.100000000000000</double>
     </property>
     <property name="value">
-     <double>1.750000000000000</double>
+     <double>1.720000000000000</double>
     </property>
    </widget>
    <widget class="QDoubleSpinBox" name="spinZx">
@@ -1222,7 +1232,7 @@
      <number>2140</number>
     </property>
     <property name="value">
-     <number>1750</number>
+     <number>1720</number>
     </property>
     <property name="orientation">
      <enum>Qt::Vertical</enum>
@@ -1823,7 +1833,7 @@ p, li { white-space: pre-wrap; }
   <connection>
    <sender>spinBox</sender>
    <signal>valueChanged(int)</signal>
-   <receiver>horizontalSlider</receiver>
+   <receiver>slider_base_mobile</receiver>
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1837,7 +1847,7 @@ p, li { white-space: pre-wrap; }
    </hints>
   </connection>
   <connection>
-   <sender>horizontalSlider_2</sender>
+   <sender>slider_parallelogramme</sender>
    <signal>valueChanged(int)</signal>
    <receiver>spinBox_2</receiver>
    <slot>setValue(int)</slot>
@@ -1855,7 +1865,7 @@ p, li { white-space: pre-wrap; }
   <connection>
    <sender>spinBox_2</sender>
    <signal>valueChanged(int)</signal>
-   <receiver>horizontalSlider_2</receiver>
+   <receiver>slider_parallelogramme</receiver>
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1871,7 +1881,7 @@ p, li { white-space: pre-wrap; }
   <connection>
    <sender>spinBox_3</sender>
    <signal>valueChanged(int)</signal>
-   <receiver>horizontalSlider_3</receiver>
+   <receiver>slider_coude</receiver>
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1887,7 +1897,7 @@ p, li { white-space: pre-wrap; }
   <connection>
    <sender>spinBox_4</sender>
    <signal>valueChanged(int)</signal>
-   <receiver>horizontalSlider_4</receiver>
+   <receiver>slider_avant_bras</receiver>
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1901,7 +1911,7 @@ p, li { white-space: pre-wrap; }
    </hints>
   </connection>
   <connection>
-   <sender>horizontalSlider_4</sender>
+   <sender>slider_avant_bras</sender>
    <signal>valueChanged(int)</signal>
    <receiver>spinBox_4</receiver>
    <slot>setValue(int)</slot>
@@ -1919,7 +1929,7 @@ p, li { white-space: pre-wrap; }
   <connection>
    <sender>spinBox_5</sender>
    <signal>valueChanged(int)</signal>
-   <receiver>horizontalSlider_5</receiver>
+   <receiver>slider_poignet_1</receiver>
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1933,7 +1943,7 @@ p, li { white-space: pre-wrap; }
    </hints>
   </connection>
   <connection>
-   <sender>horizontalSlider_5</sender>
+   <sender>slider_poignet_1</sender>
    <signal>valueChanged(int)</signal>
    <receiver>spinBox_5</receiver>
    <slot>setValue(int)</slot>
@@ -1951,7 +1961,7 @@ p, li { white-space: pre-wrap; }
   <connection>
    <sender>spinBox_6</sender>
    <signal>valueChanged(int)</signal>
-   <receiver>horizontalSlider_6</receiver>
+   <receiver>slider_poignet_2</receiver>
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1965,7 +1975,7 @@ p, li { white-space: pre-wrap; }
    </hints>
   </connection>
   <connection>
-   <sender>horizontalSlider_6</sender>
+   <sender>slider_poignet_2</sender>
    <signal>valueChanged(int)</signal>
    <receiver>spinBox_6</receiver>
    <slot>setValue(int)</slot>
@@ -1981,7 +1991,7 @@ p, li { white-space: pre-wrap; }
    </hints>
   </connection>
   <connection>
-   <sender>horizontalSlider</sender>
+   <sender>slider_base_mobile</sender>
    <signal>valueChanged(int)</signal>
    <receiver>spinBox</receiver>
    <slot>setValue(int)</slot>
@@ -1997,7 +2007,7 @@ p, li { white-space: pre-wrap; }
    </hints>
   </connection>
   <connection>
-   <sender>horizontalSlider_3</sender>
+   <sender>slider_coude</sender>
    <signal>valueChanged(int)</signal>
    <receiver>spinBox_3</receiver>
    <slot>setValue(int)</slot>

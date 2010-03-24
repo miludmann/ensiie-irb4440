@@ -12,6 +12,8 @@
 #define R4 0.880
 #define R6 0.140
 
+#define M_PI 3.14159265358979323846
+
 extern IVLoader *iv;
 
 /*
@@ -27,6 +29,13 @@ Interface::Interface(QWidget* parent, const char* name, Qt::WindowFlags fl)
 {
     setupUi(this);
 
+    flag = false;
+    angle23 = 82 + 62;
+
+    a = 0.6933703916;
+    b = 0.122805578;
+    c = 0.8161759675;
+    old2 = 82;
 }
 
 /*
@@ -48,12 +57,12 @@ void Interface::languageChange()
 
 void Interface::on_reset_sliders_clicked()
 {
-    horizontalSlider->setValue(165);
-    horizontalSlider_2->setValue(82);
-    horizontalSlider_3->setValue(62);
-    horizontalSlider_4->setValue(200);
-    horizontalSlider_5->setValue(120);
-    horizontalSlider_6->setValue(400);
+    slider_base_mobile->setValue(165);
+    slider_parallelogramme->setValue(82);
+    slider_coude->setValue(62);
+    slider_avant_bras->setValue(200);
+    slider_poignet_1->setValue(120);
+    slider_poignet_2->setValue(400);
 }
 
 void Interface::on_toutCocher_clicked()
@@ -249,18 +258,18 @@ void Interface::on_repeat_button_clicked()
 void Interface::repeat(float angle1, float angle2, float angle3, float angle4, float angle5, float angle6, int nb_iter)
 {
     for (double i=0; i<=nb_iter; i++) {
-        horizontalSlider->setValue(165-i*(165-angle1)/nb_iter);
-        horizontalSlider->repaint();
-        horizontalSlider_2->setValue(82-i*(82-angle2)/nb_iter);
-        horizontalSlider_2->repaint();
-        horizontalSlider_3->setValue(62-i*(62-angle3)/nb_iter);
-        horizontalSlider_3->repaint();
-        horizontalSlider_4->setValue(200-i*(200-angle4)/nb_iter);
-        horizontalSlider_4->repaint();
-        horizontalSlider_5->setValue(120-i*(120-angle5)/nb_iter);
-        horizontalSlider_5->repaint();
-        horizontalSlider_6->setValue(400-i*(400-angle6)/nb_iter);
-        horizontalSlider_6->repaint();
+        slider_base_mobile->setValue(165-i*(165-angle1)/nb_iter);
+        slider_base_mobile->repaint();
+        slider_parallelogramme->setValue(82-i*(82-angle2)/nb_iter);
+        slider_parallelogramme->repaint();
+        slider_coude->setValue(62-i*(62-angle3)/nb_iter);
+        slider_coude->repaint();
+        slider_avant_bras->setValue(200-i*(200-angle4)/nb_iter);
+        slider_avant_bras->repaint();
+        slider_poignet_1->setValue(120-i*(120-angle5)/nb_iter);
+        slider_poignet_1->repaint();
+        slider_poignet_2->setValue(400-i*(400-angle6)/nb_iter);
+        slider_poignet_2->repaint();
         iv->viewer->render();
         millisleep(20);
     }
@@ -268,26 +277,26 @@ void Interface::repeat(float angle1, float angle2, float angle3, float angle4, f
 
 void Interface::repeat_from_current(float angle1, float angle2, float angle3, float angle4, float angle5, float angle6, int nb_iter)
 {
-    double angle1_current = horizontalSlider->value();
-    double angle2_current = horizontalSlider_2->value();
-    double angle3_current = horizontalSlider_3->value();
-    double angle4_current = horizontalSlider_4->value();
-    double angle5_current = horizontalSlider_5->value();
-    double angle6_current = horizontalSlider_6->value();
+    double angle1_current = slider_base_mobile->value();
+    double angle2_current = slider_parallelogramme->value();
+    double angle3_current = slider_coude->value();
+    double angle4_current = slider_avant_bras->value();
+    double angle5_current = slider_poignet_1->value();
+    double angle6_current = slider_poignet_2->value();
 
     for (double i=0; i<=nb_iter; i++) {
-        horizontalSlider->setValue(angle1_current-i*(angle1_current-angle1)/nb_iter);
-        horizontalSlider->repaint();
-        horizontalSlider_2->setValue(angle2_current-i*(angle2_current-angle2)/nb_iter);
-        horizontalSlider_2->repaint();
-        horizontalSlider_3->setValue(angle3_current-i*(angle3_current-angle3)/nb_iter);
-        horizontalSlider_3->repaint();
-        horizontalSlider_4->setValue(angle4_current-i*(angle4_current-angle4)/nb_iter);
-        horizontalSlider_4->repaint();
-        horizontalSlider_5->setValue(angle5_current-i*(angle5_current-angle5)/nb_iter);
-        horizontalSlider_5->repaint();
-        horizontalSlider_6->setValue(angle6_current-i*(angle6_current-angle6)/nb_iter);
-        horizontalSlider_6->repaint();
+        slider_base_mobile->setValue(angle1_current-i*(angle1_current-angle1)/nb_iter);
+        slider_base_mobile->repaint();
+        slider_parallelogramme->setValue(angle2_current-i*(angle2_current-angle2)/nb_iter);
+        slider_parallelogramme->repaint();
+        slider_coude->setValue(angle3_current-i*(angle3_current-angle3)/nb_iter);
+        slider_coude->repaint();
+        slider_avant_bras->setValue(angle4_current-i*(angle4_current-angle4)/nb_iter);
+        slider_avant_bras->repaint();
+        slider_poignet_1->setValue(angle5_current-i*(angle5_current-angle5)/nb_iter);
+        slider_poignet_1->repaint();
+        slider_poignet_2->setValue(angle6_current-i*(angle6_current-angle6)/nb_iter);
+        slider_poignet_2->repaint();
         iv->viewer->render();
         millisleep(20);
     }
@@ -295,12 +304,12 @@ void Interface::repeat_from_current(float angle1, float angle2, float angle3, fl
 
 void Interface::repeat_control_mgd()
 {
-    float angle1 = horizontalSlider->value();
-    float angle2 = horizontalSlider_2->value();
-    float angle3 = horizontalSlider_3->value();
-    float angle4 = horizontalSlider_4->value();
-    float angle5 = horizontalSlider_5->value();
-    float angle6 = horizontalSlider_6->value();
+    float angle1 = slider_base_mobile->value();
+    float angle2 = slider_parallelogramme->value();
+    float angle3 = slider_coude->value();
+    float angle4 = slider_avant_bras->value();
+    float angle5 = slider_poignet_1->value();
+    float angle6 = slider_poignet_2->value();
 
     repeat(angle1, angle2, angle3, angle4, angle5, angle6, 50);
 }
@@ -472,12 +481,12 @@ void Interface::on_lancer_commande_clicked()
         {
             repeat_from_current(thetas[0], thetas[1], thetas[2], thetas[3], thetas[4], thetas[5], 50);
         } else {
-            horizontalSlider->setValue(thetas[0]);
-            horizontalSlider_2->setValue(thetas[1]);
-            horizontalSlider_3->setValue(thetas[2]);
-            horizontalSlider_4->setValue(thetas[3]);
-            horizontalSlider_5->setValue(thetas[4]);
-            horizontalSlider_6->setValue(thetas[5]);
+            slider_base_mobile->setValue(thetas[0]);
+            slider_parallelogramme->setValue(thetas[1]);
+            slider_coude->setValue(thetas[2]);
+            slider_avant_bras->setValue(thetas[3]);
+            slider_poignet_1->setValue(thetas[4]);
+            slider_poignet_2->setValue(thetas[5]);
         }
     }
 }
@@ -522,4 +531,177 @@ void Interface::on_sliderZz_valueChanged(int value)
     double Zz = ((double) value);
     spinZz->setValue(Zz);
     on_lancer_commande_clicked();
+}
+
+QVector<double> Interface::mgd(double q1_, double q2_, double q3_, double q4_, double q5_, double q6_)
+{
+    //Application du modèle géométrique direct
+
+    double q1 = (q1_-165) * M_PI / 180;
+    double q2 = (q2_-82) * M_PI / 180;
+    double q3 = (q3_-62) * M_PI / 180;
+    double q4 = (q4_-200) * M_PI / 180;
+    double q5 = (q5_-120) * M_PI / 180;
+    double q6 = (q6_-400) * M_PI / 180;
+
+    q3 = q3 - q2;
+
+    double s1 = sin(q1);
+    double c1 = cos(q1);
+    double s2 = sin(q2);
+    double c2 = cos(q2);
+    //double s3 = sin(q3);
+    //double c3 = cos(q3);
+    double s4 = sin(q4);
+    double c4 = cos(q4);
+    double s5 = sin(q5);
+    double c5 = cos(q5);
+    double s6 = sin(q6);
+    double c6 = cos(q6);
+
+    double s23 = sin(q2 + q3);
+    double c23 = cos(q2 + q3);
+
+    double Xx = ((s1 * s4 - c1 * s23 * c4) * c5 - c1 *c23 * s5) * c6 + (c1 * s23 * s4 + s1 * c4) * s6;
+    double Xy = ((-c1 * s4 - s1 * s23 * c4) * c5 - s1 *c23 * s5) * c6 + (s1 * s23 * s4 - c1 * c4) * s6;
+    double Xz = (c23 * c4 * c5 - s23 * s5) * c6 - c23 * s4 * s6;
+
+    double Yx = ((-s1 * s4 + c1 * c23 * c4) * c5 + c1 *c23 * s5) * s6 + (c1 * s23 * s4 + s1 * c4) * c6;
+    double Yy = ((c1 * s4 + s1 * s23 * c4) * c5 + s1 *c23 * s5) * s6 + (s1 * s23 * s4 - c1 * c4) * c6;
+    double Yz = (c23 * c4 * c5 - s23 * s5) * c6 - c23 * s4 * s6;
+
+    double Zx = (-c1 * s23 * c4 - c1 * s4) * s5 + c1 * c23 * c5;
+    double Zy = (-s1 * s23 * c4 + s1 * s4) * s5 + s1 * c23 * c5;
+    double Zz = c23 * c4 * s5 + s23 * c5;
+
+    double px = Zx * R6 + R4 * c1 * c23 - A4 * c1 * s23 - A3 * c1 * s2 + A2 * c1;
+    double py = Zy * R6 + R4 * s1 * c23 - A4 * s1 * s23 - A3 * s1 * s2 + A2 * s1;
+    double pz = Zz * R6 + R4 * s23 + A4 * c23 + A3 *c2 + R1;
+
+
+    //Mise en forme des résultats retournés par la fonction mgd()
+    QVector<double> MGD(12);
+
+    MGD[0] = Xx;
+    MGD[1] = Xy;
+    MGD[2] = Xz;
+    MGD[3] = Yx;
+    MGD[4] = Yy;
+    MGD[5] = Yz;
+    MGD[6] = Zx;
+    MGD[7] = Zy;
+    MGD[8] = Zz;
+    MGD[9] = px;
+    MGD[10] = py;
+    MGD[11] = pz;
+
+    char buffer[7777];
+    sprintf(buffer,"px=%f, py=%f, pz=%f, Xx=%f, Xy=%f, Xz=%f, Yx=%f, Yy=%f, Yz=%f, Zx=%f, Zy=%f, Zz=%f", px, py, pz, Xx, Xy, Xz, Yx, Yy, Yz, Zx, Zy, Zz);
+    display_mgd->setText(QString(buffer));
+
+    return MGD;
+}
+
+void Interface::mgd_sliders()
+{
+    double q1 = slider_base_mobile->value();
+    double q2 = slider_parallelogramme->value();
+    double q3 = slider_coude->value();
+    double q4 = slider_avant_bras->value();
+    double q5 = slider_poignet_1->value();
+    double q6 = slider_poignet_2->value();
+
+    mgd(q1, q2, q3, q4, q5, q6);
+}
+
+void Interface::on_slider_base_mobile_valueChanged(int angle)
+{
+    iv->base_mobile_transform->rotation.setValue(SbVec3f(0, 0, 1), (angle-165)*M_PI/180);
+    mgd_sliders();
+}
+
+void Interface::on_slider_parallelogramme_valueChanged(int angle)
+{
+    float angle3 = slider_coude->value();
+    float ang2, c2;
+
+    if ( (angle3 == 0 && angle > old2)
+        || (angle3 == 125 && angle < old2) )
+    {
+        slider_parallelogramme->setValue(old2);
+    }
+    else
+    {
+        if ( angle-old2 > angle3 )
+        {
+            slider_parallelogramme->setValue(old2+angle3);
+        }
+        else
+        {
+            if ( old2-angle + angle3 > 125 )
+            {
+                slider_parallelogramme->setValue(old2-(125-angle3));
+            }
+            else
+            {
+                if ( angle3 >= 0 && angle3 <= 125)
+                {
+                    c2 = sqrt(a*a+b*b+2*a*b*cos((((float) 180)+angle-82)/180*M_PI));
+                    ang2 = acos((c2*c2+a*a-b*b)/(2*a*c2))*180/M_PI*(angle-82)/abs(angle-82);
+                    old2 = angle;
+
+                    flag = true;
+                    iv->parallelogramme_avant_transform->rotation.setValue(SbVec3f(0, 1, 0), (angle-82)*M_PI/180);
+                    slider_coude->setValue(angle23-angle);
+                    //move_coude(angle3+82-angle);
+
+                    iv->cylindre_base_transform->rotation.setValue(SbVec3f(0, 1, 0), ang2*M_PI/180);
+                    iv->sortie_cylindre_transform->rotation.setValue(SbVec3f(0, 1, 0), (ang2+(82-angle))*M_PI/180);
+                }
+            }
+        }
+    }
+    mgd_sliders();
+}
+
+void Interface::on_slider_coude_valueChanged(int angle)
+{
+    float angle2 = slider_parallelogramme->value();
+
+    if ( angle+angle2 >= 62+82-20 )
+    {
+        iv->coude_transform->rotation.setValue(SbVec3f(0, 1, 0), (angle-62)*M_PI/180);
+        iv->bitoniot_arriere_transform->rotation.setValue(SbVec3f(0, 1, 0), (angle-62)*M_PI/180);
+        iv->parallelogramme_arriere_transform->rotation.setValue(SbVec3f(0, 1, 0), -(angle-62)*M_PI/180);
+
+        if(!flag)
+        {
+            angle23 = angle + slider_parallelogramme->value();
+        } else {
+            flag = false;
+        }
+    }
+    else
+    {
+        slider_coude->setValue(62+82-20-angle2);
+    }
+    mgd_sliders();
+}
+
+void Interface::on_slider_avant_bras_valueChanged(int angle)
+{
+    iv->avant_bras_transform->rotation.setValue(SbVec3f(1, 0, 0), (angle-200)*M_PI/180);
+    mgd_sliders();
+}
+
+void Interface::on_slider_poignet_1_valueChanged(int angle)
+{
+    iv->poignet_1_transform->rotation.setValue(SbVec3f(0, 1, 0), (angle-120)*M_PI/180);
+    mgd_sliders();
+}
+
+void Interface::on_slider_poignet_2_valueChanged(int angle)
+{
+    iv->poignet_2_transform->rotation.setValue(SbVec3f(1, 0, 0), (angle-400)*M_PI/180);
+    mgd_sliders();
 }
