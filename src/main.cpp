@@ -296,11 +296,6 @@ int main(int argc, char** argv)
   interface->connect( interface->horizontalSlider_4, SIGNAL (valueChanged(int)), iv, SLOT(move_avant_bras(int)));
   interface->connect( interface->horizontalSlider_5, SIGNAL (valueChanged(int)), iv, SLOT(move_poignet_1(int)));
   interface->connect( interface->horizontalSlider_6, SIGNAL (valueChanged(int)), iv, SLOT(move_poignet_2(int)));
-  interface->connect( interface->pushButton_7, SIGNAL( clicked()), iv, SLOT(repeat_control_mgd()));
-
-  interface->connect( interface->pushButton_6, SIGNAL( clicked()), iv, SLOT(on_lancer_commande()));
-  interface->connect( interface->pushButton_9, SIGNAL( clicked()), iv, SLOT(default_mgi()));
-
 
   SoQt::mainLoop();
   //delete(&robot.getViewer());

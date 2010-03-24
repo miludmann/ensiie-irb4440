@@ -135,16 +135,6 @@ class IVLoader : public QObject
     //SoQtRenderArea* viewer;
 
 
-    double px_wanted;
-    double py_wanted;
-    double pz_wanted;
-    double zx_wanted;
-    double zy_wanted;
-    double zz_wanted;
-    double last_good_px;
-    double last_good_py;
-    double last_good_pz;
-
     int simulation_mode;
     bool gotoposition(double x, double y, double z);
 
@@ -157,12 +147,6 @@ class IVLoader : public QObject
       void move_poignet_1(int angle);
       void move_poignet_2(int angle);
       void move_coude(int angle);
-      void repeat(float angle1, float angle2, float angle3, float angle4, float angle5, float angle6, int nb_iter);
-      void repeat_from_current(float angle1, float angle2, float angle3, float angle4, float angle5, float angle6, int nb_iter);
-      void repeat_control_mgd();
-      QVector<double> mgi(double x, double y, double z, double a, double b, double c);
-      void on_lancer_commande();
-      void default_mgi();
 };
 
 #endif //__PROJET_H__
