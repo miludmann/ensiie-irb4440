@@ -76,105 +76,14 @@
   <valuemap type="QVariantMap">
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Debug</value>
    <valuelist key="abstractProcess.Environment" type="QVariantList">
-    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-okCrxPE8zT,guid=d30e44232cfe64b1719e91ab4ba6bb19</value>
-    <value type="QString">DESKTOP_SESSION=gnome</value>
-    <value type="QString">DISPLAY=:0.0</value>
-    <value type="QString">GDMSESSION=gnome</value>
-    <value type="QString">GDM_KEYBOARD_LAYOUT=fr	oss</value>
-    <value type="QString">GDM_LANG=fr_FR.UTF-8</value>
-    <value type="QString">GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
-    <value type="QString">GNOME_KEYRING_PID=1320</value>
-    <value type="QString">GNOME_KEYRING_SOCKET=/tmp/keyring-oBadbR/socket</value>
-    <value type="QString">GTK_MODULES=canberra-gtk-module</value>
-    <value type="QString">GTK_RC_FILES=/etc/gtk/gtkrc:/home/guigui/.gtkrc-1.2-gnome2</value>
-    <value type="QString">HOME=/home/guigui</value>
-    <value type="QString">LANG=fr_FR.UTF-8</value>
-    <value type="QString">LD_LIBRARY_PATH=/home/guigui/qtsdk-2010.02/lib/qtcreator:</value>
-    <value type="QString">LOGNAME=guigui</value>
-    <value type="QString">ORBIT_SOCKETDIR=/tmp/orbit-guigui</value>
-    <value type="QString">PATH=/home/guigui/qtsdk-2010.02/qt/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games</value>
-    <value type="QString">PWD=/home/guigui</value>
-    <value type="QString">QTDIR=/home/guigui/qtsdk-2010.02/qt</value>
-    <value type="QString">SESSION_MANAGER=local/branson:@/tmp/.ICE-unix/1335,unix/branson:/tmp/.ICE-unix/1335</value>
-    <value type="QString">SHELL=/bin/bash</value>
-    <value type="QString">SPEECHD_PORT=7560</value>
-    <value type="QString">SSH_AGENT_PID=1412</value>
-    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-oBadbR/socket.ssh</value>
-    <value type="QString">USER=guigui</value>
-    <value type="QString">USERNAME=guigui</value>
-    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-guigui-kwB6Ek/database</value>
-    <value type="QString">XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share/:/usr/share/</value>
-    <value type="QString">XDG_SESSION_COOKIE=77bfe4a05fa6ac50716e86bd4b65ef5d-1269218070.661906-1718935249</value>
-   </valuelist>
-   <valuelist key="abstractProcess.arguments" type="QVariantList">
-    <value type="QString">/home/guigui/ensiie-irb4440/src/IRB4400.pro</value>
-    <value type="QString">-spec</value>
-    <value type="QString">linux-g++</value>
-    <value type="QString">-r</value>
-    <value type="QString">CONFIG+=debug</value>
-   </valuelist>
-   <value key="abstractProcess.command" type="QString">/home/guigui/qtsdk-2010.02/qt/bin/qmake</value>
-   <value key="abstractProcess.enabled" type="bool">false</value>
-   <value key="abstractProcess.workingDirectory" type="QString">/home/guigui/ensiie-irb4440/src</value>
-  </valuemap>
- </data>
- <data>
-  <variable>buildconfiguration-Debug-buildstep1</variable>
-  <valuemap type="QVariantMap">
-   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Debug</value>
-   <valuelist key="abstractProcess.Environment" type="QVariantList">
-    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-okCrxPE8zT,guid=d30e44232cfe64b1719e91ab4ba6bb19</value>
-    <value type="QString">DESKTOP_SESSION=gnome</value>
-    <value type="QString">DISPLAY=:0.0</value>
-    <value type="QString">GDMSESSION=gnome</value>
-    <value type="QString">GDM_KEYBOARD_LAYOUT=fr	oss</value>
-    <value type="QString">GDM_LANG=fr_FR.UTF-8</value>
-    <value type="QString">GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
-    <value type="QString">GNOME_KEYRING_PID=1320</value>
-    <value type="QString">GNOME_KEYRING_SOCKET=/tmp/keyring-oBadbR/socket</value>
-    <value type="QString">GTK_MODULES=canberra-gtk-module</value>
-    <value type="QString">GTK_RC_FILES=/etc/gtk/gtkrc:/home/guigui/.gtkrc-1.2-gnome2</value>
-    <value type="QString">HOME=/home/guigui</value>
-    <value type="QString">LANG=fr_FR.UTF-8</value>
-    <value type="QString">LD_LIBRARY_PATH=/home/guigui/qtsdk-2010.02/lib/qtcreator:</value>
-    <value type="QString">LOGNAME=guigui</value>
-    <value type="QString">ORBIT_SOCKETDIR=/tmp/orbit-guigui</value>
-    <value type="QString">PATH=/home/guigui/qtsdk-2010.02/qt/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games</value>
-    <value type="QString">PWD=/home/guigui</value>
-    <value type="QString">QTDIR=/home/guigui/qtsdk-2010.02/qt</value>
-    <value type="QString">SESSION_MANAGER=local/branson:@/tmp/.ICE-unix/1335,unix/branson:/tmp/.ICE-unix/1335</value>
-    <value type="QString">SHELL=/bin/bash</value>
-    <value type="QString">SPEECHD_PORT=7560</value>
-    <value type="QString">SSH_AGENT_PID=1412</value>
-    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-oBadbR/socket.ssh</value>
-    <value type="QString">USER=guigui</value>
-    <value type="QString">USERNAME=guigui</value>
-    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-guigui-kwB6Ek/database</value>
-    <value type="QString">XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share/:/usr/share/</value>
-    <value type="QString">XDG_SESSION_COOKIE=77bfe4a05fa6ac50716e86bd4b65ef5d-1269218070.661906-1718935249</value>
-   </valuelist>
-   <value key="abstractProcess.IgnoreReturnValue" type="bool">false</value>
-   <valuelist key="abstractProcess.arguments" type="QVariantList">
-    <value type="QString">-w</value>
-   </valuelist>
-   <value key="abstractProcess.command" type="QString">/usr/bin/make</value>
-   <value key="abstractProcess.enabled" type="bool">true</value>
-   <value key="abstractProcess.workingDirectory" type="QString">/home/guigui/ensiie-irb4440/src</value>
-  </valuemap>
- </data>
- <data>
-  <variable>buildconfiguration-Debug-cleanstep0</variable>
-  <valuemap type="QVariantMap">
-   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Debug</value>
-   <valuelist key="abstractProcess.Environment" type="QVariantList">
-    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-S7bXbuuFOH,guid=22a5ce01644ef22c2bb67a424b99546b</value>
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-BzrwGJJDQN,guid=db9d9e627ef2177d7f2521714ba7c869</value>
     <value type="QString">DESKTOP_SESSION=gnome</value>
     <value type="QString">DISPLAY=:0.0</value>
     <value type="QString">GDMSESSION=gnome</value>
     <value type="QString">GDM_KEYBOARD_LAYOUT=fr</value>
     <value type="QString">GDM_LANG=en_US.UTF-8</value>
     <value type="QString">GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
-    <value type="QString">GNOME_KEYRING_SOCKET=/tmp/keyring-K5Eszr/socket</value>
+    <value type="QString">GNOME_KEYRING_SOCKET=/tmp/keyring-IzJyRg/socket</value>
     <value type="QString">GTK_MODULES=canberra-gtk-module</value>
     <value type="QString">GTK_RC_FILES=/etc/gtk/gtkrc:/home/parapampa/.gtkrc-1.2-gnome2</value>
     <value type="QString">HOME=/home/parapampa</value>
@@ -185,16 +94,105 @@
     <value type="QString">PATH=/home/parapampa/qtsdk-2010.02/qt/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games</value>
     <value type="QString">PWD=/home/parapampa/qtsdk-2010.02/bin</value>
     <value type="QString">QTDIR=/home/parapampa/qtsdk-2010.02/qt</value>
-    <value type="QString">SESSION_MANAGER=local/parapampa-laptop:@/tmp/.ICE-unix/1050,unix/parapampa-laptop:/tmp/.ICE-unix/1050</value>
+    <value type="QString">SESSION_MANAGER=local/parapampa-laptop:@/tmp/.ICE-unix/1075,unix/parapampa-laptop:/tmp/.ICE-unix/1075</value>
     <value type="QString">SHELL=/bin/bash</value>
     <value type="QString">SPEECHD_PORT=7560</value>
-    <value type="QString">SSH_AGENT_PID=1239</value>
-    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-K5Eszr/socket.ssh</value>
+    <value type="QString">SSH_AGENT_PID=1251</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-IzJyRg/socket.ssh</value>
     <value type="QString">USER=parapampa</value>
     <value type="QString">USERNAME=parapampa</value>
-    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-parapampa-fo3iuB/database</value>
+    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-parapampa-T54Xxv/database</value>
     <value type="QString">XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share/:/usr/share/</value>
-    <value type="QString">XDG_SESSION_COOKIE=ea38317ff97c1a0752c070b14b942e6f-1268339814.540913-1316604827</value>
+    <value type="QString">XDG_SESSION_COOKIE=ea38317ff97c1a0752c070b14b942e6f-1269287010.632614-1167520543</value>
+   </valuelist>
+   <valuelist key="abstractProcess.arguments" type="QVariantList">
+    <value type="QString">/home/parapampa/devel/Projet ROBO/IRB4400/test_gui/ensiie-irb4440/src/IRB4400.pro</value>
+    <value type="QString">-spec</value>
+    <value type="QString">linux-g++</value>
+    <value type="QString">-r</value>
+    <value type="QString">CONFIG+=debug</value>
+   </valuelist>
+   <value key="abstractProcess.command" type="QString">/home/parapampa/qtsdk-2010.02/qt/bin/qmake</value>
+   <value key="abstractProcess.enabled" type="bool">false</value>
+   <value key="abstractProcess.workingDirectory" type="QString">/home/parapampa/devel/Projet ROBO/IRB4400/test_gui/ensiie-irb4440/src</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildconfiguration-Debug-buildstep1</variable>
+  <valuemap type="QVariantMap">
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Debug</value>
+   <valuelist key="abstractProcess.Environment" type="QVariantList">
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-BzrwGJJDQN,guid=db9d9e627ef2177d7f2521714ba7c869</value>
+    <value type="QString">DESKTOP_SESSION=gnome</value>
+    <value type="QString">DISPLAY=:0.0</value>
+    <value type="QString">GDMSESSION=gnome</value>
+    <value type="QString">GDM_KEYBOARD_LAYOUT=fr</value>
+    <value type="QString">GDM_LANG=en_US.UTF-8</value>
+    <value type="QString">GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
+    <value type="QString">GNOME_KEYRING_SOCKET=/tmp/keyring-IzJyRg/socket</value>
+    <value type="QString">GTK_MODULES=canberra-gtk-module</value>
+    <value type="QString">GTK_RC_FILES=/etc/gtk/gtkrc:/home/parapampa/.gtkrc-1.2-gnome2</value>
+    <value type="QString">HOME=/home/parapampa</value>
+    <value type="QString">LANG=en_US.UTF-8</value>
+    <value type="QString">LD_LIBRARY_PATH=/home/parapampa/qtsdk-2010.02/lib/qtcreator:</value>
+    <value type="QString">LOGNAME=parapampa</value>
+    <value type="QString">ORBIT_SOCKETDIR=/tmp/orbit-parapampa</value>
+    <value type="QString">PATH=/home/parapampa/qtsdk-2010.02/qt/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games</value>
+    <value type="QString">PWD=/home/parapampa/qtsdk-2010.02/bin</value>
+    <value type="QString">QTDIR=/home/parapampa/qtsdk-2010.02/qt</value>
+    <value type="QString">SESSION_MANAGER=local/parapampa-laptop:@/tmp/.ICE-unix/1075,unix/parapampa-laptop:/tmp/.ICE-unix/1075</value>
+    <value type="QString">SHELL=/bin/bash</value>
+    <value type="QString">SPEECHD_PORT=7560</value>
+    <value type="QString">SSH_AGENT_PID=1251</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-IzJyRg/socket.ssh</value>
+    <value type="QString">USER=parapampa</value>
+    <value type="QString">USERNAME=parapampa</value>
+    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-parapampa-T54Xxv/database</value>
+    <value type="QString">XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share/:/usr/share/</value>
+    <value type="QString">XDG_SESSION_COOKIE=ea38317ff97c1a0752c070b14b942e6f-1269287010.632614-1167520543</value>
+   </valuelist>
+   <value key="abstractProcess.IgnoreReturnValue" type="bool">false</value>
+   <valuelist key="abstractProcess.arguments" type="QVariantList">
+    <value type="QString">-w</value>
+   </valuelist>
+   <value key="abstractProcess.command" type="QString">/usr/bin/make</value>
+   <value key="abstractProcess.enabled" type="bool">true</value>
+   <value key="abstractProcess.workingDirectory" type="QString">/home/parapampa/devel/Projet ROBO/IRB4400/test_gui/ensiie-irb4440/src</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildconfiguration-Debug-cleanstep0</variable>
+  <valuemap type="QVariantMap">
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Debug</value>
+   <valuelist key="abstractProcess.Environment" type="QVariantList">
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-BzrwGJJDQN,guid=db9d9e627ef2177d7f2521714ba7c869</value>
+    <value type="QString">DESKTOP_SESSION=gnome</value>
+    <value type="QString">DISPLAY=:0.0</value>
+    <value type="QString">GDMSESSION=gnome</value>
+    <value type="QString">GDM_KEYBOARD_LAYOUT=fr</value>
+    <value type="QString">GDM_LANG=en_US.UTF-8</value>
+    <value type="QString">GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
+    <value type="QString">GNOME_KEYRING_SOCKET=/tmp/keyring-IzJyRg/socket</value>
+    <value type="QString">GTK_MODULES=canberra-gtk-module</value>
+    <value type="QString">GTK_RC_FILES=/etc/gtk/gtkrc:/home/parapampa/.gtkrc-1.2-gnome2</value>
+    <value type="QString">HOME=/home/parapampa</value>
+    <value type="QString">LANG=en_US.UTF-8</value>
+    <value type="QString">LD_LIBRARY_PATH=/home/parapampa/qtsdk-2010.02/lib/qtcreator:</value>
+    <value type="QString">LOGNAME=parapampa</value>
+    <value type="QString">ORBIT_SOCKETDIR=/tmp/orbit-parapampa</value>
+    <value type="QString">PATH=/home/parapampa/qtsdk-2010.02/qt/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games</value>
+    <value type="QString">PWD=/home/parapampa/qtsdk-2010.02/bin</value>
+    <value type="QString">QTDIR=/home/parapampa/qtsdk-2010.02/qt</value>
+    <value type="QString">SESSION_MANAGER=local/parapampa-laptop:@/tmp/.ICE-unix/1075,unix/parapampa-laptop:/tmp/.ICE-unix/1075</value>
+    <value type="QString">SHELL=/bin/bash</value>
+    <value type="QString">SPEECHD_PORT=7560</value>
+    <value type="QString">SSH_AGENT_PID=1251</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-IzJyRg/socket.ssh</value>
+    <value type="QString">USER=parapampa</value>
+    <value type="QString">USERNAME=parapampa</value>
+    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-parapampa-T54Xxv/database</value>
+    <value type="QString">XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share/:/usr/share/</value>
+    <value type="QString">XDG_SESSION_COOKIE=ea38317ff97c1a0752c070b14b942e6f-1269287010.632614-1167520543</value>
    </valuelist>
    <value key="abstractProcess.IgnoreReturnValue" type="bool">true</value>
    <valuelist key="abstractProcess.arguments" type="QVariantList">
@@ -203,7 +201,7 @@
    </valuelist>
    <value key="abstractProcess.command" type="QString">/usr/bin/make</value>
    <value key="abstractProcess.enabled" type="bool">true</value>
-   <value key="abstractProcess.workingDirectory" type="QString">/home/parapampa/devel/Projet ROBO/IRB4400</value>
+   <value key="abstractProcess.workingDirectory" type="QString">/home/parapampa/devel/Projet ROBO/IRB4400/test_gui/ensiie-irb4440/src</value>
    <value key="cleanConfig" type="bool">true</value>
    <valuelist key="makeargs" type="QVariantList">
     <value type="QString">clean</value>
