@@ -74,3 +74,6 @@ void Interface::on_toutCocher_clicked()
     }
 }
 
+
+
+
