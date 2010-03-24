@@ -34,6 +34,8 @@ class IRB4400 : public QObject
     float b;
     float c;
 
+
+
     //matiere
     SoMaterial *matiere;
     //root
@@ -151,13 +153,8 @@ class IRB4400 : public QObject
     public slots:
       void openFileDialog();
       SoQtExaminerViewer getViewer();
-      void x_changed(const QString& text);
-      void y_changed(const QString& text);
-      void z_changed(const QString& text);
-      void move();
       void move_grille();
       void reset_grille();
-      void reset_sliders();
       void center_scene();
       void toggle_headlight(int state);
       void toggle_fil_de_fer(int state);
@@ -177,7 +174,6 @@ class IRB4400 : public QObject
       void repeat(float angle1, float angle2, float angle3, float angle4, float angle5, float angle6, int nb_iter);
       void repeat_from_current(float angle1, float angle2, float angle3, float angle4, float angle5, float angle6, int nb_iter);
       void repeat_control_mgd();
-      void toggle_toutCocher();
       QVector<double> mgi(double x, double y, double z, double a, double b, double c);
       void on_lancer_commande();
       void default_mgi();

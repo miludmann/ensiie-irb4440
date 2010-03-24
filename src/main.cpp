@@ -289,22 +289,14 @@ int main(int argc, char** argv)
   myWidget->show();
 
   root->mode = 0;
-  //root->move();
 
   root->center_scene();
 
-  //interface->connect( interface->pushButton1, SIGNAL( clicked() ), root, SLOT( move() ) );
   interface->connect( interface->checkBox_2, SIGNAL( stateChanged(int) ), root, SLOT( toggle_fil_de_fer(int) ) );
   interface->connect( interface->pushButton, SIGNAL( clicked() ), root, SLOT( center_scene() ) );
-  interface->connect( interface->checkBox, SIGNAL( stateChanged(int) ), root, SLOT(toggle_headlight(int) ) );
-  //interface->connect( interface->lineEdit1, SIGNAL( textChanged(const QString&) ), root, SLOT(x_changed(const QString&) ));
-  //interface->connect( interface->lineEdit2, SIGNAL( textChanged(const QString&) ), root, SLOT(y_changed(const QString&) ));
-  //interface->connect( interface->lineEdit3, SIGNAL( textChanged(const QString&) ), root, SLOT(z_changed(const QString&) ));
-  //interface->connect( interface->radioButton4, SIGNAL( stateChanged(int) ), root, SLOT( toggle_moving_mode(int) ));
-  //interface->connect( interface->radioButton3, SIGNAL( stateChanged(int) ), root, SLOT( toggle_moving_mode2(int) ));
-  interface->connect( interface->verticalSlider, SIGNAL( sliderMoved(int) ), root, SLOT( move_grille(int) ));
+  interface->connect( interface->light_proj, SIGNAL( stateChanged(int) ), root, SLOT(toggle_headlight(int) ) );
+  interface->connect( interface->verticalSlider, SIGNAL( sliderMoved(int) ), root, SLOT( move_grille() ));
   interface->connect( interface->pushButton_2, SIGNAL( clicked() ), root, SLOT( reset_grille() ));
-  //interface->connect( interface->pushButton4, SIGNAL( clicked() ), root, SLOT( lauch_simulation() ));
 
   interface->connect( interface->checkBox_3, SIGNAL( stateChanged(int) ), root, SLOT( toggle_rep0(int) ) );
   interface->connect( interface->checkBox_4, SIGNAL( stateChanged(int) ), root, SLOT( toggle_rep1(int) ) );
@@ -314,8 +306,6 @@ int main(int argc, char** argv)
   interface->connect( interface->checkBox_8, SIGNAL( stateChanged(int) ), root, SLOT( toggle_rep3(int) ) );
   interface->connect( interface->checkBox_9, SIGNAL( stateChanged(int) ), root, SLOT( toggle_rep6(int) ) );
 
-  interface->connect( interface->pushButton_10, SIGNAL( clicked() ), root, SLOT( toggle_toutCocher() ) );
-
   interface->connect( interface->horizontalSlider, SIGNAL (valueChanged(int)), root, SLOT(move_base_mobile(int)));
   interface->connect( interface->horizontalSlider_2, SIGNAL (valueChanged(int)), root, SLOT(move_parallelogramme(int)));
   interface->connect( interface->horizontalSlider_3, SIGNAL (valueChanged(int)), root, SLOT(move_coude(int)));
@@ -323,7 +313,6 @@ int main(int argc, char** argv)
   interface->connect( interface->horizontalSlider_5, SIGNAL (valueChanged(int)), root, SLOT(move_poignet_1(int)));
   interface->connect( interface->horizontalSlider_6, SIGNAL (valueChanged(int)), root, SLOT(move_poignet_2(int)));
   interface->connect( interface->pushButton_7, SIGNAL( clicked()), root, SLOT(repeat_control_mgd()));
-  //interface->connect( interface->pushButton_8, SIGNAL( clicked()), root, SLOT(reset_sliders()));
 
   interface->connect( interface->pushButton_6, SIGNAL( clicked()), root, SLOT(on_lancer_commande()));
   interface->connect( interface->pushButton_9, SIGNAL( clicked()), root, SLOT(default_mgi()));

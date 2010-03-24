@@ -160,9 +160,9 @@ SoQtExaminerViewer IRB4400::getViewer()
 
 void IRB4400::move_grille()
 {
-  double position=interface->verticalSlider->value();
+  double position = interface->verticalSlider->value();
   position = position / 1000;
-  grille_translation->translation= SbVec3f(0, 0, position);;
+  grille_translation->translation= SbVec3f(0, 0, position);
 }
 
 void IRB4400::reset_grille()
@@ -170,22 +170,6 @@ void IRB4400::reset_grille()
   grille_translation->translation= SbVec3f(0, 0, 0);;
   interface->verticalSlider->setValue(0);
 }
-
-void IRB4400::x_changed(const QString& text)
-{
-  px_wanted = strtod((char *)text.data(), (char**)NULL);
-}
-
-void IRB4400::y_changed(const QString& text)
-{
-  py_wanted = strtod((char *)text.data(), (char**)NULL);
-}
-
-void IRB4400::z_changed(const QString& text)
-{
-  pz_wanted = strtod((char *)text.data(), (char**)NULL);
-}
-
 
 void IRB4400::center_scene()
 {
@@ -212,34 +196,6 @@ void IRB4400::toggle_fil_de_fer(int state)
     viewer->setDrawStyle(SoQtViewer::INTERACTIVE, SoQtViewer::VIEW_AS_IS);
     viewer->setDrawStyle(SoQtViewer::STILL, SoQtViewer::VIEW_AS_IS);
   }
-}
-
-void IRB4400::toggle_toutCocher()
-{
-    if(interface->checkBox_3->isChecked() ||
-       interface->checkBox_4->isChecked() ||
-       interface->checkBox_5->isChecked() ||
-       interface->checkBox_6->isChecked() ||
-       interface->checkBox_7->isChecked() ||
-       interface->checkBox_8->isChecked() ||
-       interface->checkBox_9->isChecked() )
-    {
-        interface->checkBox_3->setChecked(false);
-        interface->checkBox_4->setChecked(false);
-        interface->checkBox_5->setChecked(false);
-        interface->checkBox_6->setChecked(false);
-        interface->checkBox_7->setChecked(false);
-        interface->checkBox_8->setChecked(false);
-        interface->checkBox_9->setChecked(false);
-    } else {
-        interface->checkBox_3->setChecked(true);
-        interface->checkBox_4->setChecked(true);
-        interface->checkBox_5->setChecked(true);
-        interface->checkBox_6->setChecked(true);
-        interface->checkBox_7->setChecked(true);
-        interface->checkBox_8->setChecked(true);
-        interface->checkBox_9->setChecked(true);
-    }
 }
 
 void IRB4400::toggle_rep0(int state)
@@ -390,17 +346,6 @@ void IRB4400::move_coude(int angle)
         flag = false;
     }
 }
-
-void IRB4400::reset_sliders()
-{
-    interface->horizontalSlider->setValue(165);
-    interface->horizontalSlider_2->setValue(82);
-    interface->horizontalSlider_3->setValue(62);
-    interface->horizontalSlider_4->setValue(200);
-    interface->horizontalSlider_5->setValue(120);
-    interface->horizontalSlider_6->setValue(400);
-}
-
 
 void IRB4400::repeat(float angle1, float angle2, float angle3, float angle4, float angle5, float angle6, int nb_iter)
 {

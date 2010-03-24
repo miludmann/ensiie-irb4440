@@ -1,6 +1,8 @@
 #include "mainWidget.h"
+#include "projet.h"
 
 #include <qvariant.h>
+
 /*
  *  Constructs a Interface as a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'.
@@ -13,7 +15,6 @@ Interface::Interface(QWidget* parent, const char* name, Qt::WindowFlags fl)
     : QTabWidget(parent, name, fl)
 {
     setupUi(this);
-
 }
 
 /*
@@ -44,3 +45,32 @@ void Interface::on_reset_sliders_clicked()
     horizontalSlider_5->setValue(120);
     horizontalSlider_6->setValue(400);
 }
+
+void Interface::on_toutCocher_clicked()
+{
+    if(checkBox_3->isChecked() ||
+       checkBox_4->isChecked() ||
+       checkBox_5->isChecked() ||
+       checkBox_6->isChecked() ||
+       checkBox_7->isChecked() ||
+       checkBox_8->isChecked() ||
+       checkBox_9->isChecked() )
+    {
+        checkBox_3->setChecked(false);
+        checkBox_4->setChecked(false);
+        checkBox_5->setChecked(false);
+        checkBox_6->setChecked(false);
+        checkBox_7->setChecked(false);
+        checkBox_8->setChecked(false);
+        checkBox_9->setChecked(false);
+    } else {
+        checkBox_3->setChecked(true);
+        checkBox_4->setChecked(true);
+        checkBox_5->setChecked(true);
+        checkBox_6->setChecked(true);
+        checkBox_7->setChecked(true);
+        checkBox_8->setChecked(true);
+        checkBox_9->setChecked(true);
+    }
+}
+
