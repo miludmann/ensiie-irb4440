@@ -71,6 +71,10 @@ IRB4400::IRB4400(QWidget* parent) : QObject(parent)
   flag = false;
   angle23 = 82 + 62;
 
+  a = 0.6933703916;
+  b = 0.122805578;
+  c = 0.8161759675;
+
 }
 
 IRB4400::~IRB4400()
@@ -358,11 +362,19 @@ void IRB4400::move_poignet_2(int angle)
 
 void IRB4400::move_parallelogramme(int angle)
 {
+    float ang2, c2;
+
+    c2 = sqrt(a*a+b*b+2*a*b*cos((((float) 180)+angle-82)/180*M_PI));
+    ang2 = acos((c2*c2+a*a-b*b)/(2*a*c2))*180/M_PI*(angle-82)/abs(angle-82);
+
     //static float angle3 = interface->horizontalSlider_3->value() + (interface->horizontalSlider_2->value()-82);
     flag = true;
     parallelogramme_avant_transform->rotation.setValue(SbVec3f(0, 1, 0), (angle-82)*M_PI/180);
     interface->horizontalSlider_3->setValue(angle23-angle);
     //move_coude(angle3+82-angle);
+
+    cylindre_base_transform->rotation.setValue(SbVec3f(0, 1, 0), ang2*M_PI/180);
+    sortie_cylindre_transform->rotation.setValue(SbVec3f(0, 1, 0), (ang2+(82-angle))*M_PI/180);
 }
 
 void IRB4400::move_coude(int angle)

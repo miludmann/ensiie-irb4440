@@ -199,13 +199,14 @@ int main(int argc, char** argv)
     root->cylindre_base_base->ref();
     root->base_mobile_base->addChild(root->cylindre_base_base);
     root->cylindre_base_transform->translation = SbVec3f(0, 0, 0);
-    root->cylindre_base_transform->recenter(SbVec3f(-0.48, 0, 0.52));
+    root->cylindre_base_transform->recenter(SbVec3f(-0.4775, 0, 0.5325));
     root->cylindre_base_base->addChild(root->cylindre_base_transform);
     root->openMember("vrml/cylindre_base.wrl", root->cylindre_base, root->cylindre_base_base);
     //sortie cylindre
     root->sortie_cylindre_base->ref();
-    root->cylindre_base_base->addChild(root->sortie_cylindre_base);
+    root->parallelogramme_avant_base->addChild(root->sortie_cylindre_base);
     root->sortie_cylindre_transform->translation = SbVec3f(0, 0, 0);
+    root->sortie_cylindre_transform->recenter(SbVec3f(0.32, 0, 0.7061));
     root->sortie_cylindre_base->addChild(root->sortie_cylindre_transform);
     root->openMember("vrml/sortie_cylindre.wrl", root->sortie_cylindre, root->sortie_cylindre_base);
     //coude

@@ -30,6 +30,9 @@ class IRB4400 : public QObject
 
     int angle23;
     bool flag;
+    float a;
+    float b;
+    float c;
 
     //matiere
     SoMaterial *matiere;
