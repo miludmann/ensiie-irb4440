@@ -30,6 +30,11 @@ public:
     double last_good_py;
     double last_good_pz;
 
+    int angle23;
+    bool flag;
+    float a, b, c;
+    float old2;
+
 protected slots:
     virtual void languageChange();
 
@@ -39,6 +44,12 @@ public slots:
 
 
 private slots:
+    void on_slider_poignet_2_valueChanged(int value);
+    void on_slider_poignet_1_valueChanged(int value);
+    void on_slider_coude_valueChanged(int value);
+    void on_slider_avant_bras_valueChanged(int value);
+    void on_slider_parallelogramme_valueChanged(int value);
+    void on_slider_base_mobile_valueChanged(int value);
     void on_sliderZz_valueChanged(int value);
     void on_sliderZy_valueChanged(int value);
     void on_sliderZx_valueChanged(int value);
@@ -67,7 +78,8 @@ private slots:
     void repeat_from_current(float angle1, float angle2, float angle3, float angle4, float angle5, float angle6, int nb_iter);
     void repeat_control_mgd();
     QVector<double> mgi(double x, double y, double z, double a, double b, double c);
-
+    QVector<double> mgd(double q1, double q2, double q3, double q4, double q5, double q6);
+    void mgd_sliders();
 };
 
 #endif // MAINWIDGET_H

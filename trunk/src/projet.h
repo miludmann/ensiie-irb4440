@@ -28,13 +28,6 @@ class IVLoader : public QObject
     void openFile(QString s);
     void openMember(QString s, SoSeparator *new_separator, SoSeparator *iv);
 
-    int angle23;
-    bool flag;
-    float a, b, c;
-    float old2;
-
-
-
     //matiere
     SoMaterial *matiere;
     //iv
@@ -141,12 +134,6 @@ class IVLoader : public QObject
     public slots:
       void openFileDialog();
       SoQtExaminerViewer getViewer();
-      void move_base_mobile(int angle);
-      void move_parallelogramme(int angle);
-      void move_avant_bras(int angle);
-      void move_poignet_1(int angle);
-      void move_poignet_2(int angle);
-      void move_coude(int angle);
 };
 
 #endif //__PROJET_H__
