@@ -34,16 +34,7 @@
 #define R6 0.140
 
 extern Interface *interface;
-
-extern IRB4400 *root;
-
-SoNode *repere_r0Tmp;
-SoNode *repere_r1Tmp;
-SoNode *repere_r2Tmp;
-SoNode *repere_r3Tmp;
-SoNode *repere_r4Tmp;
-SoNode *repere_r5Tmp;
-SoNode *repere_r6Tmp;
+extern IVLoader *iv;
 
 void millisleep( unsigned int milliseconds )
 {
@@ -58,7 +49,7 @@ void millisleep( unsigned int milliseconds )
 }
 
 
-IRB4400::IRB4400(QWidget* parent) : QObject(parent)
+IVLoader::IVLoader(QWidget* parent) : QObject(parent)
 {
   SoQt::init(parent);
   viewer = new SoQtExaminerViewer(parent);
@@ -77,12 +68,12 @@ IRB4400::IRB4400(QWidget* parent) : QObject(parent)
   old2 = 82;
 }
 
-IRB4400::~IRB4400()
+IVLoader::~IVLoader()
 {
   delete viewer;
 }
 
-void IRB4400::openFile(QString s)
+void IVLoader::openFile(QString s)
 {
   // Lecture du graphe de scene
   SoInput sceneInput;
@@ -109,7 +100,7 @@ void IRB4400::openFile(QString s)
 }
 
 
-void IRB4400::openMember(QString s, SoSeparator *new_separator, SoSeparator *root)
+void IVLoader::openMember(QString s, SoSeparator *new_separator, SoSeparator *iv)
 {
   // Lecture du graphe de scne
   SoInput sceneInput;
@@ -130,13 +121,13 @@ void IRB4400::openMember(QString s, SoSeparator *new_separator, SoSeparator *roo
     return;
   }
   new_separator->ref();
-  root->addChild(new_separator);
+  iv->addChild(new_separator);
   sceneInput.closeFile();
   viewer->render();
 }
 
 
-void IRB4400::openFileDialog()
+void IVLoader::openFileDialog()
 {
   // ouverture d'une boite de dialogue
   QString s = Q3FileDialog::getOpenFileName(
@@ -153,197 +144,32 @@ void IRB4400::openFileDialog()
   openFile(s);
 }
 
-SoQtExaminerViewer IRB4400::getViewer()
+SoQtExaminerViewer IVLoader::getViewer()
 {
     return *viewer;
 }
 
-void IRB4400::move_grille()
-{
-  double position = interface->verticalSlider->value();
-  position = position / 1000;
-  grille_translation->translation= SbVec3f(0, 0, position);
-}
-
-void IRB4400::reset_grille()
-{
-  grille_translation->translation= SbVec3f(0, 0, 0);;
-  interface->verticalSlider->setValue(0);
-}
-
-void IRB4400::center_scene()
-{
-  viewer->viewAll();
-}
-
-void IRB4400::toggle_headlight(int checked)
-{
-  if (checked)
-  {
-    viewer->setHeadlight(true);
-  }else{
-    viewer->setHeadlight(false);
-  }
-}
-
-void IRB4400::on_display_mode_activated(int choice)
-{
-    switch (choice)
-    {
-    case 0 :
-        viewer->setDrawStyle(SoQtViewer::INTERACTIVE, SoQtViewer::VIEW_AS_IS);
-        viewer->setDrawStyle(SoQtViewer::STILL, SoQtViewer::VIEW_AS_IS);
-        break;
-    case 1:
-        viewer->setDrawStyle(SoQtViewer::INTERACTIVE, SoQtViewer::VIEW_LINE);
-        viewer->setDrawStyle(SoQtViewer::STILL, SoQtViewer::VIEW_LINE);
-        break;
-    case 2:
-        viewer->setDrawStyle(SoQtViewer::INTERACTIVE, SoQtViewer::VIEW_POINT);
-        viewer->setDrawStyle(SoQtViewer::STILL, SoQtViewer::VIEW_POINT);
-        break;
-    case 3:
-        viewer->setDrawStyle(SoQtViewer::INTERACTIVE, SoQtViewer::VIEW_BBOX);
-        viewer->setDrawStyle(SoQtViewer::STILL, SoQtViewer::VIEW_BBOX);
-        break;
-    case 4:
-        viewer->setDrawStyle(SoQtViewer::STILL, SoQtViewer::VIEW_AS_IS);
-        break;
-    }
-}
-
-
-void IRB4400::on_set3D_toggled(bool checked)
-{
-    if (checked)
-    {
-        viewer->setStereoType(SoQtViewer::STEREO_ANAGLYPH);
-
-    } else {
-        viewer->setStereoType(SoQtViewer::STEREO_NONE);
-    }
-
-}
-
-void IRB4400::toggle_rep0(int state)
-{
-  if (state)
-  {
-    repere_r0_base->insertChild(repere_r0Tmp, 0);
-    viewer->render();
-  }else{
-    //suppression du repère affiché ("3" correspond au premier enfant du noeud, i.e. le repère ici)
-    repere_r0Tmp = repere_r0_base->getChild(0);
-    repere_r0_base->removeChild(0);
-    viewer->render();
-  }
-}
-
-void IRB4400::toggle_rep1(int state)
-{
-  if (state)
-  {
-    repere_r1_base->insertChild(repere_r1Tmp, 1);
-    viewer->render();
-  }else{
-    //suppression du repère affiché ("3" correspond au premier enfant du noeud, i.e. le repère ici)
-    repere_r1Tmp = repere_r1_base->getChild(1);
-    repere_r1_base->removeChild(1);
-    viewer->render();
-  }
-}
-
-void IRB4400::toggle_rep2(int state)
-{
-  if (state)
-  {
-    repere_r2_base->insertChild(repere_r2Tmp, 3);
-    viewer->render();
-  }else{
-    //suppression du repère affiché ("3" correspond au premier enfant du noeud, i.e. le repère ici)
-    repere_r2Tmp = repere_r2_base->getChild(3);
-    repere_r2_base->removeChild(3);
-    viewer->render();
-  }
-}
-
-void IRB4400::toggle_rep3(int state)
-{
-  if (state)
-  {
-    repere_r3_base->insertChild(repere_r3Tmp, 3);
-    viewer->render();
-  }else{
-    //suppression du repère affiché ("3" correspond au premier enfant du noeud, i.e. le repère ici)
-    repere_r3Tmp = repere_r3_base->getChild(3);
-    repere_r3_base->removeChild(3);
-    viewer->render();
-  }
-}
-
-void IRB4400::toggle_rep4(int state)
-{
-  if (state)
-  {
-    repere_r4_base->insertChild(repere_r4Tmp, 3);
-    viewer->render();
-  }else{
-    //suppression du repère affiché ("3" correspond au premier enfant du noeud, i.e. le repère ici)
-    repere_r4Tmp = repere_r4_base->getChild(3);
-    repere_r4_base->removeChild(3);
-    viewer->render();
-  }
-}
-
-void IRB4400::toggle_rep5(int state)
-{
-  if (state)
-  {
-    repere_r5_base->insertChild(repere_r5Tmp, 3);
-    viewer->render();
-  }else{
-    //suppression du repère affiché ("3" correspond au premier enfant du noeud, i.e. le repère ici)
-    repere_r5Tmp = repere_r5_base->getChild(3);
-    repere_r5_base->removeChild(3);
-    viewer->render();
-  }
-}
-
-void IRB4400::toggle_rep6(int state)
-{
-  if (state)
-  {
-    repere_r6_base->insertChild(repere_r6Tmp, 3);
-    viewer->render();
-  }else{
-    //suppression du repère affiché ("3" correspond au premier enfant du noeud, i.e. le repère ici)
-    repere_r6Tmp = repere_r6_base->getChild(3);
-    repere_r6_base->removeChild(3);
-    viewer->render();
-  }
-}
-
-void IRB4400::move_base_mobile(int angle)
+void IVLoader::move_base_mobile(int angle)
 {
     base_mobile_transform->rotation.setValue(SbVec3f(0, 0, 1), (angle-165)*M_PI/180);
 }
 
-void IRB4400::move_avant_bras(int angle)
+void IVLoader::move_avant_bras(int angle)
 {
     avant_bras_transform->rotation.setValue(SbVec3f(1, 0, 0), (angle-200)*M_PI/180);
 }
 
-void IRB4400::move_poignet_1(int angle)
+void IVLoader::move_poignet_1(int angle)
 {
     poignet_1_transform->rotation.setValue(SbVec3f(0, 1, 0), (angle-120)*M_PI/180);
 }
 
-void IRB4400::move_poignet_2(int angle)
+void IVLoader::move_poignet_2(int angle)
 {
     poignet_2_transform->rotation.setValue(SbVec3f(1, 0, 0), (angle-400)*M_PI/180);
 }
 
-void IRB4400::move_parallelogramme(int angle)
+void IVLoader::move_parallelogramme(int angle)
 {
     float angle3 = interface->horizontalSlider_3->value();
     float ang2, c2;
@@ -387,7 +213,7 @@ void IRB4400::move_parallelogramme(int angle)
     }
 }
 
-void IRB4400::move_coude(int angle)
+void IVLoader::move_coude(int angle)
 {
     float angle2 = interface->horizontalSlider_2->value();
 
@@ -410,7 +236,7 @@ void IRB4400::move_coude(int angle)
     }
 }
 
-void IRB4400::repeat(float angle1, float angle2, float angle3, float angle4, float angle5, float angle6, int nb_iter)
+void IVLoader::repeat(float angle1, float angle2, float angle3, float angle4, float angle5, float angle6, int nb_iter)
 {
     for (double i=0; i<=nb_iter; i++) {
         interface->horizontalSlider->setValue(165-i*(165-angle1)/nb_iter);
@@ -430,7 +256,7 @@ void IRB4400::repeat(float angle1, float angle2, float angle3, float angle4, flo
     }
 }
 
-void IRB4400::repeat_from_current(float angle1, float angle2, float angle3, float angle4, float angle5, float angle6, int nb_iter)
+void IVLoader::repeat_from_current(float angle1, float angle2, float angle3, float angle4, float angle5, float angle6, int nb_iter)
 {
     double angle1_current = interface->horizontalSlider->value();
     double angle2_current = interface->horizontalSlider_2->value();
@@ -457,7 +283,7 @@ void IRB4400::repeat_from_current(float angle1, float angle2, float angle3, floa
     }
 }
 
-void IRB4400::repeat_control_mgd()
+void IVLoader::repeat_control_mgd()
 {
     float angle1 = interface->horizontalSlider->value();
     float angle2 = interface->horizontalSlider_2->value();
@@ -469,7 +295,7 @@ void IRB4400::repeat_control_mgd()
     repeat(angle1, angle2, angle3, angle4, angle5, angle6, 50);
 }
 
-QVector<double> IRB4400::mgi(double px, double py, double pz, double zx_nnorme, double zy_nnorme, double zz_nnorme)
+QVector<double> IVLoader::mgi(double px, double py, double pz, double zx_nnorme, double zy_nnorme, double zz_nnorme)
 {    
     //On norme le vecteur Z
     double zNorm = sqrt(SQUARE(zx_nnorme) + SQUARE(zy_nnorme) + SQUARE(zz_nnorme));
@@ -601,7 +427,7 @@ QVector<double> IRB4400::mgi(double px, double py, double pz, double zx_nnorme, 
     return thetas;
 }
 
-void IRB4400::on_lancer_commande()
+void IVLoader::on_lancer_commande()
 {
     px_wanted = interface->doubleSpinBox->value();
     py_wanted = interface->doubleSpinBox_2->value();
@@ -631,7 +457,7 @@ void IRB4400::on_lancer_commande()
     }
 }
 
-void IRB4400::default_mgi()
+void IVLoader::default_mgi()
 {
     interface->doubleSpinBox->setValue(1.22);
     interface->doubleSpinBox_2->setValue(0.00);

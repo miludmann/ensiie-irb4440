@@ -19,14 +19,14 @@
 
 void millisleep( unsigned int milliseconds );
 
-class IRB4400 : public QObject
+class IVLoader : public QObject
 {
   Q_OBJECT
   public :
-    IRB4400(QWidget* parent);
-    ~IRB4400();
+    IVLoader(QWidget* parent);
+    ~IVLoader();
     void openFile(QString s);
-    void openMember(QString s, SoSeparator *new_separator, SoSeparator *root);
+    void openMember(QString s, SoSeparator *new_separator, SoSeparator *iv);
 
     int angle23;
     bool flag;
@@ -37,7 +37,7 @@ class IRB4400 : public QObject
 
     //matiere
     SoMaterial *matiere;
-    //root
+    //iv
     SoSeparator *separator;
 
     //socle
@@ -145,26 +145,12 @@ class IRB4400 : public QObject
     double last_good_py;
     double last_good_pz;
 
-    int mode;
     int simulation_mode;
     bool gotoposition(double x, double y, double z);
 
     public slots:
       void openFileDialog();
       SoQtExaminerViewer getViewer();
-      void move_grille();
-      void reset_grille();
-      void center_scene();
-      void toggle_headlight(int state);
-      void on_display_mode_activated(int choice);
-      void on_set3D_toggled(bool checked);
-      void toggle_rep0(int state);
-      void toggle_rep1(int state);
-      void toggle_rep2(int state);
-      void toggle_rep3(int state);
-      void toggle_rep4(int state);
-      void toggle_rep5(int state);
-      void toggle_rep6(int state);
       void move_base_mobile(int angle);
       void move_parallelogramme(int angle);
       void move_avant_bras(int angle);
@@ -178,10 +164,5 @@ class IRB4400 : public QObject
       void on_lancer_commande();
       void default_mgi();
 };
-
-void move_progressif(double x_initial, double x_wanted, double y_initial, double y_wanted, double z_initial, double z_wanted, IRB4400 *ivv);
-void move_progressif_objet(double x_initial, double x_wanted, double y_initial, double y_wanted, double z_initial, double z_wanted, IRB4400 *ivv);
-void move_progressif_both(double x_initial, double x_wanted, double y_initial, double y_wanted, double z_initial, double z_wanted, IRB4400 *ivv);
-void move_progressif_objet_only(double x_initial, double x_wanted, double y_initial, double y_wanted, double z_initial, double z_wanted, IRB4400 *ivv);
 
 #endif //__PROJET_H__
