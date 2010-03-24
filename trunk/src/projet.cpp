@@ -633,19 +633,3 @@ void IRB4400::default_mgi()
     interface->doubleSpinBox_6->setValue(0.00);
 }
 
-void IRB4400::move()
-{/*
-  if (mode == 0) {
-    // on est en mode direct.
-    if (gotoposition(x_wanted, y_wanted, z_wanted)) {
-      x_initial = x_wanted;
-      y_initial = y_wanted;
-      z_initial = z_wanted;
-    }
-  } else {
-    // on est en mode progressif
-    move_progressif(x_initial, x_wanted, y_initial, y_wanted, z_initial, z_wanted, root);
-  }
-  */
-}
-
