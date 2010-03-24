@@ -25,7 +25,7 @@ Interface *interface;
 
 int main(int argc, char** argv)
 {
-  // Cration d'une application Qt
+  // Création d'une application Qt
   QApplication app(argc,argv);
 
   Q3MainWindow* myWidget= new Q3MainWindow();
@@ -277,12 +277,13 @@ int main(int argc, char** argv)
     iv->openMember("vrml/repere.wrl", iv->repere_r6, iv->repere_r6_base);
 }
 
-  interface = new Interface();
+  //C est ici qu on decide de faire rentrer l interface dans la fenetre principale ou non
+  interface = new Interface(myWidget);
   interface->show();
-  interface->move(QPoint(1050,0));
+  interface->move(QPoint(700,0));
 
   app.setMainWidget(myWidget);
-  myWidget->resize(800,600);
+  myWidget->resize(1024,800);
   myWidget->move(QPoint(0,0));
   myWidget->show();
 
