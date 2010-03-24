@@ -1,10 +1,10 @@
-# define COIN_GLERROR_DEBUGGING=1
 TEMPLATE = app
 HEADERS += projet.h \
-    interface2.h
+    mainWidget.h
+FORMS += mainWidgetform.ui
 SOURCES += main.cpp \
     projet.cpp \
-    interface.cpp
+    mainWidget.cpp
 OTHER_FILES += vrml/sortie_cylindre.wrl \
     vrml/socle.wrl \
     vrml/repere.wrl \
@@ -25,13 +25,11 @@ OTHER_FILES += vrml/sortie_cylindre.wrl \
     vrml/avant_bras.wrl
 
 # The following line was changed from FORMS to FORMS3 by qt3to4
-# FORMS3   = form1.ui
 INCLUDEPATH += $$system(soqt-config --includedir)
 LIBS += $$system(soqt-config --ldflags --libs)
 
 # The following line was inserted by qt3to4
 QT += qt3support
 
-# The following line was inserted by qt3to4
-CONFIG += uic3
-FORMS += interfaceUi.ui
+
+

@@ -1,11 +1,10 @@
 #include "projet.h"
+#include "mainWidget.h"
 
 #include <Inventor/Qt/SoQt.h>
 #include <q3filedialog.h>
 #include <qdir.h>
 #include <qmessagebox.h>
-
-#include "interface2.h"
 
 #include <Inventor/Qt/viewers/SoQtViewer.h>
 
@@ -34,7 +33,7 @@
 #define R4 0.880
 #define R6 0.140
 
-extern TabWidget *interface;
+extern Interface *interface;
 
 extern IRB4400 *root;
 
@@ -155,7 +154,7 @@ SoQtExaminerViewer IRB4400::getViewer()
     return *viewer;
 }
 
-void IRB4400::move_grille(int val)
+void IRB4400::move_grille()
 {
   double position=interface->verticalSlider->value();
   position = position / 1000;
@@ -187,16 +186,6 @@ void IRB4400::z_changed(const QString& text)
 void IRB4400::center_scene()
 {
   viewer->viewAll();
-}
-
-void IRB4400::toggle_moving_mode(int state)
-{
-  mode=1;
-}
-
-void IRB4400::toggle_moving_mode2(int state)
-{
-  mode=0;
 }
 
 void IRB4400::toggle_headlight(int state)
@@ -400,16 +389,9 @@ void IRB4400::reset_sliders()
     interface->horizontalSlider_6->setValue(400);
 }
 
-void IRB4400::repeat(int nb_iter)
+
+void IRB4400::repeat(float angle1, float angle2, float angle3, float angle4, float angle5, float angle6, int nb_iter)
 {
-
-    float angle1 = interface->horizontalSlider->value();
-    float angle2 = interface->horizontalSlider_2->value();
-    float angle3 = interface->horizontalSlider_3->value();
-    float angle4 = interface->horizontalSlider_4->value();
-    float angle5 = interface->horizontalSlider_5->value();
-    float angle6 = interface->horizontalSlider_6->value();
-
     for (double i=0; i<=nb_iter; i++) {
         interface->horizontalSlider->setValue(165-i*(165-angle1)/nb_iter);
         interface->horizontalSlider->repaint();
@@ -428,7 +410,34 @@ void IRB4400::repeat(int nb_iter)
     }
 }
 
-void IRB4400::repeat_command()
+void IRB4400::repeat_from_current(float angle1, float angle2, float angle3, float angle4, float angle5, float angle6, int nb_iter)
+{
+    double angle1_current = interface->horizontalSlider->value();
+    double angle2_current = interface->horizontalSlider_2->value();
+    double angle3_current = interface->horizontalSlider_3->value();
+    double angle4_current = interface->horizontalSlider_4->value();
+    double angle5_current = interface->horizontalSlider_5->value();
+    double angle6_current = interface->horizontalSlider_6->value();
+
+    for (double i=0; i<=nb_iter; i++) {
+        interface->horizontalSlider->setValue(angle1_current-i*(angle1_current-angle1)/nb_iter);
+        interface->horizontalSlider->repaint();
+        interface->horizontalSlider_2->setValue(angle2_current-i*(angle2_current-angle2)/nb_iter);
+        interface->horizontalSlider_2->repaint();
+        interface->horizontalSlider_3->setValue(angle3_current-i*(angle3_current-angle3)/nb_iter);
+        interface->horizontalSlider_3->repaint();
+        interface->horizontalSlider_4->setValue(angle4_current-i*(angle4_current-angle4)/nb_iter);
+        interface->horizontalSlider_4->repaint();
+        interface->horizontalSlider_5->setValue(angle5_current-i*(angle5_current-angle5)/nb_iter);
+        interface->horizontalSlider_5->repaint();
+        interface->horizontalSlider_6->setValue(angle6_current-i*(angle6_current-angle6)/nb_iter);
+        interface->horizontalSlider_6->repaint();
+        viewer->render();
+        millisleep(20);
+    }
+}
+
+void IRB4400::repeat_control_mgd()
 {
     float angle1 = interface->horizontalSlider->value();
     float angle2 = interface->horizontalSlider_2->value();
@@ -437,7 +446,7 @@ void IRB4400::repeat_command()
     float angle5 = interface->horizontalSlider_5->value();
     float angle6 = interface->horizontalSlider_6->value();
 
-    repeat(50);
+    repeat(angle1, angle2, angle3, angle4, angle5, angle6, 50);
 }
 
 QVector<double> IRB4400::mgi(double px, double py, double pz, double zx_nnorme, double zy_nnorme, double zz_nnorme)
@@ -525,8 +534,8 @@ QVector<double> IRB4400::mgi(double px, double py, double pz, double zx_nnorme, 
     theta3 = theta3_tmp - atan2(A4, R4);
 
     //theta2
-    double s2 = (-(A3 + b4 * s3_tmp) * pwx1_tmp + b4 * c3_tmp * pwz1_tmp) / (A3 * A3 + SQUARE(b4) + 2 * A3 * b4 * s3_tmp);
     double c2 = ((A3 + b4 * s3_tmp) * pwz1_tmp + b4 * c3_tmp * pwx1_tmp) / (A3*A3 + SQUARE(b4) + 2 * A3 * b4 * s3_tmp);
+    double s2 = (-(A3 + b4 * s3_tmp) * pwx1_tmp + b4 * c3_tmp * pwz1_tmp) / (A3 * A3 + SQUARE(b4) + 2 * A3 * b4 * s3_tmp);
     theta2 = atan2(s2, c2);
 
     //theta4, theta5 et theta6
@@ -583,13 +592,23 @@ void IRB4400::on_lancer_commande()
 
     QVector<double> thetas = mgi(px_wanted, py_wanted, pz_wanted, zx_wanted, zy_wanted, zz_wanted);
 
-    interface->horizontalSlider->setValue(thetas[0]);
-    interface->horizontalSlider_2->setValue(thetas[1]);
-    interface->horizontalSlider_3->setValue(thetas[2]);
-    interface->horizontalSlider_4->setValue(thetas[3]);
-    interface->horizontalSlider_5->setValue(thetas[4]);
-    interface->horizontalSlider_6->setValue(thetas[5]);
+    if(interface->radioButton_11->isChecked())
+    {
+        repeat(thetas[0], thetas[1], thetas[2], thetas[3], thetas[4], thetas[5], 50);
 
+    } else {      
+        if(interface->radioButton_21->isChecked())
+        {
+            repeat_from_current(thetas[0], thetas[1], thetas[2], thetas[3], thetas[4], thetas[5], 50);
+        } else {
+            interface->horizontalSlider->setValue(thetas[0]);
+            interface->horizontalSlider_2->setValue(thetas[1]);
+            interface->horizontalSlider_3->setValue(thetas[2]);
+            interface->horizontalSlider_4->setValue(thetas[3]);
+            interface->horizontalSlider_5->setValue(thetas[4]);
+            interface->horizontalSlider_6->setValue(thetas[5]);
+        }
+    }
 }
 
 void IRB4400::default_mgi()
