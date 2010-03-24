@@ -33,6 +33,7 @@ class IRB4400 : public QObject
     float a;
     float b;
     float c;
+    float old2;
 
 
 
