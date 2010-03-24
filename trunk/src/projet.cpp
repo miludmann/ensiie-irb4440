@@ -75,7 +75,6 @@ IRB4400::IRB4400(QWidget* parent) : QObject(parent)
   b = 0.122805578;
   c = 0.8161759675;
   old2 = 82;
-
 }
 
 IRB4400::~IRB4400()
@@ -363,15 +362,24 @@ void IRB4400::move_parallelogramme(int angle)
 
 void IRB4400::move_coude(int angle)
 {
-    coude_transform->rotation.setValue(SbVec3f(0, 1, 0), (angle-62)*M_PI/180);
-    bitoniot_arriere_transform->rotation.setValue(SbVec3f(0, 1, 0), (angle-62)*M_PI/180);
-    parallelogramme_arriere_transform->rotation.setValue(SbVec3f(0, 1, 0), -(angle-62)*M_PI/180);
+    float angle2 = interface->horizontalSlider_2->value();
 
-    if(!flag)
+    if ( angle+angle2 >= 62+82-20 )
     {
-        angle23 = angle + interface->horizontalSlider_2->value();
-    } else {
-        flag = false;
+        coude_transform->rotation.setValue(SbVec3f(0, 1, 0), (angle-62)*M_PI/180);
+        bitoniot_arriere_transform->rotation.setValue(SbVec3f(0, 1, 0), (angle-62)*M_PI/180);
+        parallelogramme_arriere_transform->rotation.setValue(SbVec3f(0, 1, 0), -(angle-62)*M_PI/180);
+
+        if(!flag)
+        {
+            angle23 = angle + interface->horizontalSlider_2->value();
+        } else {
+            flag = false;
+        }
+    }
+    else
+    {
+        interface->horizontalSlider_3->setValue(62+82-20-angle2);
     }
 }
 
