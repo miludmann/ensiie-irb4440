@@ -37,8 +37,6 @@ void Interface::languageChange()
     retranslateUi(this);
 }
 
-
-
 void Interface::on_reset_sliders_clicked()
 {
     horizontalSlider->setValue(165);
