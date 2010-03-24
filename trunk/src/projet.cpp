@@ -176,9 +176,9 @@ void IRB4400::center_scene()
   viewer->viewAll();
 }
 
-void IRB4400::toggle_headlight(int state)
+void IRB4400::toggle_headlight(int checked)
 {
-  if (state)
+  if (checked)
   {
     viewer->setHeadlight(true);
   }else{
@@ -186,16 +186,43 @@ void IRB4400::toggle_headlight(int state)
   }
 }
 
-void IRB4400::toggle_fil_de_fer(int state)
+void IRB4400::on_display_mode_activated(int choice)
 {
-  if (state)
-  {
-    viewer->setDrawStyle(SoQtViewer::INTERACTIVE, SoQtViewer::VIEW_LINE);
-    viewer->setDrawStyle(SoQtViewer::STILL, SoQtViewer::VIEW_LINE);
-  }else{
-    viewer->setDrawStyle(SoQtViewer::INTERACTIVE, SoQtViewer::VIEW_AS_IS);
-    viewer->setDrawStyle(SoQtViewer::STILL, SoQtViewer::VIEW_AS_IS);
-  }
+    switch (choice)
+    {
+    case 0 :
+        viewer->setDrawStyle(SoQtViewer::INTERACTIVE, SoQtViewer::VIEW_AS_IS);
+        viewer->setDrawStyle(SoQtViewer::STILL, SoQtViewer::VIEW_AS_IS);
+        break;
+    case 1:
+        viewer->setDrawStyle(SoQtViewer::INTERACTIVE, SoQtViewer::VIEW_LINE);
+        viewer->setDrawStyle(SoQtViewer::STILL, SoQtViewer::VIEW_LINE);
+        break;
+    case 2:
+        viewer->setDrawStyle(SoQtViewer::INTERACTIVE, SoQtViewer::VIEW_POINT);
+        viewer->setDrawStyle(SoQtViewer::STILL, SoQtViewer::VIEW_POINT);
+        break;
+    case 3:
+        viewer->setDrawStyle(SoQtViewer::INTERACTIVE, SoQtViewer::VIEW_BBOX);
+        viewer->setDrawStyle(SoQtViewer::STILL, SoQtViewer::VIEW_BBOX);
+        break;
+    case 4:
+        viewer->setDrawStyle(SoQtViewer::STILL, SoQtViewer::VIEW_AS_IS);
+        break;
+    }
+}
+
+
+void IRB4400::on_set3D_toggled(bool checked)
+{
+    if (checked)
+    {
+        viewer->setStereoType(SoQtViewer::STEREO_ANAGLYPH);
+
+    } else {
+        viewer->setStereoType(SoQtViewer::STEREO_NONE);
+    }
+
 }
 
 void IRB4400::toggle_rep0(int state)

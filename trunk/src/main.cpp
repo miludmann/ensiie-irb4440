@@ -291,8 +291,10 @@ int main(int argc, char** argv)
   root->mode = 0;
 
   root->center_scene();
+  root->viewer->setHeadlight(false);
 
-  interface->connect( interface->checkBox_2, SIGNAL( stateChanged(int) ), root, SLOT( toggle_fil_de_fer(int) ) );
+  interface->connect( interface->display_mode, SIGNAL(activated(int)), root, SLOT(on_display_mode_activated(int)));
+  interface->connect( interface->set3D, SIGNAL(toggled(bool)), root, SLOT( on_set3D_toggled(bool) ) );
   interface->connect( interface->pushButton, SIGNAL( clicked() ), root, SLOT( center_scene() ) );
   interface->connect( interface->light_proj, SIGNAL( stateChanged(int) ), root, SLOT(toggle_headlight(int) ) );
   interface->connect( interface->verticalSlider, SIGNAL( sliderMoved(int) ), root, SLOT( move_grille() ));

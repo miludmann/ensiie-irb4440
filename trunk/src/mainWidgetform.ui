@@ -134,7 +134,7 @@
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>360</y>
+      <y>340</y>
       <width>171</width>
       <height>23</height>
      </rect>
@@ -143,20 +143,7 @@
      <string>Projecteur de lumière</string>
     </property>
     <property name="checked">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QCheckBox" name="checkBox_2">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>390</y>
-      <width>93</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Fil de fer</string>
+     <bool>false</bool>
     </property>
    </widget>
    <widget class="Line" name="line_7">
@@ -311,6 +298,67 @@
     </property>
     <property name="text">
      <string>Tout cocher / décocher</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="display_mode">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>396</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Normal</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Fil de fer</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Points</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Bbox</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>3D</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label_25">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>400</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Affichage</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="set3D">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>370</y>
+      <width>181</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Vue 3D stéréoscopique</string>
     </property>
    </widget>
   </widget>

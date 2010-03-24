@@ -156,7 +156,8 @@ class IRB4400 : public QObject
       void reset_grille();
       void center_scene();
       void toggle_headlight(int state);
-      void toggle_fil_de_fer(int state);
+      void on_display_mode_activated(int choice);
+      void on_set3D_toggled(bool checked);
       void toggle_rep0(int state);
       void toggle_rep1(int state);
       void toggle_rep2(int state);
