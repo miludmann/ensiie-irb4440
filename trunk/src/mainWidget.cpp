@@ -34,3 +34,13 @@ void Interface::languageChange()
 }
 
 
+
+void Interface::on_reset_sliders_clicked()
+{
+    horizontalSlider->setValue(165);
+    horizontalSlider_2->setValue(82);
+    horizontalSlider_3->setValue(62);
+    horizontalSlider_4->setValue(200);
+    horizontalSlider_5->setValue(120);
+    horizontalSlider_6->setValue(400);
+}

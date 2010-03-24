@@ -18,6 +18,9 @@ public slots:
     //void reset_sliders();
 
 
+
+private slots:
+    void on_reset_sliders_clicked();
 };
 
 #endif // MAINWIDGET_H
