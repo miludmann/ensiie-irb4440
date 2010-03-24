@@ -278,9 +278,9 @@ int main(int argc, char** argv)
 }
 
   //C est ici qu on decide de faire rentrer l interface dans la fenetre principale ou non
-  interface = new Interface(myWidget);
+  interface = new Interface();
   interface->show();
-  interface->move(QPoint(700,0));
+  interface->move(QPoint(1040,0));
 
   app.setMainWidget(myWidget);
   myWidget->resize(1024,800);

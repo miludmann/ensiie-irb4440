@@ -429,12 +429,12 @@ QVector<double> IVLoader::mgi(double px, double py, double pz, double zx_nnorme,
 
 void IVLoader::on_lancer_commande()
 {
-    px_wanted = interface->doubleSpinBox->value();
-    py_wanted = interface->doubleSpinBox_2->value();
-    pz_wanted = interface->doubleSpinBox_3->value();
-    zx_wanted = interface->doubleSpinBox_4->value();
-    zy_wanted = interface->doubleSpinBox_5->value();
-    zz_wanted = interface->doubleSpinBox_6->value();
+    px_wanted = interface->spinX->value();
+    py_wanted = interface->spinY->value();
+    pz_wanted = interface->spinZ->value();
+    zx_wanted = interface->spinZx->value();
+    zy_wanted = interface->spinZy->value();
+    zz_wanted = interface->spinZz->value();
 
     QVector<double> thetas = mgi(px_wanted, py_wanted, pz_wanted, zx_wanted, zy_wanted, zz_wanted);
 
@@ -459,11 +459,11 @@ void IVLoader::on_lancer_commande()
 
 void IVLoader::default_mgi()
 {
-    interface->doubleSpinBox->setValue(1.22);
-    interface->doubleSpinBox_2->setValue(0.00);
-    interface->doubleSpinBox_3->setValue(1.75);
-    interface->doubleSpinBox_4->setValue(1.00);
-    interface->doubleSpinBox_5->setValue(0.00);
-    interface->doubleSpinBox_6->setValue(0.00);
+    interface->spinX->setValue(1.22);
+    interface->spinY->setValue(0.00);
+    interface->spinZ->setValue(1.75);
+    interface->spinZx->setValue(1.00);
+    interface->spinZy->setValue(0.00);
+    interface->spinZz->setValue(0.00);
 }
 
