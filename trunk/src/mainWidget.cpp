@@ -538,13 +538,13 @@ QVector<double> Interface::mgd(double q1_, double q2_, double q3_, double q4_, d
     //Application du modèle géométrique direct
 
     double q1 = (q1_-165) * M_PI / 180;
-    double q2 = (q2_-82) * M_PI / 180;
-    double q3 = (q3_-62) * M_PI / 180;
+    double q2 = -(q2_-82) * M_PI / 180;
+    double q3 = -(q3_-62) * M_PI / 180;
     double q4 = (q4_-200) * M_PI / 180;
-    double q5 = (q5_-120) * M_PI / 180;
+    double q5 = -(q5_-120) * M_PI / 180;
     double q6 = (q6_-400) * M_PI / 180;
 
-    q3 = q3 - q2;
+    //q3 = q3 - q2;
 
     double s1 = sin(q1);
     double c1 = cos(q1);
@@ -570,8 +570,8 @@ QVector<double> Interface::mgd(double q1_, double q2_, double q3_, double q4_, d
     double Yy = ((c1 * s4 + s1 * s23 * c4) * c5 + s1 *c23 * s5) * s6 + (s1 * s23 * s4 - c1 * c4) * c6;
     double Yz = (c23 * c4 * c5 - s23 * s5) * c6 - c23 * s4 * s6;
 
-    double Zx = (-c1 * s23 * c4 - c1 * s4) * s5 + c1 * c23 * c5;
-    double Zy = (-s1 * s23 * c4 + s1 * s4) * s5 + s1 * c23 * c5;
+    double Zx = (-c1 * s23 * c4 + s1 * s4) * s5 + c1 * c23 * c5;
+    double Zy = (-s1 * s23 * c4 - c1 * s4) * s5 + s1 * c23 * c5;
     double Zz = c23 * c4 * s5 + s23 * c5;
 
     double px = Zx * R6 + R4 * c1 * c23 - A4 * c1 * s23 - A3 * c1 * s2 + A2 * c1;
