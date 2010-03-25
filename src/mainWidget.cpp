@@ -382,6 +382,7 @@ QVector<double> Interface::mgi(double px, double py, double pz, double zx_nnorme
     double c6 = (-yz * c23 * s4 + xz * sqrt(SQUARE(xz) + SQUARE(yz) - SQUARE(c23) * SQUARE(s4))) / (SQUARE(xz) + SQUARE(yz));
     double s6 = (-xz * c23 * s4 + yz * sqrt(SQUARE(xz) + SQUARE(yz) - SQUARE(c23) * SQUARE(s4))) / (SQUARE(xz) + SQUARE(yz));
     double theta6 = atan2(s6, c6);
+
 */
 
     //theta1
@@ -543,8 +544,6 @@ QVector<double> Interface::mgd(double q1_, double q2_, double q3_, double q4_, d
     double q4 = (q4_-200) * M_PI / 180;
     double q5 = -(q5_-120) * M_PI / 180;
     double q6 = (q6_-400) * M_PI / 180;
-
-    //q3 = q3 - q2;
 
     double s1 = sin(q1);
     double c1 = cos(q1);
