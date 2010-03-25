@@ -127,7 +127,6 @@ class IVLoader : public QObject
     SoQtExaminerViewer* viewer;
     //SoQtRenderArea* viewer;
 
-
     int simulation_mode;
     bool gotoposition(double x, double y, double z);
 

@@ -41,8 +41,6 @@ protected slots:
 public slots:
     //void reset_sliders();
 
-
-
 private slots:
     void on_slider_poignet_2_valueChanged(int value);
     void on_slider_poignet_1_valueChanged(int value);
