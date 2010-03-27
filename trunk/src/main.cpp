@@ -332,7 +332,7 @@ int main(int argc, char** argv)
   myWidget->show();
 
   iv->viewer->viewAll();;
-  iv->viewer->setHeadlight(false);
+  iv->viewer->setHeadlight(true);
 
   SoQt::mainLoop();
   //delete(&robot.getViewer());
