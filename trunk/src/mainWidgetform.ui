@@ -1391,7 +1391,7 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>100</x>
       <y>180</y>
       <width>111</width>
       <height>27</height>
@@ -1404,14 +1404,67 @@
    <widget class="QPushButton" name="hanoi_button">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>220</y>
+      <x>150</x>
+      <y>260</y>
       <width>93</width>
-      <height>27</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
-     <string>Test</string>
+     <string>Au boulot !</string>
+    </property>
+   </widget>
+   <widget class="QSlider" name="hanoi_end">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>290</y>
+      <width>111</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>-1</number>
+    </property>
+    <property name="maximum">
+     <number>1</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>260</y>
+      <width>111</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Palette d'arrivée</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_26">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>20</y>
+      <width>221</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Comic Sans MS</family>
+      <pointsize>18</pointsize>
+      <italic>false</italic>
+      <underline>false</underline>
+     </font>
+    </property>
+    <property name="text">
+     <string>Les Tours de Hanoï</string>
     </property>
    </widget>
   </widget>

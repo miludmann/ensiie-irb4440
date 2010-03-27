@@ -6,7 +6,8 @@
 Separator { 
    DirectionalLight { direction 0 0 -1 }
    Separator {                 # Object Separator 
-
+   Material { emissiveColor 0.3 0.8 0.2 }
+   Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
