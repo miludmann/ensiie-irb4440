@@ -226,10 +226,14 @@ void Interface::on_set3D_toggled(bool checked)
 {
     if (checked)
     {
+        //Couleur de fond (la 3D ressort mieux sur le fond blanc)
+        iv->viewer->setBackgroundColor(SbColor(1, 1, 1));
         iv->viewer->setAnaglyphStereoColorMasks(left3D, right3D);
         iv->viewer->setStereoType(SoQtViewer::STEREO_ANAGLYPH);
 
     } else {
+        //Couleur de fond
+        iv->viewer->setBackgroundColor(SbColor(0, 0, 0));
         iv->viewer->setStereoType(SoQtViewer::STEREO_NONE);
     }
 }
@@ -740,6 +744,16 @@ void Interface::on_pushButton_clicked()
     hanoi3_slider->setValue(0);
 }
 
+void Interface::on_keyboard_mode_toggled(bool checked)
+{
+    if(checked)
+    {
+        iv->viewer->setViewing(false);
+    } else {
+        iv->viewer->setViewing(true);
+    }
+}
+
 void Interface::adjust_hanoi()
 {
     float h1 = hanoi1_slider->value();
@@ -778,3 +792,4 @@ void Interface::adjust_hanoi()
         }
     }
 }
+
