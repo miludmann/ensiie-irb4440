@@ -32,6 +32,25 @@ int main(int argc, char** argv)
 
   iv->socle = new SoSeparator;
 
+
+  //hanoi
+  iv->hanoi1_base = new SoSeparator;
+  iv->hanoi1_transform = new SoTransform;
+  iv->hanoi1_rotor = new SoRotation;
+  iv->hanoi1 = new SoSeparator;
+
+  iv->hanoi2_base = new SoSeparator;
+  iv->hanoi2_transform = new SoTransform;
+  iv->hanoi2_rotor = new SoRotation;
+  iv->hanoi2 = new SoSeparator;
+
+  iv->hanoi3_base = new SoSeparator;
+  iv->hanoi3_transform = new SoTransform;
+  iv->hanoi3_rotor = new SoRotation;
+  iv->hanoi3 = new SoSeparator;
+
+
+
   iv->grille_base = new SoSeparator;
   iv->grille_translation = new SoTranslation;
   iv->grille = new SoSeparator;
@@ -129,6 +148,37 @@ int main(int argc, char** argv)
     //matiere
     iv->matiere->diffuseColor.setValue(0.5, 0.7, 0.1);
     iv->separator->addChild(iv->matiere);
+
+
+    //hanoi
+    iv->hanoi1_base->ref();
+    iv->separator->addChild(iv->hanoi1_base);
+    iv->hanoi1_rotor->rotation.setValue(SbVec3f(1, 0, 0), M_PI/2);
+    iv->hanoi1_transform->recenter(SbVec3f(0, 0, 0.05));
+    iv->hanoi1_transform->translation.setValue(SbVec3f(1.5, 0, 0.05));
+    iv->hanoi1_base->addChild(iv->hanoi1_transform);
+    iv->hanoi1_base->addChild(iv->hanoi1_rotor);
+    iv->openMember("vrml/hanoi1.wrl", iv->hanoi1, iv->hanoi1_base);
+
+    iv->hanoi2_base->ref();
+    iv->separator->addChild(iv->hanoi2_base);
+    iv->hanoi2_rotor->rotation.setValue(SbVec3f(1, 0, 0), M_PI/2);
+    iv->hanoi2_transform->recenter(SbVec3f(0, 0, 0.05));
+    iv->hanoi2_transform->translation.setValue(SbVec3f(1.5, 0, 0.15));
+    iv->hanoi2_base->addChild(iv->hanoi2_transform);
+    iv->hanoi2_base->addChild(iv->hanoi2_rotor);
+    iv->openMember("vrml/hanoi2.wrl", iv->hanoi2, iv->hanoi2_base);
+
+    iv->hanoi3_base->ref();
+    iv->separator->addChild(iv->hanoi3_base);
+    iv->hanoi3_rotor->rotation.setValue(SbVec3f(1, 0, 0), M_PI/2);
+    iv->hanoi3_transform->recenter(SbVec3f(0, 0, 0.05));
+    iv->hanoi3_transform->translation.setValue(SbVec3f(1.5, 0, 0.25));
+    iv->hanoi3_base->addChild(iv->hanoi3_transform);
+    iv->hanoi3_base->addChild(iv->hanoi3_rotor);
+    iv->openMember("vrml/hanoi3.wrl", iv->hanoi3, iv->hanoi3_base);
+
+
 
     //grille
     iv->grille_base->ref();
