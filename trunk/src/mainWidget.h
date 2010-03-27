@@ -85,6 +85,7 @@ private slots:
     QVector<double> mgi(double x, double y, double z, double a, double b, double c);
     QVector<double> mgd(double q1, double q2, double q3, double q4, double q5, double q6);
     void mgd_sliders();
+    void adjust_hanoi();
 };
 
 #endif // MAINWIDGET_H
