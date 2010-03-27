@@ -359,6 +359,89 @@ void KeyboardCBFunction(void *userData, SoEventCallback *eventCB)
  printf("in Keyboard CB function...");
 
  const SoEvent *event = eventCB->getEvent();
+ float tmp;
+
+ if (SO_KEY_PRESS_EVENT(event, A))
+ {
+     tmp = interface->sliderX->value();
+     interface->sliderX->setValue(tmp+20);
+     interface->on_sliderX_valueChanged(tmp+20);
+ }
+ if (SO_KEY_PRESS_EVENT(event, Z))
+ {
+     tmp = interface->sliderX->value();
+     interface->sliderX->setValue(tmp-20);
+     interface->on_sliderX_valueChanged(tmp-20);
+ }
+
+ if (SO_KEY_PRESS_EVENT(event, E))
+ {
+     tmp = interface->sliderY->value();
+     interface->sliderY->setValue(tmp+20);
+     interface->on_sliderY_valueChanged(tmp+20);
+ }
+ if (SO_KEY_PRESS_EVENT(event, R))
+ {
+     tmp = interface->sliderY->value();
+     interface->sliderY->setValue(tmp-20);
+     interface->on_sliderY_valueChanged(tmp-20);
+ }
+
+ if (SO_KEY_PRESS_EVENT(event, T))
+ {
+     tmp = interface->sliderZ->value();
+     interface->sliderZ->setValue(tmp+20);
+     interface->on_sliderZ_valueChanged(tmp+20);
+ }
+ if (SO_KEY_PRESS_EVENT(event, Y))
+ {
+     tmp = interface->sliderZ->value();
+     interface->sliderZ->setValue(tmp-20);
+     interface->on_sliderZ_valueChanged(tmp-20);
+ }
+
+ if (SO_KEY_PRESS_EVENT(event, Q))
+ {
+     tmp = interface->sliderZx->value();
+     interface->sliderZx->setValue(tmp+5);
+     interface->on_sliderZx_valueChanged(tmp+5);
+ }
+ if (SO_KEY_PRESS_EVENT(event, S))
+ {
+     tmp = interface->sliderZx->value();
+     interface->sliderZx->setValue(tmp-5);
+     interface->on_sliderZx_valueChanged(tmp-5);
+ }
+
+ if (SO_KEY_PRESS_EVENT(event, D))
+ {
+     tmp = interface->sliderZy->value();
+     interface->sliderZy->setValue(tmp+5);
+     interface->on_sliderZy_valueChanged(tmp+5);
+ }
+ if (SO_KEY_PRESS_EVENT(event, F))
+ {
+     tmp = interface->sliderZy->value();
+     interface->sliderZy->setValue(tmp-5);
+     interface->on_sliderZy_valueChanged(tmp-5);
+ }
+ if (SO_KEY_PRESS_EVENT(event, G))
+ {
+     tmp = interface->sliderZz->value();
+     interface->sliderZz->setValue(tmp+5);
+     interface->on_sliderZz_valueChanged(tmp+5);
+ }
+ if (SO_KEY_PRESS_EVENT(event, H))
+ {
+     tmp = interface->sliderZz->value();
+     interface->sliderZz->setValue(tmp-5);
+     interface->on_sliderZz_valueChanged(tmp-5);
+ }
+
+
+
+
+
 
  if (SO_KEY_PRESS_EVENT(event, PAD_1)) {
    fprintf(stderr, "pressed 'PAD_1' key ");
