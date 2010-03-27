@@ -38,19 +38,15 @@ class IVLoader : public QObject
     //hanoi
       SoSeparator *hanoi1_base;
       SoTransform *hanoi1_transform;
-      SoRotation *hanoi1_rotor;
       SoSeparator *hanoi1;
 
       SoSeparator *hanoi2_base;
       SoTransform *hanoi2_transform;
-      SoRotation *hanoi2_rotor;
       SoSeparator *hanoi2;
 
       SoSeparator *hanoi3_base;
       SoTransform *hanoi3_transform;
-      SoRotation *hanoi3_rotor;
       SoSeparator *hanoi3;
-
 
     //socle
     SoSeparator *socle;
