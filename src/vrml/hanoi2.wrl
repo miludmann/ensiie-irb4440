@@ -1,0 +1,18 @@
+#VRML V2.0 utf8 
+#Description d'un cylindre 
+
+
+Shape { 
+	geometry Cylinder { 
+		height 0.1
+		radius 0.2
+		top TRUE 
+		side TRUE 
+		bottom TRUE 
+	} 
+	appearance Appearance { 
+		material Material { 
+			diffuseColor 1 0 0 
+		} 
+	} 
+} 
