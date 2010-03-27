@@ -793,3 +793,18 @@ void Interface::adjust_hanoi()
     }
 }
 
+void Interface::on_hanoi_button_clicked()
+{
+    QVector<double> angles(6);
+    angles = mgi(1, 0, 0.3, 0, 0, -1);
+    repeat_from_current(angles[0], angles[1], angles[2], angles[3], angles[4], angles[5], 30);
+
+    iv->separator->removeChild(iv->hanoi3_base);
+
+    iv->hanoi3_base->ref();
+    iv->poignet_2_base->addChild(iv->hanoi3_base);
+    iv->hanoi3_transform->translation = SbVec3f(1.27, 0, 1.720);
+    iv->hanoi3_transform->rotation.setValue(SbVec3f(0, 0, 1), M_PI/2);
+    iv->hanoi3_base->addChild(iv->hanoi3_transform);
+
+}

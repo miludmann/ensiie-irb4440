@@ -22,7 +22,10 @@ OTHER_FILES += vrml/sortie_cylindre.wrl \
     vrml/coude.wrl \
     vrml/bitoniot_arriere.wrl \
     vrml/base_mobile.wrl \
-    vrml/avant_bras.wrl
+    vrml/avant_bras.wrl \
+    vrml/hanoi1.wrl \
+    vrml/hanoi2.wrl \
+    vrml/hanoi3.wrl
 
 # The following line was changed from FORMS to FORMS3 by qt3to4
 INCLUDEPATH += $$system(soqt-config --includedir)
