@@ -718,16 +718,19 @@ void Interface::on_slider_poignet_2_valueChanged(int angle)
 void Interface::on_hanoi1_slider_valueChanged(int value)
 {
     iv->hanoi1_transform->translation.setValue(SbVec3f(1, value*0.8, 0.05));
+    adjust_hanoi();
 }
 
 void Interface::on_hanoi2_slider_valueChanged(int value)
 {
     iv->hanoi2_transform->translation.setValue(SbVec3f(1, value*0.8, 0.15));
+    adjust_hanoi();
 }
 
 void Interface::on_hanoi3_slider_valueChanged(int value)
 {
     iv->hanoi3_transform->translation.setValue(SbVec3f(1, value*0.8, 0.25));
+    adjust_hanoi();
 }
 
 void Interface::on_pushButton_clicked()
@@ -735,4 +738,43 @@ void Interface::on_pushButton_clicked()
     hanoi1_slider->setValue(0);
     hanoi2_slider->setValue(0);
     hanoi3_slider->setValue(0);
+}
+
+void Interface::adjust_hanoi()
+{
+    float h1 = hanoi1_slider->value();
+    float h2 = hanoi2_slider->value();
+    float h3 = hanoi3_slider->value();
+
+    if ( h2 == h1 )
+    {
+        iv->hanoi2_transform->translation.setValue(SbVec3f(1, h2*0.8, 0.15));
+    }
+    else
+    {
+        iv->hanoi2_transform->translation.setValue(SbVec3f(1, h2*0.8, 0.05));
+    }
+
+    if ( h3 == h1 )
+    {
+        if( h3 == h2 )
+        {
+            iv->hanoi3_transform->translation.setValue(SbVec3f(1, h3*0.8, 0.25));
+        }
+        else
+        {
+            iv->hanoi3_transform->translation.setValue(SbVec3f(1, h3*0.8, 0.15));
+        }
+    }
+    else
+    {
+        if( h3 == h2 )
+        {
+            iv->hanoi3_transform->translation.setValue(SbVec3f(1, h3*0.8, 0.15));
+        }
+        else
+        {
+            iv->hanoi3_transform->translation.setValue(SbVec3f(1, h3*0.8, 0.05));
+        }
+    }
 }
