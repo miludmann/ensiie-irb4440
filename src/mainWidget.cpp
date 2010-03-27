@@ -714,3 +714,25 @@ void Interface::on_slider_poignet_2_valueChanged(int angle)
     iv->poignet_2_transform->rotation.setValue(SbVec3f(1, 0, 0), (angle-400)*M_PI/180);
     mgd_sliders();
 }
+
+void Interface::on_hanoi1_slider_valueChanged(int value)
+{
+    iv->hanoi1_transform->translation.setValue(SbVec3f(1, value*0.8, 0.05));
+}
+
+void Interface::on_hanoi2_slider_valueChanged(int value)
+{
+    iv->hanoi2_transform->translation.setValue(SbVec3f(1, value*0.8, 0.15));
+}
+
+void Interface::on_hanoi3_slider_valueChanged(int value)
+{
+    iv->hanoi3_transform->translation.setValue(SbVec3f(1, value*0.8, 0.25));
+}
+
+void Interface::on_pushButton_clicked()
+{
+    hanoi1_slider->setValue(0);
+    hanoi2_slider->setValue(0);
+    hanoi3_slider->setValue(0);
+}
