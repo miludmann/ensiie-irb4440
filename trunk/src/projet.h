@@ -66,6 +66,7 @@ class IVLoader : public QObject
     SoTransform *base_mobile_transform;
     SoSeparator *base_mobile_base;
     SoSeparator *base_mobile;
+    SoMaterial  *base_mobile_mat;
     //parallelogramme_avant
     SoTransform *parallelogramme_avant_transform;
     SoSeparator *parallelogramme_avant_base;
@@ -143,7 +144,6 @@ class IVLoader : public QObject
     SoRotation *repere_r6_rotor2;
     SoSeparator *repere_r6;
 
-    //Gestion des events
     SoEventCallback *eventCBNode;
 
     SoQtExaminerViewer* viewer;

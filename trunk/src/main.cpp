@@ -19,6 +19,11 @@
 IVLoader *iv;
 Interface *interface;
 
+int axis;
+int oldValue;
+
+void KeyboardCBFunction(void *userData, SoEventCallback *eventCB);
+
 int main(int argc, char** argv)
 {
   // Création d'une application Qt
@@ -58,6 +63,7 @@ int main(int argc, char** argv)
   iv->base_mobile = new SoSeparator;
   iv->base_mobile_transform = new SoTransform;
   iv->base_mobile_base = new SoSeparator;
+  iv->base_mobile_mat = new SoMaterial;
 
   iv->parallelogramme_avant = new SoSeparator;
   iv->parallelogramme_avant_transform = new SoTransform;
@@ -134,19 +140,23 @@ int main(int argc, char** argv)
   iv->repere_r6_rotor2 = new SoRotation;
   iv->repere_r6 = new SoSeparator;
 
+  //Gestion des events
   iv->eventCBNode = new SoEventCallback;
 
   if (argc > 1) {
     iv->openFile(QString(argv[1]));
   }
   else {
+    // register specific keyboard and mouse callbacks
+    iv->eventCBNode->addEventCallback(SoKeyboardEvent::getClassTypeId(),
+                  KeyboardCBFunction, NULL);
     //Events
-    //iv->separator->addChild(eventCBNode);
+    iv->separator->addChild(iv->eventCBNode);
 
     //Eclairage
     iv->separator->addChild(new SoDirectionalLight);
     //matiere
-    iv->matiere->diffuseColor.setValue(0.5, 0.7, 0.1);
+    iv->matiere->diffuseColor.setValue(0.4, 0.3, 1);
     iv->separator->addChild(iv->matiere);
 
 
@@ -178,8 +188,6 @@ int main(int argc, char** argv)
     iv->hanoi3_base->addChild(iv->hanoi3_rotor);
     iv->openMember("vrml/hanoi3.wrl", iv->hanoi3, iv->hanoi3_base);
 
-
-
     //grille
     iv->grille_base->ref();
     iv->separator->addChild(iv->grille_base);
@@ -199,6 +207,8 @@ int main(int argc, char** argv)
     iv->base_mobile_transform->translation = SbVec3f(0, 0, 0);
     iv->base_mobile_transform->rotation.setValue(SbVec3f(0, 0, 1), 0);
     iv->base_mobile_base->addChild(iv->base_mobile_transform);
+    iv->base_mobile_mat->emissiveColor.setValue(0.890196, 0.411765, 0.125490);
+    iv->base_mobile_base->addChild(iv->base_mobile_mat);
     iv->openMember("vrml/base_mobile.wrl", iv->base_mobile, iv->base_mobile_base);
     //repere_r1
     iv->repere_r1_base->ref();
@@ -331,12 +341,54 @@ int main(int argc, char** argv)
   myWidget->move(QPoint(0,0));
   myWidget->show();
 
+  iv->viewer->setViewing(false);
   iv->viewer->viewAll();;
   iv->viewer->setHeadlight(true);
+  //Couleur de fond
+  iv->viewer->setBackgroundColor(SbColor(0, 0, 0));
 
   SoQt::mainLoop();
   //delete(&robot.getViewer());
   delete iv->viewer;
 
   return 0;
+}
+
+void KeyboardCBFunction(void *userData, SoEventCallback *eventCB)
+{
+ printf("in Keyboard CB function...");
+
+ const SoEvent *event = eventCB->getEvent();
+
+ if (SO_KEY_PRESS_EVENT(event, PAD_1)) {
+   fprintf(stderr, "pressed 'PAD_1' key ");
+   axis = 1;
+   iv->base_mobile_mat->emissiveColor.setValue(0, 0, 1);
+   if (event->wasShiftDown()) {
+      printf("(with Shift key DOWN)\n");
+   } else {
+      printf("(with Shift key UP)\n");
+  }
+ }
+ else if (SO_KEY_PRESS_EVENT(event, RIGHT_ARROW)) {
+   printf("pressed 'RIGHT_ARROW' key\n");
+   switch(axis)
+   {
+   case 1 : oldValue = interface->slider_base_mobile->value();
+            interface->slider_base_mobile->setValue(oldValue+1);
+            interface->on_slider_base_mobile_valueChanged(oldValue+1);
+   }
+ }
+ else if (SO_KEY_PRESS_EVENT(event, LEFT_ARROW)) {
+   printf("pressed 'RIGHT_ARROW' key\n");
+   switch(axis)
+   {
+   case 1 : oldValue = interface->slider_base_mobile->value();
+            interface->slider_base_mobile->setValue(oldValue-1);
+            interface->on_slider_base_mobile_valueChanged(oldValue-1);
+   }
+ }
+ else {
+  printf("pressed un-handled key\n");
+ }
 }

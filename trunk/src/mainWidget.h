@@ -42,9 +42,7 @@ protected slots:
     virtual void languageChange();
 
 public slots:
-    //void reset_sliders();
-
-private slots:
+    void on_keyboard_mode_toggled(bool checked);
     void on_pushButton_clicked();
     void on_hanoi3_slider_valueChanged(int value);
     void on_hanoi2_slider_valueChanged(int value);

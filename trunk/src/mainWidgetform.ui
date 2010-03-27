@@ -30,7 +30,7 @@
    <enum>QTabWidget::Rounded</enum>
   </property>
   <property name="currentIndex">
-   <number>3</number>
+   <number>0</number>
   </property>
   <property name="elideMode">
    <enum>Qt::ElideNone</enum>
@@ -65,7 +65,7 @@
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>30</y>
+      <y>10</y>
       <width>159</width>
       <height>28</height>
      </rect>
@@ -372,6 +372,22 @@
     </property>
     <property name="text">
      <string>Vue 3D stéréoscopique</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="keyboard_mode">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>60</y>
+      <width>171</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Commandes clavier</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>
