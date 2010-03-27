@@ -795,16 +795,186 @@ void Interface::adjust_hanoi()
 
 void Interface::on_hanoi_button_clicked()
 {
+    float h1 = hanoi1_slider->value();
+    float h2 = hanoi2_slider->value();
+    float h3 = hanoi3_slider->value();
+
+    if( h1 == h2 )
+    {
+        if( h3 != h2 )
+        {
+            move_hanoi(3, h3, h2);
+        }
+    }
+    else
+    {
+        if ( h3 == h2 )
+        {
+            move_hanoi(3, h3, -h3-h1);
+            move_hanoi(2, h2, h1);
+            move_hanoi(3, -h3-h1, h1);
+        }
+        else
+        {
+            if ( h3 == h1 )
+            {
+                move_hanoi(3, h3, -h3-h2);
+                move_hanoi(2, h2, h1);
+                move_hanoi(3, -h3-h2, h1);
+            }
+            else
+            {
+                move_hanoi(2, h2, h1);
+                move_hanoi(3, h3, h1);
+            }
+        }
+    }
+
+    solve_hanoi();
+}
+
+
+void Interface::move_hanoi(int piece, int from, int to)
+{
     QVector<double> angles(6);
-    angles = mgi(1, 0, 0.3, 0, 0, -1);
-    repeat_from_current(angles[0], angles[1], angles[2], angles[3], angles[4], angles[5], 30);
 
-    iv->separator->removeChild(iv->hanoi3_base);
+    float h1 = hanoi1_slider->value();
+    float h2 = hanoi2_slider->value();
+    float h3 = hanoi3_slider->value();
 
-    iv->hanoi3_base->ref();
-    iv->poignet_2_base->addChild(iv->hanoi3_base);
-    iv->hanoi3_transform->translation = SbVec3f(1.27, 0, 1.720);
-    iv->hanoi3_transform->rotation.setValue(SbVec3f(0, 0, 1), M_PI/2);
-    iv->hanoi3_base->addChild(iv->hanoi3_transform);
+    int tmp = 1;
+    int tmp2 = 1;
 
+    switch( piece )
+    {
+    case 3:
+        {
+            if( h1 == from )
+                tmp++;
+
+            if( h2 == from )
+                    tmp++;
+
+            if( h1 == to )
+                tmp2++;
+
+            if( h2 == to )
+                tmp2++;
+
+
+            angles = mgi(1, from*0.8, tmp*0.1, 0, 0, -1);
+            repeat_from_current(angles[0], angles[1], angles[2], angles[3], angles[4], angles[5], 30);
+
+            iv->separator->removeChild(iv->hanoi3_base);
+            iv->hanoi3_base->ref();
+            iv->poignet_2_base->addChild(iv->hanoi3_base);
+            iv->hanoi3_transform->translation = SbVec3f(1.27, 0, 1.720);
+            iv->hanoi3_transform->rotation.setValue(SbVec3f(0, 0, 1), M_PI/2);
+
+            angles = mgi(1, from*0.8, 1, 0, 0, -1);
+            repeat_from_current(angles[0], angles[1], angles[2], angles[3], angles[4], angles[5], 30);
+
+            angles = mgi(1, to*0.8, 0.1*tmp2, 0, 0, -1);
+            repeat_from_current(angles[0], angles[1], angles[2], angles[3], angles[4], angles[5], 30);
+
+            iv->hanoi3_transform->translation = SbVec3f(1, to*0.8, 0.1*tmp2-0.05);
+            iv->hanoi3_transform->rotation.setValue(SbVec3f(1, 0, 0), M_PI/2);
+            iv->poignet_2_base->removeChild(iv->hanoi3_base);
+            iv->hanoi3_base->ref();
+            iv->separator->addChild(iv->hanoi3_base);
+
+            hanoi3_slider->setValue(to);
+
+            angles = mgi(1, to*0.8, 1, 0, 0, -1);
+            repeat_from_current(angles[0], angles[1], angles[2], angles[3], angles[4], angles[5], 30);
+
+            break;
+        }
+    case 2:
+        {
+            if( h1 == from )
+                tmp++;
+
+            if( h1 == to )
+                tmp2++;
+
+            angles = mgi(1, from*0.8, tmp*0.1, 0, 0, -1);
+            repeat_from_current(angles[0], angles[1], angles[2], angles[3], angles[4], angles[5], 30);
+
+            iv->separator->removeChild(iv->hanoi2_base);
+            iv->hanoi2_base->ref();
+            iv->poignet_2_base->addChild(iv->hanoi2_base);
+            iv->hanoi2_transform->translation = SbVec3f(1.27, 0, 1.720);
+            iv->hanoi2_transform->rotation.setValue(SbVec3f(0, 0, 1), M_PI/2);
+
+            angles = mgi(1, from*0.8, 1, 0, 0, -1);
+            repeat_from_current(angles[0], angles[1], angles[2], angles[3], angles[4], angles[5], 30);
+
+            angles = mgi(1, to*0.8, 0.1*tmp2, 0, 0, -1);
+            repeat_from_current(angles[0], angles[1], angles[2], angles[3], angles[4], angles[5], 30);
+
+            iv->hanoi2_transform->translation = SbVec3f(1, to*0.8, 0.1*tmp2-0.05);
+            iv->hanoi2_transform->rotation.setValue(SbVec3f(1, 0, 0), M_PI/2);
+            iv->poignet_2_base->removeChild(iv->hanoi2_base);
+            iv->hanoi2_base->ref();
+            iv->separator->addChild(iv->hanoi2_base);
+
+            hanoi2_slider->setValue(to);
+
+            angles = mgi(1, to*0.8, 1, 0, 0, -1);
+            repeat_from_current(angles[0], angles[1], angles[2], angles[3], angles[4], angles[5], 30);
+
+            break;
+        }
+    case 1:
+        {
+            angles = mgi(1, from*0.8, tmp*0.1, 0, 0, -1);
+            repeat_from_current(angles[0], angles[1], angles[2], angles[3], angles[4], angles[5], 30);
+
+            iv->separator->removeChild(iv->hanoi1_base);
+            iv->hanoi1_base->ref();
+            iv->poignet_2_base->addChild(iv->hanoi1_base);
+            iv->hanoi1_transform->translation = SbVec3f(1.27, 0, 1.720);
+            iv->hanoi1_transform->rotation.setValue(SbVec3f(0, 0, 1), M_PI/2);
+
+            angles = mgi(1, from*0.8, 1, 0, 0, -1);
+            repeat_from_current(angles[0], angles[1], angles[2], angles[3], angles[4], angles[5], 30);
+
+            angles = mgi(1, to*0.8, 0.1*tmp2, 0, 0, -1);
+            repeat_from_current(angles[0], angles[1], angles[2], angles[3], angles[4], angles[5], 30);
+
+            iv->hanoi1_transform->translation = SbVec3f(1, to*0.8, 0.1*tmp2-0.05);
+            iv->hanoi1_transform->rotation.setValue(SbVec3f(1, 0, 0), M_PI/2);
+            iv->poignet_2_base->removeChild(iv->hanoi1_base);
+            iv->hanoi1_base->ref();
+            iv->separator->addChild(iv->hanoi1_base);
+
+            hanoi1_slider->setValue(to);
+
+            angles = mgi(1, to*0.8, 1, 0, 0, -1);
+            repeat_from_current(angles[0], angles[1], angles[2], angles[3], angles[4], angles[5], 30);
+
+            break;
+        }
+    }
+    millisleep(20);
+}
+
+void Interface::solve_hanoi()
+{
+   float h1 = hanoi1_slider->value();
+    float h2 = hanoi2_slider->value();
+    float h3 = hanoi3_slider->value();
+    float hf = hanoi_end->value();
+
+    if ( hf != h1 )
+    {
+        move_hanoi(3, h1, hf);
+        move_hanoi(2, h1, -h1-hf);
+        move_hanoi(3, hf, -h1-hf);
+        move_hanoi(1, h1, hf);
+        move_hanoi(3, -h1-hf, h1);
+        move_hanoi(2, -h1-hf, hf);
+        move_hanoi(3, h1, hf);
+    }
 }

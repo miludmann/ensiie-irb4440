@@ -84,6 +84,8 @@ public slots:
     QVector<double> mgd(double q1, double q2, double q3, double q4, double q5, double q6);
     void mgd_sliders();
     void adjust_hanoi();
+    void move_hanoi(int piece, int from, int to);
+    void solve_hanoi();
 
 private slots:
     void on_hanoi_button_clicked();

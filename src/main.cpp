@@ -153,22 +153,22 @@ int main(int argc, char** argv)
     //Eclairage
     iv->separator->addChild(new SoDirectionalLight);
     //matiere
-    iv->matiere->diffuseColor.setValue(0.4, 0.3, 1);
+    iv->matiere->diffuseColor.setValue(0.890196, 0.411765, 0.125490 );
     iv->separator->addChild(iv->matiere);
 
 
     //hanoi
     iv->hanoi1_base->ref();
     iv->separator->addChild(iv->hanoi1_base);
-    iv->hanoi1_transform->rotation.setValue(SbVec3f(1, 0, 0), M_PI/2);
     iv->hanoi1_transform->translation.setValue(SbVec3f(1, 0, 0.05));
+    iv->hanoi1_transform->rotation.setValue(SbVec3f(1, 0, 0), M_PI/2);
     iv->hanoi1_base->addChild(iv->hanoi1_transform);
     iv->openMember("vrml/hanoi1.wrl", iv->hanoi1, iv->hanoi1_base);
 
     iv->hanoi2_base->ref();
     iv->separator->addChild(iv->hanoi2_base);
-    iv->hanoi2_transform->rotation.setValue(SbVec3f(1, 0, 0), M_PI/2);
     iv->hanoi2_transform->translation.setValue(SbVec3f(1, 0, 0.15));
+    iv->hanoi2_transform->rotation.setValue(SbVec3f(1, 0, 0), M_PI/2);
     iv->hanoi2_base->addChild(iv->hanoi2_transform);
     iv->openMember("vrml/hanoi2.wrl", iv->hanoi2, iv->hanoi2_base);
 
@@ -177,8 +177,6 @@ int main(int argc, char** argv)
     iv->hanoi3_transform->translation.setValue(SbVec3f(1, 0, 0.25));
     iv->hanoi3_transform->rotation.setValue(SbVec3f(1, 0, 0), M_PI/2);
     iv->hanoi3_base->addChild(iv->hanoi3_transform);
-
-    //iv->hanoi3_base->addChild(iv->hanoi3_rotor);
     iv->openMember("vrml/hanoi3.wrl", iv->hanoi3, iv->hanoi3_base);
 
     //grille
