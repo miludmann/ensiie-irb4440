@@ -3,6 +3,7 @@
 
 #include <qvariant.h>
 #include <math.h>
+#include <Inventor/SbBasic.h>
 
 #define SQUARE(x) ((x)*(x))
 #define A2 0.200
@@ -36,6 +37,14 @@ Interface::Interface(QWidget* parent, const char* name, Qt::WindowFlags fl)
     b = 0.122805578;
     c = 0.8161759675;
     old2 = 82;
+
+    left3D[0] = true;
+    left3D[1] = false;
+    left3D[2] = false;
+    right3D[0] = false;
+    right3D[1] = true;
+    right3D[2] = true;
+
 }
 
 /*
@@ -217,6 +226,7 @@ void Interface::on_set3D_toggled(bool checked)
 {
     if (checked)
     {
+        iv->viewer->setAnaglyphStereoColorMasks(left3D, right3D);
         iv->viewer->setStereoType(SoQtViewer::STEREO_ANAGLYPH);
 
     } else {

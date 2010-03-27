@@ -35,6 +35,9 @@ public:
     float a, b, c;
     float old2;
 
+    SbBool left3D[3];
+    SbBool right3D[3];
+
 protected slots:
     virtual void languageChange();
 
