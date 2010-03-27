@@ -5,17 +5,13 @@
 
 #include <qapplication.h>
 #include <q3mainwindow.h>
-#include <qmenubar.h>
-#include <q3popupmenu.h>
 #include <qvariant.h>
-#include <qpoint.h>
-#include <qdialog.h>
-#include <qlcdnumber.h>
-#include <qpushbutton.h>
-#include <qradiobutton.h>
-#include <qlineedit.h>
-#include <qcheckbox.h>
-#include <qslider.h>
+
+#include <Inventor/nodes/SoEventCallback.h>
+#include <Inventor/events/SoKeyboardEvent.h>
+#include <Inventor/events/SoMouseButtonEvent.h>
+#include <Inventor/events/SoLocation2Event.h>
+#include <Inventor/events/SoEvent.h>
 
 #include <math.h>
 #define M_PI 3.14159265358979323846
@@ -35,11 +31,7 @@ int main(int argc, char** argv)
   iv->matiere = new SoMaterial;
 
   iv->socle = new SoSeparator;
-/*
-  iv->objet_base = new SoSeparator;
-  iv->objet_translation = new SoTranslation;
-  iv->objet = new SoSeparator;
-*/
+
   iv->grille_base = new SoSeparator;
   iv->grille_translation = new SoTranslation;
   iv->grille = new SoSeparator;
@@ -123,14 +115,16 @@ int main(int argc, char** argv)
   iv->repere_r6_rotor2 = new SoRotation;
   iv->repere_r6 = new SoSeparator;
 
+  iv->eventCBNode = new SoEventCallback;
+
   if (argc > 1) {
     iv->openFile(QString(argv[1]));
   }
   else {
-    //camera
-    //SoPerspectiveCamera *myCamera = new SoPerspectiveCamera;
-    //iv->separator->addChild(myCamera);
-    //lighting
+    //Events
+    //iv->separator->addChild(eventCBNode);
+
+    //Eclairage
     iv->separator->addChild(new SoDirectionalLight);
     //matiere
     iv->matiere->diffuseColor.setValue(0.5, 0.7, 0.1);
@@ -292,5 +286,7 @@ int main(int argc, char** argv)
 
   SoQt::mainLoop();
   //delete(&robot.getViewer());
+  delete iv->viewer;
+
   return 0;
 }

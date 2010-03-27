@@ -9,6 +9,8 @@
 #include <Inventor/nodes/SoDirectionalLight.h>
 #include <Inventor/nodes/SoPerspectiveCamera.h>
 
+#include <Inventor/nodes/SoEventCallback.h>
+
 #include <Inventor/Qt/viewers/SoQtExaminerViewer.h>
 
 #include <qobject.h>
@@ -123,6 +125,9 @@ class IVLoader : public QObject
     SoRotation *repere_r6_rotor;
     SoRotation *repere_r6_rotor2;
     SoSeparator *repere_r6;
+
+    //Gestion des events
+    SoEventCallback *eventCBNode;
 
     SoQtExaminerViewer* viewer;
     //SoQtRenderArea* viewer;
