@@ -30,7 +30,7 @@
    <enum>QTabWidget::Rounded</enum>
   </property>
   <property name="currentIndex">
-   <number>3</number>
+   <number>0</number>
   </property>
   <property name="elideMode">
    <enum>Qt::ElideNone</enum>
@@ -161,7 +161,7 @@
      <string>Projecteur de lumière</string>
     </property>
     <property name="checked">
-     <bool>false</bool>
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="Line" name="line_7">
