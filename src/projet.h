@@ -48,6 +48,18 @@ class IVLoader : public QObject
       SoTransform *hanoi3_transform;
       SoSeparator *hanoi3;
 
+      SoSeparator *palette1_base;
+      SoTransform *palette1_transform;
+      SoSeparator *palette1;
+
+      SoSeparator *palette2_base;
+      SoTransform *palette2_transform;
+      SoSeparator *palette2;
+
+      SoSeparator *palette3_base;
+      SoTransform *palette3_transform;
+      SoSeparator *palette3;
+
     //socle
     SoSeparator *socle;
     //objet
