@@ -840,7 +840,6 @@ void Interface::move_hanoi(int piece, int from, int to)
 
     float h1 = hanoi1_slider->value();
     float h2 = hanoi2_slider->value();
-    float h3 = hanoi3_slider->value();
 
     int tmp = 1;
     int tmp2 = 1;
@@ -963,8 +962,7 @@ void Interface::move_hanoi(int piece, int from, int to)
 void Interface::solve_hanoi()
 {
    float h1 = hanoi1_slider->value();
-    float h2 = hanoi2_slider->value();
-    float h3 = hanoi3_slider->value();
+
     float hf = hanoi_end->value();
 
     if ( hf != h1 )
