@@ -88,6 +88,7 @@ public slots:
     void solve_hanoi();
 
 private slots:
+    void on_keyboard_mode_stateChanged(int );
     void on_hanoi_button_clicked();
 };
 

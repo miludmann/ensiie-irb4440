@@ -52,7 +52,17 @@ int main(int argc, char** argv)
   iv->hanoi3_transform = new SoTransform;
   iv->hanoi3 = new SoSeparator;
 
+  iv->palette1_base = new SoSeparator;
+  iv->palette1_transform = new SoTransform;
+  iv->palette1 = new SoSeparator;
 
+  iv->palette2_base = new SoSeparator;
+  iv->palette2_transform = new SoTransform;
+  iv->palette2 = new SoSeparator;
+
+  iv->palette3_base = new SoSeparator;
+  iv->palette3_transform = new SoTransform;
+  iv->palette3 = new SoSeparator;
 
   iv->grille_base = new SoSeparator;
   iv->grille_translation = new SoTranslation;
@@ -188,6 +198,24 @@ int main(int argc, char** argv)
     iv->hanoi3_transform->rotation.setValue(SbVec3f(1, 0, 0), M_PI/2);
     iv->hanoi3_base->addChild(iv->hanoi3_transform);
     iv->openMember("vrml/hanoi3.wrl", iv->hanoi3, iv->hanoi3_base);
+
+    iv->palette1_base->ref();
+    iv->separator->addChild(iv->palette1_base);
+    iv->palette1_transform->translation.setValue(SbVec3f(1, 0, -0.1));
+    iv->palette1_base->addChild(iv->palette1_transform);
+    iv->openMember("vrml/palette.wrl", iv->palette1, iv->palette1_base);
+
+    iv->palette2_base->ref();
+    iv->separator->addChild(iv->palette2_base);
+    iv->palette2_transform->translation.setValue(SbVec3f(1, 0.8, -0.1));
+    iv->palette2_base->addChild(iv->palette2_transform);
+    iv->openMember("vrml/palette.wrl", iv->palette2, iv->palette2_base);
+
+    iv->palette3_base->ref();
+    iv->separator->addChild(iv->palette3_base);
+    iv->palette3_transform->translation.setValue(SbVec3f(1, -0.8, -0.1));
+    iv->palette3_base->addChild(iv->palette3_transform);
+    iv->openMember("vrml/palette.wrl", iv->palette3, iv->palette3_base);
 
     //grille
     iv->grille_base->ref();
@@ -379,6 +407,16 @@ void KeyboardCBFunction(void *userData, SoEventCallback *eventCB)
 
  const SoEvent *event = eventCB->getEvent();
  float tmp;
+ bool cmd;
+
+ if (SO_KEY_PRESS_EVENT(event, SPACE))
+ {
+     cmd = interface->keyboard_mode->checkState();
+     if ( cmd )
+         interface->keyboard_mode->setChecked(false);
+     else
+         interface->keyboard_mode->setChecked(true);
+ }
 
  if (SO_KEY_PRESS_EVENT(event, A))
  {
