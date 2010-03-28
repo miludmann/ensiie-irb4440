@@ -140,7 +140,6 @@ Separator {
                             87,  88,   89, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -201,7 +200,6 @@ Separator {
                             33,  34,   35, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -346,7 +344,6 @@ Separator {
                             96,  97,   98, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -375,7 +372,6 @@ Separator {
                             9,  10,   11, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -396,7 +392,6 @@ Separator {
                             3,  4,   5, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -533,7 +528,6 @@ Separator {
                             90,  91,   92, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -658,7 +652,6 @@ Separator {
                             81,  82,   83, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -791,7 +784,6 @@ Separator {
                             87,  88,   89, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -812,7 +804,6 @@ Separator {
                             3,  4,   5, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -833,7 +824,6 @@ Separator {
                             3,  4,   5, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -1034,7 +1024,6 @@ Separator {
                             138,  139,   140, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -1195,7 +1184,6 @@ Separator {
                             108,  109,   110, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -1216,7 +1204,6 @@ Separator {
                             3,  4,   5, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -1241,7 +1228,6 @@ Separator {
                             6,  7,   8, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -1274,7 +1260,6 @@ Separator {
                             12,  13,   14, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -1439,7 +1424,6 @@ Separator {
                             111,  112,   113, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -1560,7 +1544,6 @@ Separator {
                             78,  79,   80, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -1601,7 +1584,6 @@ Separator {
                             18,  19,   20, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -1622,7 +1604,6 @@ Separator {
                             3,  4,   5, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -1659,7 +1640,6 @@ Separator {
                             15,  16,   17, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -2720,7 +2700,6 @@ Separator {
                             783,  784,   785, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -2741,7 +2720,6 @@ Separator {
                             3,  4,   5, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -2762,7 +2740,6 @@ Separator {
                             3,  4,   5, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -2791,7 +2768,6 @@ Separator {
                             9,  10,   11, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -3220,7 +3196,6 @@ Separator {
                             309,  310,   311, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -3617,7 +3592,6 @@ Separator {
                             285,  286,   287, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -3646,7 +3620,6 @@ Separator {
                             9,  10,   11, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -3667,7 +3640,6 @@ Separator {
                             3,  4,   5, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -3688,7 +3660,6 @@ Separator {
                             3,  4,   5, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -3709,7 +3680,6 @@ Separator {
                             3,  4,   5, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -3730,7 +3700,6 @@ Separator {
                             3,  4,   5, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -3755,7 +3724,6 @@ Separator {
                             6,  7,   8, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -3776,7 +3744,6 @@ Separator {
                             3,  4,   5, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -3797,7 +3764,6 @@ Separator {
                             3,  4,   5, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -3818,7 +3784,6 @@ Separator {
                             3,  4,   5, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -3843,7 +3808,6 @@ Separator {
                             6,  7,   8, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -3864,7 +3828,6 @@ Separator {
                             3,  4,   5, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -3885,7 +3848,6 @@ Separator {
                             3,  4,   5, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -3906,7 +3868,6 @@ Separator {
                             3,  4,   5, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -4063,7 +4024,6 @@ Separator {
                             105,  106,   107, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [
@@ -4268,7 +4228,6 @@ Separator {
                             141,  142,   143, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.890196 0.411765 0.125490 }
       Coordinate3
                 {
                 point [

@@ -9606,7 +9606,7 @@ Separator {
                             3,  4,   5, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.3 0.8 0.2 }
+
       Material { emissiveColor 0.000000 0.000000 0.000000 }
       Coordinate3
                 {
@@ -12519,7 +12519,7 @@ Separator {
                             3,  4,   5, -1
                            ]   # End of coord index
                 }              # End of indexedfaceset
-      Material { emissiveColor 0.3 0.8 0.2 }
+
       Material { emissiveColor 0.000000 0.000000 0.000000 }
       Coordinate3
                 {
