@@ -67,38 +67,47 @@ class IVLoader : public QObject
     SoTransform *parallelogramme_avant_transform;
     SoSeparator *parallelogramme_avant_base;
     SoSeparator *parallelogramme_avant;
+    SoMaterial  *parallelogramme_avant_mat;
     //bitoniot_arriere
     SoTransform *bitoniot_arriere_transform;
     SoSeparator *bitoniot_arriere_base;
     SoSeparator *bitoniot_arriere;
+    SoMaterial  *bitoniot_arriere_mat;
     //cylindre_base
     SoTransform *cylindre_base_transform;
     SoSeparator *cylindre_base_base;
     SoSeparator *cylindre_base;
+    SoMaterial  *cylindre_base_mat;
     //sortie_cylindre
     SoTransform *sortie_cylindre_transform;
     SoSeparator *sortie_cylindre_base;
     SoSeparator *sortie_cylindre;
+    SoMaterial  *sortie_cylindre_mat;
     //parallelogramme_arriere
     SoTransform *parallelogramme_arriere_transform;
     SoSeparator *parallelogramme_arriere_base;
     SoSeparator *parallelogramme_arriere;
+    SoMaterial  *parallelogramme_arriere_mat;
     //coude
     SoTransform *coude_transform;
     SoSeparator *coude_base;
     SoSeparator *coude;
+    SoMaterial  *coude_mat;
     //avant_bras
     SoTransform *avant_bras_transform;
     SoSeparator *avant_bras_base;
     SoSeparator *avant_bras;
+    SoMaterial  *avant_bras_mat;
     //poignet_1
     SoSeparator *poignet_1_base;
     SoSeparator *poignet_1;
     SoTransform *poignet_1_transform;
+    SoMaterial  *poignet_1_mat;
     //poignet_2
     SoTransform *poignet_2_transform;
     SoSeparator *poignet_2_base;
     SoSeparator *poignet_2;
+    SoMaterial  *poignet_2_mat;
 
     //repere_r0
     SoSeparator *repere_r0_base;

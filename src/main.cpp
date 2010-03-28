@@ -23,6 +23,7 @@ int axis;
 int oldValue;
 
 void KeyboardCBFunction(void *userData, SoEventCallback *eventCB);
+void uncolorAll();
 
 int main(int argc, char** argv)
 {
@@ -65,38 +66,47 @@ int main(int argc, char** argv)
   iv->parallelogramme_avant = new SoSeparator;
   iv->parallelogramme_avant_transform = new SoTransform;
   iv->parallelogramme_avant_base = new SoSeparator;
+  iv->parallelogramme_avant_mat = new SoMaterial;
 
   iv->bitoniot_arriere = new SoSeparator;
   iv->bitoniot_arriere_transform = new SoTransform;
   iv->bitoniot_arriere_base = new SoSeparator;
+  iv->bitoniot_arriere_mat = new SoMaterial;
 
   iv->cylindre_base = new SoSeparator;
   iv->cylindre_base_transform = new SoTransform;
   iv->cylindre_base_base = new SoSeparator;
+  iv->cylindre_base_mat = new SoMaterial;
 
   iv->sortie_cylindre = new SoSeparator;
   iv->sortie_cylindre_transform = new SoTransform;
   iv->sortie_cylindre_base = new SoSeparator;
+  iv->sortie_cylindre_mat = new SoMaterial;
 
   iv->parallelogramme_arriere = new SoSeparator;
   iv->parallelogramme_arriere_transform = new SoTransform;
   iv->parallelogramme_arriere_base = new SoSeparator;
+  iv->parallelogramme_arriere_mat = new SoMaterial;
 
   iv->coude = new SoSeparator;
   iv->coude_transform = new SoTransform;
   iv->coude_base = new SoSeparator;
+  iv->coude_mat = new SoMaterial;
 
   iv->avant_bras = new SoSeparator;
   iv->avant_bras_transform = new SoTransform;
   iv->avant_bras_base = new SoSeparator;
+  iv->avant_bras_mat = new SoMaterial;
 
   iv->poignet_1 = new SoSeparator;
   iv->poignet_1_base = new SoSeparator;
   iv->poignet_1_transform = new SoTransform;
+  iv->poignet_1_mat = new SoMaterial;
 
   iv->poignet_2 = new SoSeparator;
   iv->poignet_2_transform = new SoTransform;
   iv->poignet_2_base = new SoSeparator;
+  iv->poignet_2_mat = new SoMaterial;
 
   iv->repere_r0_base = new SoSeparator;
   iv->repere_r0 = new SoSeparator;
@@ -213,6 +223,8 @@ int main(int argc, char** argv)
     iv->parallelogramme_avant_transform->translation = SbVec3f(0, 0, 0);
     iv->parallelogramme_avant_transform->recenter(SbVec3f(0.2, 0, 0.68));
     iv->parallelogramme_avant_base->addChild(iv->parallelogramme_avant_transform);
+    iv->parallelogramme_avant_mat->emissiveColor.setValue(0.890196, 0.411765, 0.125490);
+    iv->parallelogramme_avant_base->addChild(iv->parallelogramme_avant_mat);
     iv->openMember("vrml/parallelogramme_avant.wrl", iv->parallelogramme_avant, iv->parallelogramme_avant_base);
     //repere_r2
     iv->repere_r2_base->ref();
@@ -230,6 +242,8 @@ int main(int argc, char** argv)
     iv->bitoniot_arriere_transform->translation = SbVec3f(0, 0, 0);
     iv->bitoniot_arriere_transform->recenter(SbVec3f(0.2, 0, 0.68));
     iv->bitoniot_arriere_base->addChild(iv->bitoniot_arriere_transform);
+    iv->bitoniot_arriere_mat->emissiveColor.setValue(0.890196, 0.411765, 0.125490);
+    iv->bitoniot_arriere_base->addChild(iv->bitoniot_arriere_mat);
     iv->openMember("vrml/bitoniot_arriere.wrl", iv->bitoniot_arriere, iv->bitoniot_arriere_base);
     //parallelogramme arriere
     iv->parallelogramme_arriere_base->ref();
@@ -237,6 +251,8 @@ int main(int argc, char** argv)
     iv->parallelogramme_arriere_transform->translation = SbVec3f(0, 0, 0);
     iv->parallelogramme_arriere_transform->recenter(SbVec3f(-0.1, 0, 0.68));
     iv->parallelogramme_arriere_base->addChild(iv->parallelogramme_arriere_transform);
+    iv->parallelogramme_arriere_mat->emissiveColor.setValue(0.890196, 0.411765, 0.125490);
+    iv->parallelogramme_arriere_base->addChild(iv->parallelogramme_arriere_mat);
     iv->openMember("vrml/parallelogramme_arriere.wrl", iv->parallelogramme_arriere, iv->parallelogramme_arriere_base);
     //cylindre base
     iv->cylindre_base_base->ref();
@@ -244,6 +260,8 @@ int main(int argc, char** argv)
     iv->cylindre_base_transform->translation = SbVec3f(0, 0, 0);
     iv->cylindre_base_transform->recenter(SbVec3f(-0.4775, 0, 0.5325));
     iv->cylindre_base_base->addChild(iv->cylindre_base_transform);
+    iv->cylindre_base_mat->emissiveColor.setValue(0.890196, 0.411765, 0.125490);
+    iv->cylindre_base_base->addChild(iv->cylindre_base_mat);
     iv->openMember("vrml/cylindre_base.wrl", iv->cylindre_base, iv->cylindre_base_base);
     //sortie cylindre
     iv->sortie_cylindre_base->ref();
@@ -251,6 +269,8 @@ int main(int argc, char** argv)
     iv->sortie_cylindre_transform->translation = SbVec3f(0, 0, 0);
     iv->sortie_cylindre_transform->recenter(SbVec3f(0.32, 0, 0.7061));
     iv->sortie_cylindre_base->addChild(iv->sortie_cylindre_transform);
+    iv->sortie_cylindre_mat->emissiveColor.setValue(0.890196, 0.411765, 0.125490);
+    iv->sortie_cylindre_base->addChild(iv->sortie_cylindre_mat);
     iv->openMember("vrml/sortie_cylindre.wrl", iv->sortie_cylindre, iv->sortie_cylindre_base);
     //coude
     iv->coude_base->ref();
@@ -258,6 +278,8 @@ int main(int argc, char** argv)
     iv->coude_transform->translation = SbVec3f(0, 0, 0);
     iv->coude_transform->recenter(SbVec3f(0.2, 0, 1.57));
     iv->coude_base->addChild(iv->coude_transform);
+    iv->coude_mat->emissiveColor.setValue(0.890196, 0.411765, 0.125490);
+    iv->coude_base->addChild(iv->coude_mat);
     iv->openMember("vrml/coude.wrl", iv->coude, iv->coude_base);
     //repere_r3
     iv->repere_r3_base->ref();
@@ -275,6 +297,8 @@ int main(int argc, char** argv)
     iv->avant_bras_transform->translation = SbVec3f(0, 0, 0);
     iv->avant_bras_transform->recenter(SbVec3f(1.08, 0, 1.720));
     iv->avant_bras_base->addChild(iv->avant_bras_transform);
+    iv->avant_bras_mat->emissiveColor.setValue(0.890196, 0.411765, 0.125490);
+    iv->avant_bras_base->addChild(iv->avant_bras_mat);
     iv->openMember("vrml/avant_bras.wrl", iv->avant_bras, iv->avant_bras_base);
     //repere_r4
     iv->repere_r4_base->ref();
@@ -292,6 +316,8 @@ int main(int argc, char** argv)
     iv->poignet_1_transform->translation = SbVec3f(0, 0, 0);
     iv->poignet_1_transform->recenter(SbVec3f(1.08, 0, 1.720));
     iv->poignet_1_base->addChild(iv->poignet_1_transform);
+    iv->poignet_1_mat->emissiveColor.setValue(0.890196, 0.411765, 0.125490);
+    iv->poignet_1_base->addChild(iv->poignet_1_mat);
     iv->openMember("vrml/poignet_1.wrl", iv->poignet_1, iv->poignet_1_base);
     //repere_r5
     iv->repere_r5_base->ref();
@@ -309,6 +335,8 @@ int main(int argc, char** argv)
     iv->poignet_2_transform->translation = SbVec3f(0, 0, 0);
     iv->poignet_2_transform->recenter(SbVec3f(1.08, 0, 1.720));
     iv->poignet_2_base->addChild(iv->poignet_2_transform);
+    iv->poignet_2_mat->emissiveColor.setValue(0.890196, 0.411765, 0.125490);
+    iv->poignet_2_base->addChild(iv->poignet_2_mat);
     iv->openMember("vrml/poignet_2.wrl", iv->poignet_2, iv->poignet_2_base);
     //repere_r6
     iv->repere_r6_base->ref();
@@ -347,7 +375,7 @@ int main(int argc, char** argv)
 
 void KeyboardCBFunction(void *userData, SoEventCallback *eventCB)
 {
- printf("in Keyboard CB function...");
+ //printf("in Keyboard CB function...");
 
  const SoEvent *event = eventCB->getEvent();
  float tmp;
@@ -435,22 +463,149 @@ void KeyboardCBFunction(void *userData, SoEventCallback *eventCB)
 
 
  if (SO_KEY_PRESS_EVENT(event, PAD_1)) {
-   fprintf(stderr, "pressed 'PAD_1' key ");
-   axis = 1;
-   iv->base_mobile_mat->emissiveColor.setValue(0, 0, 1);
-   if (event->wasShiftDown()) {
-      printf("(with Shift key DOWN)\n");
-   } else {
-      printf("(with Shift key UP)\n");
-  }
+   //fprintf(stderr, "pressed 'PAD_1' key ");
+
+    if ( axis == 1 )
+    {
+        axis = 0;
+        uncolorAll();
+    }
+    else
+    {
+        axis = 1;
+        uncolorAll();
+        iv->base_mobile_mat->emissiveColor.setValue(0, 0, 1);
+        iv->parallelogramme_avant_mat->emissiveColor.setValue(0, 0, 1);
+        iv->bitoniot_arriere_mat->emissiveColor.setValue(0, 0, 1);
+        iv->cylindre_base_mat->emissiveColor.setValue(0, 0, 1);
+        iv->sortie_cylindre_mat->emissiveColor.setValue(0, 0, 1);
+        iv->parallelogramme_arriere_mat->emissiveColor.setValue(0, 0, 1);
+        iv->coude_mat->emissiveColor.setValue(0, 0, 1);
+        iv->avant_bras_mat->emissiveColor.setValue(0, 0, 1);
+        iv->poignet_1_mat->emissiveColor.setValue(0, 0, 1);
+        iv->poignet_2_mat->emissiveColor.setValue(0, 0, 1);
+    }
  }
- else if (SO_KEY_PRESS_EVENT(event, RIGHT_ARROW)) {
+
+ if (SO_KEY_PRESS_EVENT(event, PAD_2)) {
+
+     if ( axis == 2 )
+    {
+        axis = 0;
+        uncolorAll();
+    }
+    else
+    {
+        axis = 2;
+        uncolorAll();
+        iv->parallelogramme_avant_mat->emissiveColor.setValue(0, 0, 1);
+        iv->cylindre_base_mat->emissiveColor.setValue(0, 0, 1);
+        iv->sortie_cylindre_mat->emissiveColor.setValue(0, 0, 1);
+        iv->parallelogramme_arriere_mat->emissiveColor.setValue(0, 0, 1);
+        iv->coude_mat->emissiveColor.setValue(0, 0, 1);
+        iv->avant_bras_mat->emissiveColor.setValue(0, 0, 1);
+        iv->poignet_1_mat->emissiveColor.setValue(0, 0, 1);
+        iv->poignet_2_mat->emissiveColor.setValue(0, 0, 1);
+    }
+ }
+
+ if (SO_KEY_PRESS_EVENT(event, PAD_3)) {
+
+     if ( axis == 3 )
+    {
+        axis = 0;
+        uncolorAll();
+    }
+    else
+    {
+        axis = 3;
+        uncolorAll();
+        iv->bitoniot_arriere_mat->emissiveColor.setValue(0, 0, 1);
+        iv->parallelogramme_arriere_mat->emissiveColor.setValue(0, 0, 1);
+        iv->coude_mat->emissiveColor.setValue(0, 0, 1);
+        iv->avant_bras_mat->emissiveColor.setValue(0, 0, 1);
+        iv->poignet_1_mat->emissiveColor.setValue(0, 0, 1);
+        iv->poignet_2_mat->emissiveColor.setValue(0, 0, 1);
+    }
+ }
+
+ if (SO_KEY_PRESS_EVENT(event, PAD_4)) {
+
+     if ( axis == 4 )
+    {
+        axis = 0;
+        uncolorAll();
+    }
+    else
+    {
+        axis = 4;
+        uncolorAll();
+        iv->avant_bras_mat->emissiveColor.setValue(0, 0, 1);
+        iv->poignet_1_mat->emissiveColor.setValue(0, 0, 1);
+        iv->poignet_2_mat->emissiveColor.setValue(0, 0, 1);
+    }
+ }
+
+ if (SO_KEY_PRESS_EVENT(event, PAD_5)) {
+
+     if ( axis == 5 )
+    {
+        axis = 0;
+        uncolorAll();
+    }
+    else
+    {
+        axis = 5;
+        uncolorAll();
+        iv->poignet_1_mat->emissiveColor.setValue(0, 0, 1);
+        iv->poignet_2_mat->emissiveColor.setValue(0, 0, 1);
+    }
+ }
+
+ if (SO_KEY_PRESS_EVENT(event, PAD_6)) {
+
+     if ( axis == 6 )
+    {
+        axis = 0;
+        uncolorAll();
+    }
+    else
+    {
+        axis = 6;
+        uncolorAll();
+        iv->poignet_2_mat->emissiveColor.setValue(0, 0, 1);
+    }
+ }
+
+
+ if (SO_KEY_PRESS_EVENT(event, RIGHT_ARROW)) {
    printf("pressed 'RIGHT_ARROW' key\n");
    switch(axis)
    {
    case 1 : oldValue = interface->slider_base_mobile->value();
             interface->slider_base_mobile->setValue(oldValue+1);
             interface->on_slider_base_mobile_valueChanged(oldValue+1);
+            break;
+   case 2 : oldValue = interface->slider_parallelogramme->value();
+            interface->slider_parallelogramme->setValue(oldValue+1);
+            interface->on_slider_parallelogramme_valueChanged(oldValue+1);
+            break;
+   case 3 : oldValue = interface->slider_coude->value();
+            interface->slider_coude->setValue(oldValue+1);
+            interface->on_slider_coude_valueChanged(oldValue+1);
+            break;
+   case 4 : oldValue = interface->slider_avant_bras->value();
+            interface->slider_avant_bras->setValue(oldValue+1);
+            interface->on_slider_avant_bras_valueChanged(oldValue+1);
+            break;
+   case 5 : oldValue = interface->slider_poignet_1->value();
+            interface->slider_poignet_1->setValue(oldValue+1);
+            interface->on_slider_poignet_1_valueChanged(oldValue+1);
+            break;
+   case 6 : oldValue = interface->slider_poignet_2->value();
+            interface->slider_poignet_2->setValue(oldValue+1);
+            interface->on_slider_poignet_2_valueChanged(oldValue+1);
+            break;
    }
  }
  else if (SO_KEY_PRESS_EVENT(event, LEFT_ARROW)) {
@@ -460,9 +615,41 @@ void KeyboardCBFunction(void *userData, SoEventCallback *eventCB)
    case 1 : oldValue = interface->slider_base_mobile->value();
             interface->slider_base_mobile->setValue(oldValue-1);
             interface->on_slider_base_mobile_valueChanged(oldValue-1);
+            break;
+   case 2 : oldValue = interface->slider_parallelogramme->value();
+            interface->slider_parallelogramme->setValue(oldValue-1);
+            interface->on_slider_parallelogramme_valueChanged(oldValue-1);
+            break;
+   case 3 : oldValue = interface->slider_coude->value();
+            interface->slider_coude->setValue(oldValue-1);
+            interface->on_slider_coude_valueChanged(oldValue-1);
+            break;
+   case 4 : oldValue = interface->slider_avant_bras->value();
+            interface->slider_avant_bras->setValue(oldValue-1);
+            interface->on_slider_avant_bras_valueChanged(oldValue-1);
+            break;
+   case 5 : oldValue = interface->slider_poignet_1->value();
+            interface->slider_poignet_1->setValue(oldValue-1);
+            interface->on_slider_poignet_1_valueChanged(oldValue-1);
+            break;
+   case 6 : oldValue = interface->slider_poignet_2->value();
+            interface->slider_poignet_2->setValue(oldValue-1);
+            interface->on_slider_poignet_2_valueChanged(oldValue-1);
+            break;
    }
  }
- else {
-  printf("pressed un-handled key\n");
- }
+}
+
+void uncolorAll()
+{
+    iv->base_mobile_mat->emissiveColor.setValue(0.890196, 0.411765, 0.125490);
+    iv->parallelogramme_avant_mat->emissiveColor.setValue(0.890196, 0.411765, 0.125490);
+    iv->bitoniot_arriere_mat->emissiveColor.setValue(0.890196, 0.411765, 0.125490);
+    iv->cylindre_base_mat->emissiveColor.setValue(0.890196, 0.411765, 0.125490);
+    iv->sortie_cylindre_mat->emissiveColor.setValue(0.890196, 0.411765, 0.125490);
+    iv->parallelogramme_arriere_mat->emissiveColor.setValue(0.890196, 0.411765, 0.125490);
+    iv->coude_mat->emissiveColor.setValue(0.890196, 0.411765, 0.125490);
+    iv->avant_bras_mat->emissiveColor.setValue(0.890196, 0.411765, 0.125490);
+    iv->poignet_1_mat->emissiveColor.setValue(0.890196, 0.411765, 0.125490);
+    iv->poignet_2_mat->emissiveColor.setValue(0.890196, 0.411765, 0.125490);
 }
