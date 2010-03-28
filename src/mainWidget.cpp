@@ -793,6 +793,7 @@ void Interface::adjust_hanoi()
     }
 }
 
+/*
 void Interface::on_hanoi_button_clicked()
 {
     float h1 = hanoi1_slider->value();
@@ -829,10 +830,113 @@ void Interface::on_hanoi_button_clicked()
             }
         }
     }
-
     solve_hanoi();
 }
+*/
 
+
+// Solve v2 sans passer par de position intermediaire
+// exploration de toutes les configurations
+void Interface::on_hanoi_button_clicked()
+{
+    float h1 = hanoi1_slider->value();
+    float h2 = hanoi2_slider->value();
+    float h3 = hanoi3_slider->value();
+    float hf = hanoi_end->value();
+
+    if( hf != h1 )
+    {
+        if ( h2 == h1 )
+        {
+            if ( h3 == h1 )
+            {
+                move_hanoi(3, h3, hf);
+                h3 = hf;
+                move_hanoi(2, h2, -h1-hf);
+                h2 = -h1-hf;
+                move_hanoi(3, h3, -h1-hf);
+                h3 = -h1-hf;
+            }
+            else
+            {
+                if ( h3 == hf )
+                {
+                    move_hanoi(2, h2, -h1-hf);
+                    h2 = -h1-hf;
+                    move_hanoi(3, h3, -h1-hf);
+                    h3 = -h1-hf;
+                }
+                else
+                {
+                    move_hanoi(3, h3, hf);
+                    h3 = hf;
+                    move_hanoi(2, h2, -h1-hf);
+                    h2 = -h1-hf;
+                    move_hanoi(3, h3, -h1-hf);
+                    h3 = -h1-hf;
+                }
+            }
+        }
+        else
+        {
+            if ( h2 != hf )
+            {
+                if ( h2 != h3 )
+                {
+                    move_hanoi(3, h3, h2);
+                    h3 = h2;
+                }
+            }
+            else
+            {
+                if ( h3 != h1 )
+                {
+                    move_hanoi(3, h3, h1);
+                    h3 = h1;
+                }
+
+                move_hanoi(2, h2, -h1-hf);
+                h2 = -h1-hf;
+                move_hanoi(3, h3, -h1-hf);
+                h3 = -h1-hf;
+            }
+        }
+
+        move_hanoi(1, h1, hf);
+        h1 = hf;
+    }
+
+    if( h1 == h2 )
+    {
+        if( h3 != h2 )
+        {
+            move_hanoi(3, h3, h2);
+        }
+    }
+    else
+    {
+        if ( h3 == h2 )
+        {
+            move_hanoi(3, h3, -h3-h1);
+            move_hanoi(2, h2, h1);
+            move_hanoi(3, -h3-h1, h1);
+        }
+        else
+        {
+            if ( h3 == h1 )
+            {
+                move_hanoi(3, h3, -h3-h2);
+                move_hanoi(2, h2, h1);
+                move_hanoi(3, -h3-h2, h1);
+            }
+            else
+            {
+                move_hanoi(2, h2, h1);
+                move_hanoi(3, h3, h1);
+            }
+        }
+    }
+}
 
 void Interface::move_hanoi(int piece, int from, int to)
 {
