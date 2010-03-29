@@ -433,7 +433,7 @@ void KeyboardCBFunction(void *userData, SoEventCallback *eventCB)
      tmp = interface->sliderY->value();
      interface->sliderY->setValue(tmp+20);
      interface->on_sliderY_valueChanged(tmp+20);
- }
+}
  if (SO_KEY_PRESS_EVENT(event, R))
  {
      tmp = interface->sliderY->value();
@@ -492,24 +492,6 @@ void KeyboardCBFunction(void *userData, SoEventCallback *eventCB)
      interface->on_sliderZz_valueChanged(tmp-5);
  }
 
- if (SO_KEY_PRESS_EVENT(event, P))
- {
-     tmp = interface->move_grid->value();
-     if ( tmp < 2140 )
-     {
-        interface->move_grid->setValue(tmp+10);
-        iv->grille_translation->translation= SbVec3f(0, 0, (tmp+10)/1000);
-    }
- }
- if (SO_KEY_PRESS_EVENT(event, M))
- {
-     tmp = interface->move_grid->value();
-     if ( tmp > -290 )
-     {
-         interface->move_grid->setValue(tmp-10);
-         iv->grille_translation->translation= SbVec3f(0, 0, (tmp-10)/1000);
-     }
- }
  if (SO_KEY_PRESS_EVENT(event, O))
  {
      interface->move_grid->setValue(0);
@@ -643,29 +625,53 @@ void KeyboardCBFunction(void *userData, SoEventCallback *eventCB)
 
  if (SO_KEY_PRESS_EVENT(event, PAD_8)) {
 
-     if ( axis > 0 )
-    {
-        axis--;
-    }
+     if (event->wasShiftDown())
+     {
+         tmp = interface->move_grid->value();
+         if ( tmp > -290 )
+         {
+             interface->move_grid->setValue(tmp-10);
+             iv->grille_translation->translation= SbVec3f(0, 0, (tmp-10)/1000);
+         }
+     }
+     else
+     {
+        if ( axis > 0 )
+        {
+            axis--;
+        }
 
-    uncolorAll();
-    recolor(axis);
+        uncolorAll();
+        recolor(axis);
+    }
 }
 
 
  if (SO_KEY_PRESS_EVENT(event, PAD_9)) {
 
-     if ( axis < 6 )
-    {
-        axis++;
-    }
+     if (event->wasShiftDown())
+     {
+         tmp = interface->move_grid->value();
+         if ( tmp < 2140 )
+         {
+             interface->move_grid->setValue(tmp+10);
+             iv->grille_translation->translation= SbVec3f(0, 0, (tmp+10)/1000);
+         }
+     }
+     else
+     {
+        if ( axis < 6 )
+        {
+            axis++;
+        }
 
-    uncolorAll();
-    recolor(axis);
+        uncolorAll();
+        recolor(axis);
+    }
   }
 
 
- if (SO_KEY_PRESS_EVENT(event, RIGHT_ARROW)) {
+ if (SO_KEY_PRESS_EVENT(event, W)) {
    printf("pressed 'RIGHT_ARROW' key\n");
    switch(axis)
    {
@@ -695,7 +701,7 @@ void KeyboardCBFunction(void *userData, SoEventCallback *eventCB)
             break;
    }
  }
- else if (SO_KEY_PRESS_EVENT(event, LEFT_ARROW)) {
+ else if (SO_KEY_PRESS_EVENT(event, X)) {
    printf("pressed 'RIGHT_ARROW' key\n");
    switch(axis)
    {
