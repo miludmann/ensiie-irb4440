@@ -839,6 +839,8 @@ void Interface::on_hanoi_button_clicked()
 // exploration de toutes les configurations
 void Interface::on_hanoi_button_clicked()
 {
+    QVector<double> angles(6);
+
     float h1 = hanoi1_slider->value();
     float h2 = hanoi2_slider->value();
     float h3 = hanoi3_slider->value();
@@ -936,6 +938,9 @@ void Interface::on_hanoi_button_clicked()
             }
         }
     }
+
+    angles = mgi(1.22, 0, 1.75, 1, 0, 0);
+    repeat_from_current(angles[0], angles[1], angles[2], angles[3], angles[4], angles[5], 30);
 }
 
 void Interface::move_hanoi(int piece, int from, int to)
