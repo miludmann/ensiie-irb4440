@@ -201,19 +201,19 @@ int main(int argc, char** argv)
 
     iv->palette1_base->ref();
     iv->separator->addChild(iv->palette1_base);
-    iv->palette1_transform->translation.setValue(SbVec3f(1, 0, -0.1));
+    iv->palette1_transform->translation.setValue(SbVec3f(1, 0, -0.005));
     iv->palette1_base->addChild(iv->palette1_transform);
     iv->openMember("vrml/palette.wrl", iv->palette1, iv->palette1_base);
 
     iv->palette2_base->ref();
     iv->separator->addChild(iv->palette2_base);
-    iv->palette2_transform->translation.setValue(SbVec3f(1, 0.8, -0.1));
+    iv->palette2_transform->translation.setValue(SbVec3f(1, 0.8, -0.005));
     iv->palette2_base->addChild(iv->palette2_transform);
     iv->openMember("vrml/palette.wrl", iv->palette2, iv->palette2_base);
 
     iv->palette3_base->ref();
     iv->separator->addChild(iv->palette3_base);
-    iv->palette3_transform->translation.setValue(SbVec3f(1, -0.8, -0.1));
+    iv->palette3_transform->translation.setValue(SbVec3f(1, -0.8, -0.005));
     iv->palette3_base->addChild(iv->palette3_transform);
     iv->openMember("vrml/palette.wrl", iv->palette3, iv->palette3_base);
 
