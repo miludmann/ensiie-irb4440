@@ -1405,7 +1405,7 @@
     <property name="geometry">
      <rect>
       <x>150</x>
-      <y>260</y>
+      <y>290</y>
       <width>93</width>
       <height>51</height>
      </rect>
@@ -1418,7 +1418,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>290</y>
+      <y>320</y>
       <width>111</width>
       <height>17</height>
      </rect>
@@ -1437,7 +1437,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>260</y>
+      <y>290</y>
       <width>111</width>
       <height>17</height>
      </rect>
@@ -1465,6 +1465,19 @@
     </property>
     <property name="text">
      <string>Les Tours de Hanoï</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line_3">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>240</y>
+      <width>221</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
     </property>
    </widget>
   </widget>
