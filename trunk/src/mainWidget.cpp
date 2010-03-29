@@ -1085,3 +1085,13 @@ void Interface::solve_hanoi()
         move_hanoi(3, h1, hf);
     }
 }
+
+void Interface::on_keyboard_mode_stateChanged(int )
+{
+
+}
+
+void Interface::on_keyboard_mode_clicked()
+{
+
+}
