@@ -408,7 +408,6 @@ void KeyboardCBFunction(void *userData, SoEventCallback *eventCB)
 
  const SoEvent *event = eventCB->getEvent();
  float tmp;
- bool cmd;
 
  if (SO_KEY_PRESS_EVENT(event, SPACE))
  {
@@ -493,6 +492,29 @@ void KeyboardCBFunction(void *userData, SoEventCallback *eventCB)
      interface->on_sliderZz_valueChanged(tmp-5);
  }
 
+ if (SO_KEY_PRESS_EVENT(event, P))
+ {
+     tmp = interface->move_grid->value();
+     if ( tmp < 2140 )
+     {
+        interface->move_grid->setValue(tmp+10);
+        iv->grille_translation->translation= SbVec3f(0, 0, (tmp+10)/1000);
+    }
+ }
+ if (SO_KEY_PRESS_EVENT(event, M))
+ {
+     tmp = interface->move_grid->value();
+     if ( tmp > -290 )
+     {
+         interface->move_grid->setValue(tmp-10);
+         iv->grille_translation->translation= SbVec3f(0, 0, (tmp-10)/1000);
+     }
+ }
+ if (SO_KEY_PRESS_EVENT(event, O))
+ {
+     interface->move_grid->setValue(0);
+     iv->grille_translation->translation= SbVec3f(0, 0, 0);
+ }
 
 
 
@@ -613,6 +635,23 @@ void KeyboardCBFunction(void *userData, SoEventCallback *eventCB)
     }
  }
 
+ if (SO_KEY_PRESS_EVENT(event, PAD_7)) {
+
+     axis = 0;
+     uncolorAll();
+}
+
+ if (SO_KEY_PRESS_EVENT(event, PAD_8)) {
+
+     if ( axis > 0 )
+    {
+        axis--;
+    }
+
+    uncolorAll();
+    recolor(axis);
+}
+
 
  if (SO_KEY_PRESS_EVENT(event, PAD_9)) {
 
@@ -625,16 +664,6 @@ void KeyboardCBFunction(void *userData, SoEventCallback *eventCB)
     recolor(axis);
   }
 
- if (SO_KEY_PRESS_EVENT(event, PAD_8)) {
-
-     if ( axis > 0 )
-    {
-        axis--;
-    }
-
-    uncolorAll();
-    recolor(axis);
-}
 
  if (SO_KEY_PRESS_EVENT(event, RIGHT_ARROW)) {
    printf("pressed 'RIGHT_ARROW' key\n");
