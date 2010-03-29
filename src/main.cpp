@@ -670,6 +670,23 @@ void KeyboardCBFunction(void *userData, SoEventCallback *eventCB)
     }
   }
 
+ if (SO_KEY_PRESS_EVENT(event, N)) {
+
+     interface->slider_base_mobile->setValue(165);
+     interface->slider_parallelogramme->setValue(82);
+     interface->slider_coude->setValue(62);
+     interface->slider_avant_bras->setValue(200);
+     interface->slider_poignet_1->setValue(120);
+     interface->slider_poignet_2->setValue(400);
+
+     interface->sliderX->setValue(1220);
+     interface->sliderY->setValue(0);
+     interface->sliderZ->setValue(1720);
+     interface->sliderZx->setValue(1);
+     interface->sliderZy->setValue(0);
+     interface->sliderZz->setValue(0);
+}
+
 
  if (SO_KEY_PRESS_EVENT(event, W)) {
    printf("pressed 'RIGHT_ARROW' key\n");
