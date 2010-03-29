@@ -24,6 +24,7 @@ int oldValue;
 
 void KeyboardCBFunction(void *userData, SoEventCallback *eventCB);
 void uncolorAll();
+void recolor(int angle);
 
 int main(int argc, char** argv)
 {
@@ -411,11 +412,8 @@ void KeyboardCBFunction(void *userData, SoEventCallback *eventCB)
 
  if (SO_KEY_PRESS_EVENT(event, SPACE))
  {
-     cmd = interface->keyboard_mode->checkState();
-     if ( cmd )
-         interface->keyboard_mode->setChecked(false);
-     else
-         interface->keyboard_mode->setChecked(true);
+     uncolorAll();
+     interface->keyboard_mode->setChecked(false);
  }
 
  if (SO_KEY_PRESS_EVENT(event, A))
@@ -616,6 +614,28 @@ void KeyboardCBFunction(void *userData, SoEventCallback *eventCB)
  }
 
 
+ if (SO_KEY_PRESS_EVENT(event, PAD_9)) {
+
+     if ( axis < 6 )
+    {
+        axis++;
+    }
+
+    uncolorAll();
+    recolor(axis);
+  }
+
+ if (SO_KEY_PRESS_EVENT(event, PAD_8)) {
+
+     if ( axis > 0 )
+    {
+        axis--;
+    }
+
+    uncolorAll();
+    recolor(axis);
+}
+
  if (SO_KEY_PRESS_EVENT(event, RIGHT_ARROW)) {
    printf("pressed 'RIGHT_ARROW' key\n");
    switch(axis)
@@ -690,4 +710,54 @@ void uncolorAll()
     iv->avant_bras_mat->emissiveColor.setValue(0.890196, 0.411765, 0.125490);
     iv->poignet_1_mat->emissiveColor.setValue(0.890196, 0.411765, 0.125490);
     iv->poignet_2_mat->emissiveColor.setValue(0.890196, 0.411765, 0.125490);
+}
+
+void recolor(int angle)
+{
+
+    switch(angle)
+    {
+    case 1 :
+        iv->base_mobile_mat->emissiveColor.setValue(0, 0, 1);
+        iv->parallelogramme_avant_mat->emissiveColor.setValue(0, 0, 1);
+        iv->bitoniot_arriere_mat->emissiveColor.setValue(0, 0, 1);
+        iv->cylindre_base_mat->emissiveColor.setValue(0, 0, 1);
+        iv->sortie_cylindre_mat->emissiveColor.setValue(0, 0, 1);
+        iv->parallelogramme_arriere_mat->emissiveColor.setValue(0, 0, 1);
+        iv->coude_mat->emissiveColor.setValue(0, 0, 1);
+        iv->avant_bras_mat->emissiveColor.setValue(0, 0, 1);
+        iv->poignet_1_mat->emissiveColor.setValue(0, 0, 1);
+        iv->poignet_2_mat->emissiveColor.setValue(0, 0, 1);
+    break;
+    case 2 :
+        iv->parallelogramme_avant_mat->emissiveColor.setValue(0, 0, 1);
+        iv->cylindre_base_mat->emissiveColor.setValue(0, 0, 1);
+        iv->sortie_cylindre_mat->emissiveColor.setValue(0, 0, 1);
+        iv->parallelogramme_arriere_mat->emissiveColor.setValue(0, 0, 1);
+        iv->coude_mat->emissiveColor.setValue(0, 0, 1);
+        iv->avant_bras_mat->emissiveColor.setValue(0, 0, 1);
+        iv->poignet_1_mat->emissiveColor.setValue(0, 0, 1);
+        iv->poignet_2_mat->emissiveColor.setValue(0, 0, 1);
+    break;
+    case 3 :
+        iv->bitoniot_arriere_mat->emissiveColor.setValue(0, 0, 1);
+        iv->parallelogramme_arriere_mat->emissiveColor.setValue(0, 0, 1);
+        iv->coude_mat->emissiveColor.setValue(0, 0, 1);
+        iv->avant_bras_mat->emissiveColor.setValue(0, 0, 1);
+        iv->poignet_1_mat->emissiveColor.setValue(0, 0, 1);
+        iv->poignet_2_mat->emissiveColor.setValue(0, 0, 1);
+    break;
+    case 4 :
+        iv->avant_bras_mat->emissiveColor.setValue(0, 0, 1);
+        iv->poignet_1_mat->emissiveColor.setValue(0, 0, 1);
+        iv->poignet_2_mat->emissiveColor.setValue(0, 0, 1);
+    break;
+    case 5 :
+        iv->poignet_1_mat->emissiveColor.setValue(0, 0, 1);
+        iv->poignet_2_mat->emissiveColor.setValue(0, 0, 1);
+    break;
+    case 6 :
+        iv->poignet_2_mat->emissiveColor.setValue(0, 0, 1);
+    break;
+    }
 }

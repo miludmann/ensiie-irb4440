@@ -76,15 +76,15 @@
   <valuemap type="QVariantMap">
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Debug</value>
    <valuelist key="abstractProcess.Environment" type="QVariantList">
-    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-cXrJou6F5E,guid=cb296e72ed6785d5d5cda7e94bae6596</value>
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-MLVQK9nkTg,guid=9d575642268ff47e0649d1e94bafc16a</value>
     <value type="QString">DESKTOP_SESSION=gnome</value>
     <value type="QString">DISPLAY=:0.0</value>
     <value type="QString">GDMSESSION=gnome</value>
     <value type="QString">GDM_KEYBOARD_LAYOUT=fr	oss</value>
     <value type="QString">GDM_LANG=fr_FR.UTF-8</value>
     <value type="QString">GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
-    <value type="QString">GNOME_KEYRING_PID=1348</value>
-    <value type="QString">GNOME_KEYRING_SOCKET=/tmp/keyring-y1qvRl/socket</value>
+    <value type="QString">GNOME_KEYRING_PID=1300</value>
+    <value type="QString">GNOME_KEYRING_SOCKET=/tmp/keyring-dPfMYK/socket</value>
     <value type="QString">GTK_MODULES=canberra-gtk-module</value>
     <value type="QString">GTK_RC_FILES=/etc/gtk/gtkrc:/home/guigui/.gtkrc-1.2-gnome2</value>
     <value type="QString">HOME=/home/guigui</value>
@@ -95,16 +95,16 @@
     <value type="QString">PATH=/home/guigui/qtsdk-2010.02/qt/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games</value>
     <value type="QString">PWD=/home/guigui</value>
     <value type="QString">QTDIR=/home/guigui/qtsdk-2010.02/qt</value>
-    <value type="QString">SESSION_MANAGER=local/branson:@/tmp/.ICE-unix/1363,unix/branson:/tmp/.ICE-unix/1363</value>
+    <value type="QString">SESSION_MANAGER=local/branson:@/tmp/.ICE-unix/1315,unix/branson:/tmp/.ICE-unix/1315</value>
     <value type="QString">SHELL=/bin/bash</value>
     <value type="QString">SPEECHD_PORT=7560</value>
-    <value type="QString">SSH_AGENT_PID=1439</value>
-    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-y1qvRl/socket.ssh</value>
+    <value type="QString">SSH_AGENT_PID=1391</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-dPfMYK/socket.ssh</value>
     <value type="QString">USER=guigui</value>
     <value type="QString">USERNAME=guigui</value>
-    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-guigui-SjO7Ft/database</value>
+    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-guigui-RqHYPE/database</value>
     <value type="QString">XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share/:/usr/share/</value>
-    <value type="QString">XDG_SESSION_COOKIE=77bfe4a05fa6ac50716e86bd4b65ef5d-1269720468.195089-1490032002</value>
+    <value type="QString">XDG_SESSION_COOKIE=77bfe4a05fa6ac50716e86bd4b65ef5d-1269809511.566175-1985742647</value>
    </valuelist>
    <valuelist key="abstractProcess.arguments" type="QVariantList">
     <value type="QString">/home/guigui/ensiie-irb4440/src/IRB4400.pro</value>
@@ -123,15 +123,15 @@
   <valuemap type="QVariantMap">
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Debug</value>
    <valuelist key="abstractProcess.Environment" type="QVariantList">
-    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-cXrJou6F5E,guid=cb296e72ed6785d5d5cda7e94bae6596</value>
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-MLVQK9nkTg,guid=9d575642268ff47e0649d1e94bafc16a</value>
     <value type="QString">DESKTOP_SESSION=gnome</value>
     <value type="QString">DISPLAY=:0.0</value>
     <value type="QString">GDMSESSION=gnome</value>
     <value type="QString">GDM_KEYBOARD_LAYOUT=fr	oss</value>
     <value type="QString">GDM_LANG=fr_FR.UTF-8</value>
     <value type="QString">GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
-    <value type="QString">GNOME_KEYRING_PID=1348</value>
-    <value type="QString">GNOME_KEYRING_SOCKET=/tmp/keyring-y1qvRl/socket</value>
+    <value type="QString">GNOME_KEYRING_PID=1300</value>
+    <value type="QString">GNOME_KEYRING_SOCKET=/tmp/keyring-dPfMYK/socket</value>
     <value type="QString">GTK_MODULES=canberra-gtk-module</value>
     <value type="QString">GTK_RC_FILES=/etc/gtk/gtkrc:/home/guigui/.gtkrc-1.2-gnome2</value>
     <value type="QString">HOME=/home/guigui</value>
@@ -142,16 +142,16 @@
     <value type="QString">PATH=/home/guigui/qtsdk-2010.02/qt/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games</value>
     <value type="QString">PWD=/home/guigui</value>
     <value type="QString">QTDIR=/home/guigui/qtsdk-2010.02/qt</value>
-    <value type="QString">SESSION_MANAGER=local/branson:@/tmp/.ICE-unix/1363,unix/branson:/tmp/.ICE-unix/1363</value>
+    <value type="QString">SESSION_MANAGER=local/branson:@/tmp/.ICE-unix/1315,unix/branson:/tmp/.ICE-unix/1315</value>
     <value type="QString">SHELL=/bin/bash</value>
     <value type="QString">SPEECHD_PORT=7560</value>
-    <value type="QString">SSH_AGENT_PID=1439</value>
-    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-y1qvRl/socket.ssh</value>
+    <value type="QString">SSH_AGENT_PID=1391</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-dPfMYK/socket.ssh</value>
     <value type="QString">USER=guigui</value>
     <value type="QString">USERNAME=guigui</value>
-    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-guigui-SjO7Ft/database</value>
+    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-guigui-RqHYPE/database</value>
     <value type="QString">XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share/:/usr/share/</value>
-    <value type="QString">XDG_SESSION_COOKIE=77bfe4a05fa6ac50716e86bd4b65ef5d-1269720468.195089-1490032002</value>
+    <value type="QString">XDG_SESSION_COOKIE=77bfe4a05fa6ac50716e86bd4b65ef5d-1269809511.566175-1985742647</value>
    </valuelist>
    <value key="abstractProcess.IgnoreReturnValue" type="bool">false</value>
    <valuelist key="abstractProcess.arguments" type="QVariantList">
