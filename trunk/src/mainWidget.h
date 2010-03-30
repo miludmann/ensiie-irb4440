@@ -43,7 +43,7 @@ protected slots:
 
 public slots:
     void on_keyboard_mode_toggled(bool checked);
-    void on_pushButton_clicked();
+    void on_default_val_hanoi_clicked();
     void on_hanoi3_slider_valueChanged(int value);
     void on_hanoi2_slider_valueChanged(int value);
     void on_hanoi1_slider_valueChanged(int value);
@@ -88,6 +88,7 @@ public slots:
     void solve_hanoi();
 
 private slots:
+    void on_start_demo_clicked();
     void on_keyboard_mode_clicked();
     void on_keyboard_mode_stateChanged(int );
     void on_hanoi_button_clicked();
