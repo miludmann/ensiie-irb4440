@@ -226,14 +226,10 @@ void Interface::on_set3D_toggled(bool checked)
 {
     if (checked)
     {
-        //Couleur de fond (la 3D ressort mieux sur le fond blanc)
-        iv->viewer->setBackgroundColor(SbColor(1, 1, 1));
         iv->viewer->setAnaglyphStereoColorMasks(left3D, right3D);
         iv->viewer->setStereoType(SoQtViewer::STEREO_ANAGLYPH);
 
     } else {
-        //Couleur de fond
-        iv->viewer->setBackgroundColor(SbColor(0, 0, 0));
         iv->viewer->setStereoType(SoQtViewer::STEREO_NONE);
     }
 }
@@ -737,7 +733,7 @@ void Interface::on_hanoi3_slider_valueChanged(int value)
     adjust_hanoi();
 }
 
-void Interface::on_pushButton_clicked()
+void Interface::on_default_val_hanoi_clicked()
 {
     hanoi1_slider->setValue(0);
     hanoi2_slider->setValue(0);
@@ -1094,4 +1090,58 @@ void Interface::on_keyboard_mode_stateChanged(int )
 void Interface::on_keyboard_mode_clicked()
 {
 
+}
+
+
+
+void Interface::on_start_demo_clicked()
+{
+   hanoi3_slider->setEnabled(true);
+   hanoi2_slider->setEnabled(true);
+   hanoi1_slider->setEnabled(true);
+   default_val_hanoi->setEnabled(true);
+   hanoi_end->setEnabled(true);
+   hanoi_button->setEnabled(true);
+
+   //hanoi
+   iv->hanoi1_base->ref();
+   iv->separator->addChild(iv->hanoi1_base);
+   iv->hanoi1_transform->translation.setValue(SbVec3f(1, 0, 0.05));
+   iv->hanoi1_transform->rotation.setValue(SbVec3f(1, 0, 0), M_PI/2);
+   iv->hanoi1_base->addChild(iv->hanoi1_transform);
+   iv->openMember("vrml/hanoi1.wrl", iv->hanoi1, iv->hanoi1_base);
+
+   iv->hanoi2_base->ref();
+   iv->separator->addChild(iv->hanoi2_base);
+   iv->hanoi2_transform->translation.setValue(SbVec3f(1, 0, 0.15));
+   iv->hanoi2_transform->rotation.setValue(SbVec3f(1, 0, 0), M_PI/2);
+   iv->hanoi2_base->addChild(iv->hanoi2_transform);
+   iv->openMember("vrml/hanoi2.wrl", iv->hanoi2, iv->hanoi2_base);
+
+   iv->hanoi3_base->ref();
+   iv->separator->addChild(iv->hanoi3_base);
+   iv->hanoi3_transform->translation.setValue(SbVec3f(1, 0, 0.25));
+   iv->hanoi3_transform->rotation.setValue(SbVec3f(1, 0, 0), M_PI/2);
+   iv->hanoi3_base->addChild(iv->hanoi3_transform);
+   iv->openMember("vrml/hanoi3.wrl", iv->hanoi3, iv->hanoi3_base);
+
+   iv->palette1_base->ref();
+   iv->separator->addChild(iv->palette1_base);
+   iv->palette1_transform->translation.setValue(SbVec3f(1, 0, -0.005));
+   iv->palette1_base->addChild(iv->palette1_transform);
+   iv->openMember("vrml/palette.wrl", iv->palette1, iv->palette1_base);
+
+   iv->palette2_base->ref();
+   iv->separator->addChild(iv->palette2_base);
+   iv->palette2_transform->translation.setValue(SbVec3f(1, 0.8, -0.005));
+   iv->palette2_base->addChild(iv->palette2_transform);
+   iv->openMember("vrml/palette.wrl", iv->palette2, iv->palette2_base);
+
+   iv->palette3_base->ref();
+   iv->separator->addChild(iv->palette3_base);
+   iv->palette3_transform->translation.setValue(SbVec3f(1, -0.8, -0.005));
+   iv->palette3_base->addChild(iv->palette3_transform);
+   iv->openMember("vrml/palette.wrl", iv->palette3, iv->palette3_base);
+
+   start_demo->setEnabled(false);
 }

@@ -30,7 +30,7 @@
    <enum>QTabWidget::Rounded</enum>
   </property>
   <property name="currentIndex">
-   <number>0</number>
+   <number>3</number>
   </property>
   <property name="elideMode">
    <enum>Qt::ElideNone</enum>
@@ -1320,7 +1320,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>80</y>
+      <y>140</y>
       <width>251</width>
       <height>88</height>
      </rect>
@@ -1342,6 +1342,9 @@
      </item>
      <item row="1" column="1">
       <widget class="QSlider" name="hanoi2_slider">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="minimum">
         <number>-1</number>
        </property>
@@ -1362,6 +1365,9 @@
      </item>
      <item row="2" column="1">
       <widget class="QSlider" name="hanoi1_slider">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="minimum">
         <number>-1</number>
        </property>
@@ -1375,6 +1381,9 @@
      </item>
      <item row="0" column="1">
       <widget class="QSlider" name="hanoi3_slider">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="minimum">
         <number>-1</number>
        </property>
@@ -1388,11 +1397,14 @@
      </item>
     </layout>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="default_val_hanoi">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>180</y>
+      <y>240</y>
       <width>111</width>
       <height>27</height>
      </rect>
@@ -1402,10 +1414,13 @@
     </property>
    </widget>
    <widget class="QPushButton" name="hanoi_button">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>150</x>
-      <y>290</y>
+      <y>350</y>
       <width>93</width>
       <height>51</height>
      </rect>
@@ -1415,10 +1430,13 @@
     </property>
    </widget>
    <widget class="QSlider" name="hanoi_end">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>320</y>
+      <y>380</y>
       <width>111</width>
       <height>17</height>
      </rect>
@@ -1437,7 +1455,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>290</y>
+      <y>350</y>
       <width>111</width>
       <height>17</height>
      </rect>
@@ -1451,7 +1469,7 @@
      <rect>
       <x>20</x>
       <y>20</y>
-      <width>221</width>
+      <width>231</width>
       <height>21</height>
      </rect>
     </property>
@@ -1471,13 +1489,39 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>240</y>
+      <y>300</y>
       <width>221</width>
       <height>20</height>
      </rect>
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_4">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>120</y>
+      <width>221</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="start_demo">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>80</y>
+      <width>191</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Démarrer la démonstration</string>
     </property>
    </widget>
   </widget>
